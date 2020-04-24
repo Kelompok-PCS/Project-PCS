@@ -11,25 +11,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Project.Master_menu
 {
     /// <summary>
-    /// Interaction logic for InsertMenu.xaml
+    /// Interaction logic for Insert_menu_UC.xaml
     /// </summary>
-    public partial class InsertMenu : Window
+    public partial class Insert_menu_UC : UserControl
     {
         OracleConnection connection;
-        public InsertMenu()
+        Canvas canvas;
+        public Insert_menu_UC(Canvas canvas)
         {
             InitializeComponent();
             connection = App.Connection;
+            this.canvas = canvas;
         }
-
+        
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if(tbNama.Text !="" && tbHarga.Text !="" && cmbKat.SelectedIndex != -1)
+            if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1)
             {
                 try
                 {
@@ -66,7 +69,7 @@ namespace Project.Master_menu
                 {
                     MessageBox.Show("Harga tidak valid");
                 }
-                
+
             }
             else
             {
@@ -74,7 +77,7 @@ namespace Project.Master_menu
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             fillKategori();
             cmbKat.SelectedIndex = 0;
@@ -94,13 +97,14 @@ namespace Project.Master_menu
                 string query =
                     "SELECT ID_KATEGORI,NAMA_KATEGORI " +
                     "FROM kategori ";
-                OracleCommand cmd = new OracleCommand(query,connection);
+                OracleCommand cmd = new OracleCommand(query, connection);
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    kategoris.Add(new Kategori() {
+                    kategoris.Add(new Kategori()
+                    {
                         kode = reader.GetString(0),
-                        nama = reader.GetString(0) + " - " +reader.GetString(1)
+                        nama = reader.GetString(0) + " - " + reader.GetString(1)
                     });
                 }
                 cmbKat.ItemsSource = kategoris;
@@ -118,7 +122,9 @@ namespace Project.Master_menu
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            canvas.Children.Clear();
+            Menu_makanan_UC menu_makanan = new Menu_makanan_UC(canvas);
+            canvas.Children.Add(menu_makanan);
         }
     }
 }

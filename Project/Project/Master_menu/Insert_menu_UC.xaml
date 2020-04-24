@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Project.Master_menu.Insert_menu_UC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project.Master_menu"
+             mc:Ignorable="d" 
+             d:DesignHeight="494" d:DesignWidth="651"
+             Background="#FFEFEFEF">
+    <Grid Loaded="Grid_Loaded">
+        <Label Content="Insert Menu" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="5,37,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
+        <Label Content="Nama Menu" HorizontalAlignment="Left" Margin="21,81,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="25,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Harga Menu" HorizontalAlignment="Left" Margin="21,141,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="25,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Kategori Menu" HorizontalAlignment="Left" Margin="21,195,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="26,228,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Deskripsi Menu" HorizontalAlignment="Left" Margin="21,262,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbDesc" HorizontalAlignment="Left" Height="76" Margin="25,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="26,390,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="26,465,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+
+    </Grid>
+</UserControl>
