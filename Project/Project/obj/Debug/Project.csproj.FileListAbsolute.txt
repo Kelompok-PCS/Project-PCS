@@ -22,7 +22,6 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_me
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\MasterKategori\Insert_kategori.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\InsertMenu.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\App.g.cs
@@ -35,7 +34,6 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Project.
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Project.exe
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Project.pdb
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\MasterKategori\Insert_kategori.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\InsertMenu.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.g.resources
@@ -43,3 +41,7 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.csproj.GenerateResource.cache
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Form_Utama.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Form_Utama.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master User\Master_User_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master User\Master_User_UC.baml

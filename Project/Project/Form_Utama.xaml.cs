@@ -32,5 +32,12 @@ namespace Project
             Insert_kategori panel = new Insert_kategori(conn);
             canvas.Children.Add(panel);
         }
+
+        private void tbShowMembers_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Master_User_UC panel = new Master_User_UC(conn);
+            canvas.Children.Add(panel);
+        }
     }
 }

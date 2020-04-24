@@ -64,7 +64,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MasterKategori\Insert_kategori.xaml">
+    <Page Include="Master Kateogri\Insert_kategori.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,7 +79,7 @@
     <Compile Include="Form_Utama.xaml.cs">
       <DependentUpon>Form_Utama.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MasterKategori\Insert_kategori.xaml.cs">
+    <Compile Include="Master Kateogri\Insert_kategori.xaml.cs">
       <DependentUpon>Insert_kategori.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
@@ -94,6 +94,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Master User\Master_User_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master_menu\InsertMenu.xaml.cs">
@@ -101,6 +105,9 @@
     </Compile>
     <Compile Include="Master_menu\Menu_makanan.xaml.cs">
       <DependentUpon>Menu_makanan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master User\Master_User_UC.xaml.cs">
+      <DependentUpon>Master_User_UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

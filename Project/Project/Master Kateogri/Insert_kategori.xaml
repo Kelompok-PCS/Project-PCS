@@ -8,8 +8,8 @@
              d:DesignHeight="494" d:DesignWidth="651">
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
-        <Label Content="Insert Kategori" HorizontalAlignment="Left" Margin="14,13,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="14,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
+        <Label Content="Insert Kategori" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
         <Label Content="Nama Kategori" HorizontalAlignment="Left" Margin="30,91,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="35,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
         <Label Content="Jenis Kategori" HorizontalAlignment="Left" Margin="30,151,0,0" VerticalAlignment="Top" FontSize="14"/>
