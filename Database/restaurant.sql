@@ -45,7 +45,7 @@ CREATE TABLE kategori (
 CREATE TABLE menu (
   id_menu varchar(10) NOT NULL CONSTRAINTS pk_menu PRIMARY KEY,
   nama_menu varchar(50) NOT NULL,
-  harga_menu NUMBER NOT NULL,
+  harga_menu varchar(10) NOT NULL,
   gambar varchar(200) NOT NULL,
   deskripsi varchar(200) NOT NULL,
   id_kategori varchar(10) NOT NULL CONSTRAINTS fk_kategori REFERENCES kategori(id_kategori),

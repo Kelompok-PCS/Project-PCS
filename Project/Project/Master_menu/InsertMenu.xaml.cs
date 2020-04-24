@@ -31,37 +31,42 @@ namespace Project.Master_menu
         {
             if(tbNama.Text !="" && tbHarga.Text !="" && cmbKat.SelectedIndex != -1)
             {
-                connection.Open();
-                OracleTransaction trans = connection.BeginTransaction();
                 try
                 {
-                    
-                    string kode = "MEN";
-                    string query =
-                        "SELECT LPAD(NVL(MAX(SUBSTR(id_menu,-3,3)),0)+1,3,0) " +
-                        "FROM menu " +
-                        $"WHERE id_menu LIKE '{kode}%'";
-                    OracleCommand cmd = new OracleCommand(query, connection);
-                    kode += cmd.ExecuteScalar();
+                    int harga = Convert.ToInt32(tbHarga.Text);
+                    connection.Open();
+                    OracleTransaction trans = connection.BeginTransaction();
+                    try
+                    {
+                        string kode = "MEN";
+                        string query =
+                            "SELECT LPAD(NVL(MAX(SUBSTR(id_menu,-3,3)),0)+1,3,0) " +
+                            "FROM menu " +
+                            $"WHERE id_menu LIKE '{kode}%'";
+                        OracleCommand cmd = new OracleCommand(query, connection);
+                        kode += cmd.ExecuteScalar();
+                        query =
+                            $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
+                        cmd = new OracleCommand(query, connection);
+                        cmd.ExecuteNonQuery();
 
-                    MessageBox.Show(kode);
-                    query =
-                        $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
-                    cmd = new OracleCommand(query,connection);
-                    MessageBox.Show(query);
-                    cmd.ExecuteNonQuery();
-
-                    trans.Commit();
-                    connection.Close();
-                    MessageBox.Show("Berhasil Masukan Menu");
+                        trans.Commit();
+                        connection.Close();
+                        MessageBox.Show("Berhasil Masukan Menu");
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        connection.Close();
+                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Gagal Masukan Menu");
+                    }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    trans.Rollback();
-                    connection.Close();
-                    MessageBox.Show(ex.Message);
-                    MessageBox.Show("Gagal Masukan Menu");
+                    MessageBox.Show("Harga tidak valid");
                 }
+                
             }
             else
             {
@@ -101,7 +106,6 @@ namespace Project.Master_menu
                 cmbKat.ItemsSource = kategoris;
                 cmbKat.DisplayMemberPath = "nama";
                 cmbKat.SelectedValuePath = "kode";
-                MessageBox.Show(kategoris[0].nama);
                 connection.Close();
             }
             catch (Exception ex)
@@ -110,6 +114,11 @@ namespace Project.Master_menu
                 MessageBox.Show(ex.Message);
                 MessageBox.Show("ada yang salah dengan kategori");
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
