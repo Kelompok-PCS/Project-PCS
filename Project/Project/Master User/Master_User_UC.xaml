@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Project.Master_User_UC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="494" d:DesignWidth="651">
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
+        <Label Content="Master Members" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
+        <DataGrid x:Name="dtgMembers" HorizontalAlignment="Left" Height="206" Margin="8,74,0,0" VerticalAlignment="Top" Width="636" SelectionChanged="DataGrid_SelectionChanged"/>
+    </Grid>
+</UserControl>

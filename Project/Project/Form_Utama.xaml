@@ -1,0 +1,15 @@
+﻿<Window x:Class="Project.Form_Utama"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Form_Utama" Height="535.025" Width="898" WindowState="Maximized">
+    <Grid>
+        <Button x:Name="tbInsertKategori" Content="Insert Kategori" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="125" Click="Insert_Kategori_Click"/>
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="494" Margin="229,0,0,0" VerticalAlignment="Top" Width="651"/>
+        <Button x:Name="tbShowMembers" Content="Show Members" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top" Width="125" Click="tbShowMembers_Click"/>
+
+    </Grid>
+</Window>

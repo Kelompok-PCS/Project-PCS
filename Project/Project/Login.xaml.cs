@@ -34,10 +34,11 @@ namespace Project
             {
                 string datasource = $"data source={tbData.Text}; user id={tbUser.Text}; password={tbPass.Text}";
                 conn = new OracleConnection(datasource);
-                App.Connection = conn;
+                conn.Open();
+                conn.Close();
                 //TODO nanti ganti homepage
-                Menu_makanan insertMenu = new Menu_makanan();
-                insertMenu.ShowDialog();
+                Form_Utama Form_Utama = new Form_Utama(conn);
+                Form_Utama.ShowDialog();
             }
             catch (Exception ex)
             {
