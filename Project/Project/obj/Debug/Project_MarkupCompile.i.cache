@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\
 Project
 none
 false
 DEBUG;TRACE
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\App.xaml
-32140989649
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\App.xaml
+5408048701
 
-8-1056733595
-15-1421739032
-Login.xaml;Master_menu\InsertMenu.xaml;Master_menu\Menu_makanan.xaml;
+102038974087
+151640097301
+Form_Utama.xaml;MasterKategori\Insert_kategori.xaml;Login.xaml;Master_menu\InsertMenu.xaml;Master_menu\Menu_makanan.xaml;
 
 True
 

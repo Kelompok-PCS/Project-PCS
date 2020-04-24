@@ -36,8 +36,8 @@ namespace Project
                 conn = new OracleConnection(datasource);
                 App.Connection = conn;
                 //TODO nanti ganti homepage
-                Menu_makanan insertMenu = new Menu_makanan();
-                insertMenu.ShowDialog();
+                Form_Utama Form_Utama = new Form_Utama(conn);
+                Form_Utama.ShowDialog();
             }
             catch (Exception ex)
             {
