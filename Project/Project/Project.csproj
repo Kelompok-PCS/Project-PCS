@@ -86,11 +86,7 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Master_menu\InsertMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Master_menu\Menu_makanan.xaml">
+    <Page Include="Master_menu\Insert_menu_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,16 +94,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Master_menu\Menu_makanan_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Master_menu\InsertMenu.xaml.cs">
-      <DependentUpon>InsertMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Master_menu\Menu_makanan.xaml.cs">
-      <DependentUpon>Menu_makanan.xaml</DependentUpon>
+    <Compile Include="Master_menu\Insert_menu_UC.xaml.cs">
+      <DependentUpon>Insert_menu_UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Master User\Master_User_UC.xaml.cs">
       <DependentUpon>Master_User_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_menu\Menu_makanan_UC.xaml.cs">
+      <DependentUpon>Menu_makanan_UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Oracle.DataAccess.Client;
+using Project.Master_menu;
+
 namespace Project
 {
     /// <summary>
@@ -43,6 +45,13 @@ namespace Project
             canvas.Children.Clear();
             Master_User_UC panel = new Master_User_UC(conn);
             canvas.Children.Add(panel);
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Master_menu.Menu_makanan_UC menu_Makanan = new Menu_makanan_UC(canvas);
+            canvas.Children.Add(menu_Makanan);
         }
     }
 }

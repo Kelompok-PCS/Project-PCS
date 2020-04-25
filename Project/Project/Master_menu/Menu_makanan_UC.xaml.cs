@@ -1,6 +1,7 @@
 ﻿using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,61 +12,37 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data;
-using System.Windows.Threading;
 
 namespace Project.Master_menu
 {
     /// <summary>
-    /// Interaction logic for InsertMenu.xaml
+    /// Interaction logic for Menu_makanan_UC.xaml
     /// </summary>
-    public partial class Menu_makanan : Window
+    public partial class Menu_makanan_UC : UserControl
     {
         OracleConnection conn;
-        DispatcherTimer timer;
-        public Menu_makanan()
+        Canvas canvas;
+        public Menu_makanan_UC(Canvas canvas)
         {
             InitializeComponent();
-            this.conn = App.Connection;
-
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            loadMenu();
-        }
-
-        private void btnInsert_Click(object sender, RoutedEventArgs e)
-        {
-            InsertMenu insert = new InsertMenu();
-            insert.ShowDialog();
-        }
-
-        private void btnFilter_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("button");
+            conn = App.Connection;
+            this.canvas = canvas;
         }
 
         DataTable tableMenu;
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-            loadMenu();
-        }
 
-        private void loadMenu()
+        private void loadMenu(string status,DataGrid grid)
         {
             try
             {
                 tableMenu = new DataTable();
                 conn.Open();
                 string query =
-                    "SELECT nama_menu \"Nama Menu\",harga_menu \"Harga Menu\" FROM menu ";
-                OracleCommand cmd = new OracleCommand(query,conn);
+                    $"SELECT nama_menu \"Nama Menu\",harga_menu \"Harga Menu\" FROM menu WHERE status = '{status}'";
+                tbFilter.Text = query;
+                OracleCommand cmd = new OracleCommand(query, conn);
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd);
                 adapter.Fill(tableMenu);
                 DataColumn column = new DataColumn();
@@ -81,13 +58,13 @@ namespace Project.Master_menu
                     dataRow[1] = money;
                     Button btn = new Button();
                 }
-                gridMenu.ItemsSource = tableMenu.DefaultView;
+                grid.ItemsSource = tableMenu.DefaultView;
 
                 foreach (DataRow dataRow in tableMenu.Rows)
                 {
                     Button btn = new Button();
                     btn.Content = dataRow[0].ToString();
-                    
+
                 }
 
                 conn.Close();
@@ -100,6 +77,26 @@ namespace Project.Master_menu
             }
         }
 
-        
+        private void gridMenu_Loaded(object sender, RoutedEventArgs e)
+        {
+            loadMenu("1",gridMenu);
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Insert_menu_UC insert_Menu = new Insert_menu_UC(canvas);
+            canvas.Children.Add(insert_Menu);
+        }
+
+        private void gridPurgatory_Loaded(object sender, RoutedEventArgs e)
+        {
+            loadMenu("0",gridPurgatory);
+        }
+
+        private void Grid_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            
+        }
     }
 }

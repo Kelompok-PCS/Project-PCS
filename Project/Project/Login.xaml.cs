@@ -34,8 +34,7 @@ namespace Project
             {
                 string datasource = $"data source={tbData.Text}; user id={tbUser.Text}; password={tbPass.Text}";
                 conn = new OracleConnection(datasource);
-                conn.Open();
-                conn.Close();
+                App.Connection = conn;
                 //TODO nanti ganti homepage
                 Form_Utama Form_Utama = new Form_Utama(conn);
                 Form_Utama.ShowDialog();
@@ -43,7 +42,6 @@ namespace Project
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
             }
         }
     }
