@@ -25,9 +25,13 @@ namespace Project
             InitializeComponent();
             this.conn = conn;
         }
-
+        public void checkConnection(OracleConnection connection)
+        {
+            if (connection.State == System.Data.ConnectionState.Open) connection.Close();
+        }
         private void Insert_Kategori_Click(object sender, RoutedEventArgs e)
         {
+            checkConnection(conn);
             canvas.Children.Clear();
             Insert_kategori panel = new Insert_kategori(conn);
             canvas.Children.Add(panel);
@@ -35,6 +39,7 @@ namespace Project
 
         private void tbShowMembers_Click(object sender, RoutedEventArgs e)
         {
+            checkConnection(conn);
             canvas.Children.Clear();
             Master_User_UC panel = new Master_User_UC(conn);
             canvas.Children.Add(panel);

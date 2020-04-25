@@ -105,10 +105,9 @@ CREATE TABLE kota (
   kode_daerah varchar(100) NOT NULL CONSTRAINTS fk_daerah REFERENCES daerah(kode_daerah)
 );
 
-COMMIT;
-insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','12345678','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77',1234567890,'Surabaya','Ngagel',123123,'1');
-insert into members values('M000000002','San Widodo','SanKing','12345678','sanking@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'Sidoarjo','Ngagel',423421,'1');
-insert into members values('M000000003','Yongki Tanu','YoTa','12345678','yongkikun@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'Surabaya','Ngagel',523123,'1');
+insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','12345678','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77',1234567890,'K0001','D0001',123123,'1');
+insert into members values('M000000002','San Widodo','SanKing','12345678','sanking@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'K0002','D0001',423421,'1');
+insert into members values('M000000003','Yongki Tanu','YoTa','12345678','yongkikun@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'K0001','D0001',523123,'1');
 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT001','Nasi','makanan','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT002','Cap Cay','makanan','1');
@@ -117,4 +116,24 @@ Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT005','Signature Menu','makanan','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT006','Kopi','minuman','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT007','Minuman','minuman','1');
+
+INSERT INTO daerah VALUES ('D0001', 'Jawa Timur');
+INSERT INTO daerah VALUES ('D0002', 'Jawa Barat');
+INSERT INTO daerah VALUES ('D0003', 'Jawa Tengah');
+
+INSERT INTO kota VALUES('K0001', 'Surabaya', 'D0001');
+INSERT INTO kota VALUES('K0002', 'Malang', 'D0001');
+INSERT INTO kota VALUES('K0003', 'Probolinggo', 'D0001');
+INSERT INTO kota VALUES('K0004', 'Batu', 'D0001');
+INSERT INTO kota VALUES('K0005', 'Malang', 'D0001');
+INSERT INTO kota VALUES('K0006', 'Bandung', 'D0002');
+INSERT INTO kota VALUES('K0007', 'Bekasi', 'D0002');
+INSERT INTO kota VALUES('K0008', 'Cirebon', 'D0002');
+INSERT INTO kota VALUES('K0009', 'Indramayu', 'D0002');
+INSERT INTO kota VALUES('K0010', 'Depok', 'D0002');
+INSERT INTO kota VALUES('K0011', 'Magelang', 'D0003');
+INSERT INTO kota VALUES('K0012', 'Pekalongan', 'D0003');
+INSERT INTO kota VALUES('K0013', 'Salatiga', 'D0003');
+INSERT INTO kota VALUES('K0014', 'Semarang', 'D0003');
+INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
 commit;
