@@ -105,6 +105,11 @@ CREATE TABLE kota (
   kode_daerah varchar(100) NOT NULL CONSTRAINTS fk_daerah REFERENCES daerah(kode_daerah)
 );
 
+CREATE TABLE jabatan (
+  id_jabatan varchar(10) NOT NULL,
+  nama_jabatan varchar(50) NOT NULL
+) ;
+
 insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','12345678','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77',1234567890,'K0001','D0001',123123,'1');
 insert into members values('M000000002','San Widodo','SanKing','12345678','sanking@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'K0002','D0001',423421,'1');
 insert into members values('M000000003','Yongki Tanu','YoTa','12345678','yongkikun@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'K0001','D0001',523123,'1');
@@ -136,4 +141,17 @@ INSERT INTO kota VALUES('K0012', 'Pekalongan', 'D0003');
 INSERT INTO kota VALUES('K0013', 'Salatiga', 'D0003');
 INSERT INTO kota VALUES('K0014', 'Semarang', 'D0003');
 INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
+
+INSERT INTO jabatan VALUES ('JAB00001', 'Waiter');
+INSERT INTO jabatan VALUES ('JAB00002', 'Host');
+
+create or replace function autogen_IDpegawai return varchar2
+is
+    tampung varchar2(10);
+begin
+    select 'PEG'||lpad(nvl(max(substr(id_pegawai,-3,3)),'0')+1,3,0) into tampung from pegawai;
+    return tampung;
+end;
+/
+
 commit;

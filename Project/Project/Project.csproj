@@ -64,6 +64,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Insert_Pegawai_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Master Kateogri\Insert_kategori.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +82,9 @@
     </Compile>
     <Compile Include="Form_Utama.xaml.cs">
       <DependentUpon>Form_Utama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Pegawai_UC.xaml.cs">
+      <DependentUpon>Insert_Pegawai_UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Master Kateogri\Insert_kategori.xaml.cs">
       <DependentUpon>Insert_kategori.xaml</DependentUpon>

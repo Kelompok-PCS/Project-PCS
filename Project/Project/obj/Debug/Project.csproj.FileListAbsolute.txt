@@ -17,8 +17,6 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.e
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.pdb
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\InsertMenu.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\App.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.cache
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.lref
@@ -29,8 +27,6 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Project.
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Project.exe
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Project.pdb
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\InsertMenu.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.g.resources
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.Properties.Resources.resources
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.csproj.GenerateResource.cache
@@ -50,3 +46,9 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_me
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml

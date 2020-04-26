@@ -53,5 +53,12 @@ namespace Project
             Master_menu.Menu_makanan_UC menu_Makanan = new Menu_makanan_UC(canvas);
             canvas.Children.Add(menu_Makanan);
         }
+
+        private void tbInsertPegawai_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Insert_Pegawai_UC panel = new Insert_Pegawai_UC();
+            canvas.Children.Add(panel);
+        }
     }
 }
