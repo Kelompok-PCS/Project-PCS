@@ -154,4 +154,10 @@ begin
 end;
 /
 
+create or replace procedure proc_Insert_pegawai(kode in varchar2,nama in varchar2,jabatan in varchar2,email in varchar2,nohp in varchar2,password in varchar2)
+is
+begin
+insert into pegawai values(kode,nama,jabatan,email,nohp,password,'1');
+end;
+/
 commit;
