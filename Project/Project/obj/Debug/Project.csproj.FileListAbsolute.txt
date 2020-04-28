@@ -50,3 +50,4 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_me
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
