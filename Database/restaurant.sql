@@ -83,7 +83,7 @@ CREATE TABLE promo (
 CREATE TABLE paket (
   id_paket varchar(10) NOT NULL CONSTRAINTS PK_paket PRIMARY KEY,
   nama_paket varchar(50) NOT NULL,
-  harga_paket NUMBER NOT NULL,
+  harga_paket varchar(50) NOT NULL,
   id_kategori varchar(10) NOT NULL CONSTRAINTS FK_KATEGORI1 REFERENCES KATEGORI(ID_KATEGORI),
   id_promo varchar(10) NOT NULL CONSTRAINTS fk_PROMO REFERENCES promo(id_promo),
   status NUMBER NOT NULL

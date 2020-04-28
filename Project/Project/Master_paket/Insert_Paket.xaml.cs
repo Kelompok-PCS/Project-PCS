@@ -158,7 +158,7 @@ namespace Project.Master_paket
             {
                 connection.Close();
                 MessageBox.Show(ex.Message);
-                MessageBox.Show("ada yang salah dengan kategori");
+                MessageBox.Show("ada yang salah dengan promo");
             }
         }
 

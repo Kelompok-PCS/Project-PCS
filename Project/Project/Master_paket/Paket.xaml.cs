@@ -32,12 +32,15 @@ namespace Project.Master_paket
         }
 
         DataTable tableMenu;
+        DataTable tableMenuActive;
+        DataTable tableMenuPurge;
+        List<string> kodeMenuActive;
+        List<string> kodeMenuPurge;
 
-        private void loadMenu(string status, DataGrid grid)
+        private void loadMenu(string status, DataGrid grid, DataTable tableMenu, List<string> kodeMenu)
         {
             try
             {
-                tableMenu = new DataTable();
                 connection.Open();
                 string query =
                     $"SELECT NAMA_PAKET \"Nama Paket\",HARGA_PAKET \"Harga Paket\" FROM PAKET WHERE status = '{status}'";
@@ -45,9 +48,6 @@ namespace Project.Master_paket
                 OracleCommand cmd = new OracleCommand(query, connection);
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd);
                 adapter.Fill(tableMenu);
-                DataColumn column = new DataColumn();
-                column.ColumnName = "Action";
-                tableMenu.Columns.Add(column);
                 foreach (DataRow dataRow in tableMenu.Rows)
                 {
                     string money = "Rp ";
@@ -60,11 +60,14 @@ namespace Project.Master_paket
                 }
                 grid.ItemsSource = tableMenu.DefaultView;
 
-                foreach (DataRow dataRow in tableMenu.Rows)
+                query =
+                    $"SELECT ID_PAKET FROM paket WHERE status = '{status}'";
+                tbFilter.Text = query;
+                cmd = new OracleCommand(query, connection);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    Button btn = new Button();
-                    btn.Content = dataRow[0].ToString();
-
+                    kodeMenu.Add(reader.GetString(0));
                 }
 
                 connection.Close();
@@ -88,12 +91,16 @@ namespace Project.Master_paket
 
         private void gridMenu_Loaded(object sender, RoutedEventArgs e)
         {
-            loadMenu("1", gridMenu);
+            tableMenuActive = new DataTable();
+            kodeMenuActive = new List<string>();
+            loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
         }
 
         private void gridPurgatory_Loaded(object sender, RoutedEventArgs e)
         {
-            loadMenu("0", gridPurgatory);
+            tableMenuPurge = new DataTable();
+            kodeMenuPurge = new List<string>();
+            loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
         }
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
@@ -101,6 +108,60 @@ namespace Project.Master_paket
             canvas.Children.Clear();
             Insert_Paket insert_paket = new Insert_Paket(canvas);
             canvas.Children.Add(insert_paket);
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbKode.Content.ToString() != "Kosong")
+            {
+                if (rdUpdate.IsChecked == true)
+                {
+                    canvas.Children.Clear();
+                    //Insert_menu_UC update_menu = new Insert_menu_UC(canvas, lbKode.Content.ToString());
+                    //canvas.Children.Add(update_menu);
+                }
+                else
+                {
+                    connection.Open();
+                    string query =
+                            $"UPDATE menu SET status = 0 WHERE id_menu = '{lbKode.Content}'";
+                    OracleCommand cmd = new OracleCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+
+                    tableMenuActive = new DataTable();
+                    kodeMenuActive = new List<string>();
+                    loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
+
+                    tableMenuPurge = new DataTable();
+                    kodeMenuPurge = new List<string>();
+                    loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                }
+            }
+            else
+            {
+                MessageBox.Show("tidak ada menu yang dipilih");
+            }
+        }
+
+        private void rdUpdate_Checked(object sender, RoutedEventArgs e)
+        {
+            btnEdit.Content = "Update";
+        }
+
+        private void rdDelete_Checked(object sender, RoutedEventArgs e)
+        {
+            btnEdit.Content = "Delete";
+        }
+
+        private void gridMenu_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (gridMenu.SelectedIndex != -1)
+            {
+                lbKode.Content = kodeMenuActive[gridMenu.SelectedIndex];
+                DataRow dr = tableMenuActive.Rows[gridMenu.SelectedIndex];
+                tbNama.Text = dr[0].ToString();
+            }
         }
     }
 }
