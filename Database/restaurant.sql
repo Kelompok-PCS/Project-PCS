@@ -122,6 +122,11 @@ Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT006','Kopi','minuman','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT007','Minuman','minuman','1');
 
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN001','Nasi Capjai','12000','temp gambar','uenakkk','KAT002','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN002','Susi Goreng','19000','temp gambar','Goreng terusss','KAT005','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN003','test','10000','temp gambar','asdasdad','KAT004','0');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN004','test kedua','30000','temp gambar','asdadasdad','KAT006','0');
+
 INSERT INTO daerah VALUES ('D0001', 'Jawa Timur');
 INSERT INTO daerah VALUES ('D0002', 'Jawa Barat');
 INSERT INTO daerah VALUES ('D0003', 'Jawa Tengah');
