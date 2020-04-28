@@ -93,6 +93,14 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Master Promo\Insert_Promo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master Promo\Menu_Promo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Master_menu\Insert_menu_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +123,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Master Promo\Insert_Promo.xaml.cs">
+      <DependentUpon>Insert_Promo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master Promo\Menu_Promo.xaml.cs">
+      <DependentUpon>Menu_Promo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Master_menu\Insert_menu_UC.xaml.cs">
       <DependentUpon>Insert_menu_UC.xaml</DependentUpon>
     </Compile>

@@ -77,5 +77,21 @@ namespace Project
             Paket panel = new Paket(canvas);
             canvas.Children.Add(panel);
         }
-    }
+
+		private void TbInsertPromo_Click(object sender, RoutedEventArgs e)
+		{
+			checkConnection(conn);
+			canvas.Children.Clear();
+			Insert_Promo panel = new Insert_Promo(conn,"null");
+			canvas.Children.Add(panel);
+		}
+
+		private void TbSHowPromo_Click(object sender, RoutedEventArgs e)
+		{
+			checkConnection(conn);
+			canvas.Children.Clear();
+			Menu_Promo panel = new Menu_Promo(canvas);
+			canvas.Children.Add(panel);
+		}
+	}
 }

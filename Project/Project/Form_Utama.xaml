@@ -11,7 +11,10 @@
         <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="494" Margin="229,0,0,0" VerticalAlignment="Top" Width="651"/>
         <Button x:Name="tbShowMembers" Content="Show Members" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top" Width="125" Click="tbShowMembers_Click"/>
         <Button x:Name="btnMenu" Content="Master Menu" HorizontalAlignment="Left" Margin="30,147,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
-        <Button x:Name="tbInsertPegawai" Content="Show Members" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
+        <Button x:Name="tbInsertPegawai" Content="Insert Pegawai" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
+        <Button x:Name="tbInsertPromo" Content="Insert Promo" HorizontalAlignment="Left" Margin="30,219,0,0" VerticalAlignment="Top" Width="125" Click="TbInsertPromo_Click" />
+        <Button x:Name="tbSHowPromo" Content="Show Promos" HorizontalAlignment="Left" Margin="30,255,0,0" VerticalAlignment="Top" Width="125" Click="TbSHowPromo_Click" />
+        <Button x:Name="tbInsertPegawais" Content="Insert Menu" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
         <Button x:Name="tbInsertPaket" Content="Insert Paket" HorizontalAlignment="Left" Margin="30,305,0,0" VerticalAlignment="Top" Width="125" Click="Insert_Paket_Click"/>
         <Button x:Name="btnPaket" Content="Master Paket" HorizontalAlignment="Left" Margin="30,265,0,0" VerticalAlignment="Top" Width="125" Click="btnPaket_Click"/>
 
