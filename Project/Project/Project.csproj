@@ -105,6 +105,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Master_paket\Insert_Paket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master_paket\Paket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master_menu\Insert_menu_UC.xaml.cs">
@@ -115,6 +123,12 @@
     </Compile>
     <Compile Include="Master_menu\Menu_makanan_UC.xaml.cs">
       <DependentUpon>Menu_makanan_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_paket\Insert_Paket.xaml.cs">
+      <DependentUpon>Insert_Paket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_paket\Paket.xaml.cs">
+      <DependentUpon>Paket.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
