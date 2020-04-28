@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Oracle.DataAccess.Client;
 using Project.Master_menu;
+using Project.Master_paket;
 
 namespace Project
 {
@@ -58,6 +59,22 @@ namespace Project
         {
             canvas.Children.Clear();
             Insert_Pegawai_UC panel = new Insert_Pegawai_UC();
+            canvas.Children.Add(panel);
+            
+        }
+
+        private void Insert_Paket_Click(object sender, RoutedEventArgs e)
+        {
+            checkConnection(conn);
+            canvas.Children.Clear();
+            Insert_Paket panel = new Insert_Paket(canvas);
+            canvas.Children.Add(panel);
+        }
+
+        private void btnPaket_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Paket panel = new Paket(canvas);
             canvas.Children.Add(panel);
         }
 
