@@ -83,6 +83,7 @@ namespace Project.Master_paket
             fillKategori();
             fillpromo();
             cmbKat.SelectedIndex = 0;
+            cmbPro.SelectedIndex = 0;
         }
 
         private class Promo
@@ -137,12 +138,12 @@ namespace Project.Master_paket
                 connection.Open();
                 string query =
                     "SELECT ID_PROMO,NAMA_PROMO " +
-                    "FROM PROMO ";
+                    "FROM promo ";
                 OracleCommand cmd = new OracleCommand(query, connection);
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    kategoris.Add(new Kategori()
+                    promos.Add(new Promo()
                     {
                         kode = reader.GetString(0),
                         nama = reader.GetString(0) + " - " + reader.GetString(1)
@@ -157,7 +158,7 @@ namespace Project.Master_paket
             {
                 connection.Close();
                 MessageBox.Show(ex.Message);
-                MessageBox.Show("ada yang salah dengan promo");
+                MessageBox.Show("ada yang salah dengan kategori");
             }
         }
 
