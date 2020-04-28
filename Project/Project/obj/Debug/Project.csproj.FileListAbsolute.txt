@@ -116,3 +116,7 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
