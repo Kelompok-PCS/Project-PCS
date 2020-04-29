@@ -23,18 +23,16 @@ namespace Project.Master_menu
     {
         OracleConnection connection;
         Canvas canvas;
-        string kodeMenu;
-        public Insert_menu_UC(Canvas canvas,string kodeMenu)
+        public Insert_menu_UC(Canvas canvas)
         {
             InitializeComponent();
             connection = App.Connection;
             this.canvas = canvas;
-            this.kodeMenu = kodeMenu;
         }
         
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if(kodeMenu == " ")
+            if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1)
             {
                 if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1)
                 {
@@ -85,49 +83,51 @@ namespace Project.Master_menu
                 MessageBoxResult result = MessageBox.Show("Apakah Anda Yakin Update Menu ini ?", "Konfirmasi", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
+                    int harga = Convert.ToInt32(tbHarga.Text);
                     connection.Open();
                     OracleTransaction trans = connection.BeginTransaction();
                     try
                     {
+                        string kode = "MEN";
                         string query =
-                            $"UPDATE menu SET NAMA_MENU = '{tbNama.Text}',HARGA_MENU = '{tbHarga.Text}',DESKRIPSI = '{tbDesc.Text}' WHERE id_menu = '{kodeMenu}'";
-                        OracleCommand cmd = new OracleCommand(query,connection);
+                            "SELECT LPAD(NVL(MAX(SUBSTR(id_menu,-3,3)),0)+1,3,0) " +
+                            "FROM menu " +
+                            $"WHERE id_menu LIKE '{kode}%'";
+                        OracleCommand cmd = new OracleCommand(query, connection);
+                        kode += cmd.ExecuteScalar();
+                        query =
+                            $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
+                        cmd = new OracleCommand(query, connection);
                         cmd.ExecuteNonQuery();
+
                         trans.Commit();
                         connection.Close();
-                        MessageBox.Show("Berhasil update data menu");
+                        MessageBox.Show("Berhasil Masukan Menu");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
                         trans.Rollback();
                         connection.Close();
+                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Gagal Masukan Menu");
                     }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("yahhh sedihhh");
-                    MessageBox.Show("Abort Update Menu");
+                    MessageBox.Show("Harga tidak valid");
                 }
+
+            }
+            else
+            {
+                MessageBox.Show("Data belum lengkap");
             }
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             fillKategori();
-            if (kodeMenu == " ")
-            {
-                cmbKat.SelectedIndex = 0;
-                btnSubmit.Content = "Insert";
-                lbJudul.Content = "Insert Menu";
-            }
-            else
-            {
-                loadMenu();
-                btnSubmit.Content = "Update";
-                lbJudul.Content = "Update Menu";
-            }
-            lbPrevData.Content = prevName;
+            cmbKat.SelectedIndex = 0;
         }
 
         private class Kategori
@@ -135,10 +135,9 @@ namespace Project.Master_menu
             public string kode { get; set; }
             public string nama { get; set; }
         }
-        List<Kategori> kategoris;
+        List<Kategori> kategoris = new List<Kategori>();
         private void fillKategori()
         {
-            kategoris = new List<Kategori>();
             try
             {
                 connection.Open();
@@ -173,34 +172,6 @@ namespace Project.Master_menu
             canvas.Children.Clear();
             Menu_makanan_UC menu_makanan = new Menu_makanan_UC(canvas);
             canvas.Children.Add(menu_makanan);
-        }
-        string prevName = "";
-        private void loadMenu()
-        {
-            connection.Open();
-            string query =
-              $"SELECT * FROM menu WHERE id_menu = '{kodeMenu}'";
-            OracleCommand cmd = new OracleCommand(query,connection);
-            OracleDataReader reader = cmd.ExecuteReader();
-            string kodeKategori = "";
-            while (reader.Read())
-            {
-                tbNama.Text = reader.GetString(1);
-                tbHarga.Text = reader.GetString(2);
-                tbDesc.Text = reader.GetString(4);
-                kodeKategori = reader.GetString(5);
-            }
-
-            for (int i = 0; i < kategoris.Count; i++)
-            {
-                if(kategoris[i].kode == kodeKategori)
-                {
-                    cmbKat.SelectedIndex = i;
-                    prevName = $"Kategori yang ingin diupdate : {kategoris[i].nama}";
-                }
-            }
-
-            connection.Close();
         }
     }
 }

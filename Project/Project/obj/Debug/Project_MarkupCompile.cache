@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\
 Project
 none
 false
 DEBUG;TRACE
-C:\xampp\htdocs\coba\Project-PCS\Project\Project\App.xaml
-111535949324
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\App.xaml
+9-471630175
 
-15-872794516
-151056953018
-Form_Utama.xaml;Insert_Pegawai_UC.xaml;Master Kateogri\Insert_kategori.xaml;Login.xaml;Master Promo\Insert_Promo.xaml;Master Promo\Menu_Promo.xaml;Master_menu\Insert_menu_UC.xaml;Master User\Master_User_UC.xaml;Master_menu\Menu_makanan_UC.xaml;Master_paket\Insert_Paket.xaml;Master_paket\Paket.xaml;
+13-19769741
+151640097301
+Form_Utama.xaml;Master Pegawai\Insert_Pegawai_UC.xaml;Master Kateogri\Insert_kategori.xaml;Login.xaml;Master Pegawai\Update_Pegawai_UC.xaml;Master_Kategori_UC.xaml;Master_menu\Insert_menu_UC.xaml;Master User\Master_User_UC.xaml;Master_menu\Menu_makanan_UC.xaml;
 
 False
 
