@@ -55,7 +55,7 @@ namespace Project.Master_paket
                             OracleCommand cmd = new OracleCommand(query, connection);
                             kode += cmd.ExecuteScalar();
                             query =
-                                $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{cmbKat.SelectedValue}','{cmbPro.SelectedValue}','1')";
+                                $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}',{harga},'{cmbKat.SelectedValue}','{cmbPro.SelectedValue}','1')";
                             cmd = new OracleCommand(query, connection);
                             cmd.ExecuteNonQuery();
 

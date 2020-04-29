@@ -53,7 +53,7 @@ namespace Project.Master_menu
                             OracleCommand cmd = new OracleCommand(query, connection);
                             kode += cmd.ExecuteScalar();
                             query =
-                                $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
+                                $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}',{harga},'{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
                             cmd = new OracleCommand(query, connection);
                             cmd.ExecuteNonQuery();
 
