@@ -107,7 +107,7 @@ namespace Project.Master_paket
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
             canvas.Children.Clear();
-            Insert_Paket insert_paket = new Insert_Paket(canvas);
+            Insert_Paket insert_paket = new Insert_Paket(canvas," ");
             canvas.Children.Add(insert_paket);
         }
 
