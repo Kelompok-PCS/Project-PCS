@@ -124,3 +124,13 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_P
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
