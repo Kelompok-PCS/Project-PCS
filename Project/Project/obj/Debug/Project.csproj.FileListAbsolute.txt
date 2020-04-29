@@ -46,13 +46,91 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_me
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Insert_Pegawai_UC.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Update_Pegawai_UC.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Insert_Pegawai_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Update_Pegawai_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kategori_UC.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kategori_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Resources\search-icon.png
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.exe.config
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.exe
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.pdb
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Form_Utama.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master User\Master_User_UC.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\App.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.cache
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.lref
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Form_Utama.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master User\Master_User_UC.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.g.resources
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.Properties.Resources.resources
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.csproj.GenerateResource.cache
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.exe
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.pdb
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_paket.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_paket.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Resources\search-icon.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.exe.config
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.exe
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.pdb
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_Utama.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master User\Master_User_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\App.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.cache
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.lref
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_Utama.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master User\Master_User_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.g.resources
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.Properties.Resources.resources
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.csproj.GenerateResource.cache
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.exe
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.pdb
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
