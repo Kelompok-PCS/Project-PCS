@@ -20,7 +20,6 @@
         <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="23" Margin="10,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="265,287,0,0" TextWrapping="Wrap" Text="Alamat" VerticalAlignment="Top"/>
         <TextBox x:Name="tbAlamat" HorizontalAlignment="Left" Height="61" Margin="265,303,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="376" MaxLines="100"/>
-        <ComboBox HorizontalAlignment="Left" Margin="323,381,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbPronvinsi" HorizontalAlignment="Left" Margin="265,381,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbPronvinsi_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="265,365,0,0" TextWrapping="Wrap" Text="Provinsi" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbKota" HorizontalAlignment="Left" Margin="392,381,0,0" VerticalAlignment="Top" Width="120"/>

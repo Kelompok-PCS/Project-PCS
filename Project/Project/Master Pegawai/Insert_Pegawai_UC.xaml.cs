@@ -50,9 +50,11 @@ namespace Project
         }
         OracleConnection connection;
         List<jabatan> lsJabatan = new List<jabatan>();
-        public Insert_Pegawai_UC()
+        Canvas canvas;
+        public Insert_Pegawai_UC(Canvas canvas)
         {
             InitializeComponent();
+            this.canvas = canvas;
             connection = App.Connection;
             getJabatan();
         }
@@ -121,6 +123,14 @@ namespace Project
             {
                 MessageBox.Show("Data belum lengkap");
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Master_Pegawai_UC panel = new Master_Pegawai_UC(canvas);
+            canvas.Children.Add(panel);
+            
         }
     }
 }

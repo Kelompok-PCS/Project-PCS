@@ -45,7 +45,7 @@ CREATE TABLE kategori (
 CREATE TABLE menu (
   id_menu varchar(10) NOT NULL CONSTRAINTS pk_menu PRIMARY KEY,
   nama_menu varchar(50) NOT NULL,
-  harga_menu varchar(10) NOT NULL,
+  harga_menu number NOT NULL,
   gambar varchar(200) NOT NULL,
   deskripsi varchar(200) NOT NULL,
   id_kategori varchar(10) NOT NULL CONSTRAINTS fk_kategori REFERENCES kategori(id_kategori),
@@ -83,7 +83,7 @@ CREATE TABLE promo (
 CREATE TABLE paket (
   id_paket varchar(10) NOT NULL CONSTRAINTS PK_paket PRIMARY KEY,
   nama_paket varchar(50) NOT NULL,
-  harga_paket varchar(50) NOT NULL,
+  harga_paket number NOT NULL,
   id_kategori varchar(10) NOT NULL CONSTRAINTS FK_KATEGORI1 REFERENCES KATEGORI(ID_KATEGORI),
   id_promo varchar(10) NOT NULL CONSTRAINTS fk_PROMO REFERENCES promo(id_promo),
   status NUMBER NOT NULL
@@ -122,11 +122,6 @@ Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT006','Kopi','minuman','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT007','Minuman','minuman','1');
 
-Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN001','Nasi Capjai','12000','temp gambar','uenakkk','KAT002','1');
-Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN002','Susi Goreng','19000','temp gambar','Goreng terusss','KAT005','1');
-Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN003','test','10000','temp gambar','asdasdad','KAT004','0');
-Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN004','test kedua','30000','temp gambar','asdadasdad','KAT006','0');
-
 INSERT INTO daerah VALUES ('D0001', 'Jawa Timur');
 INSERT INTO daerah VALUES ('D0002', 'Jawa Barat');
 INSERT INTO daerah VALUES ('D0003', 'Jawa Tengah');
@@ -149,12 +144,6 @@ INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
 
 INSERT INTO jabatan VALUES ('JAB00001', 'Waiter');
 INSERT INTO jabatan VALUES ('JAB00002', 'Host');
-
-insert into promo values('PRO001','Promo Ramadhan1',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO002','Promo Ramadhan2',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO003','Promo Ramadhan3',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO004','Promo Ramadhan4',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO005','Promo Ramadhan5',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 
 create or replace function autogen_IDpegawai return varchar2
 is
