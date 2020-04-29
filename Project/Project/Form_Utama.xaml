@@ -10,8 +10,8 @@
         <Button x:Name="tbInsertKategori" Content="Insert Kategori" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="125" Click="Insert_Kategori_Click"/>
         <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="494" Margin="229,0,0,0" VerticalAlignment="Top" Width="651"/>
         <Button x:Name="tbShowMembers" Content="Show Members" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top" Width="125" Click="tbShowMembers_Click"/>
-        <Button x:Name="btnMenu" Content="Master Menu" HorizontalAlignment="Left" Margin="30,147,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
-        <Button x:Name="tbInsertPegawai" Content="Show Members" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
+        <Button x:Name="btnMenu" Content="Master Menu" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top" Width="125" Click="btnMenu_Click" Height="27"/>
+        <Button x:Name="tbInsertPegawai" Content="Show Pegawai" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
 
     </Grid>
 </Window>

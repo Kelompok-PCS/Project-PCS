@@ -64,7 +64,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Insert_Pegawai_UC.xaml">
+    <Page Include="Master Pegawai\Insert_Pegawai_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,7 +83,7 @@
     <Compile Include="Form_Utama.xaml.cs">
       <DependentUpon>Form_Utama.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Insert_Pegawai_UC.xaml.cs">
+    <Compile Include="Master Pegawai\Insert_Pegawai_UC.xaml.cs">
       <DependentUpon>Insert_Pegawai_UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Master Kateogri\Insert_kategori.xaml.cs">
@@ -93,6 +93,14 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Master Pegawai\Update_Pegawai_UC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master_Kategori_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Master_menu\Insert_menu_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,6 +115,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Master Pegawai\Update_Pegawai_UC.xaml.cs">
+      <DependentUpon>Update_Pegawai_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_Kategori_UC.xaml.cs">
+      <DependentUpon>Master_Kategori_UC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Master_menu\Insert_menu_UC.xaml.cs">
       <DependentUpon>Insert_menu_UC.xaml</DependentUpon>
     </Compile>

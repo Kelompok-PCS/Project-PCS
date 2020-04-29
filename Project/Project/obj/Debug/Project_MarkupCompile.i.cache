@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\App.xaml
-729175466
+9-471630175
 
-121256380884
+14-1733265927
 151640097301
-Form_Utama.xaml;Insert_Pegawai_UC.xaml;Master Kateogri\Insert_kategori.xaml;Login.xaml;Master_menu\Insert_menu_UC.xaml;Master User\Master_User_UC.xaml;Master_menu\Menu_makanan_UC.xaml;
+Form_Utama.xaml;Master Pegawai\Insert_Pegawai_UC.xaml;Master Kateogri\Insert_kategori.xaml;Login.xaml;Master Pegawai\Update_Pegawai_UC.xaml;Master_Kategori_UC.xaml;Master_menu\Insert_menu_UC.xaml;Master User\Master_User_UC.xaml;Master_menu\Menu_makanan_UC.xaml;
 
 True
 

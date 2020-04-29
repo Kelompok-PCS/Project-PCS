@@ -46,9 +46,13 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_me
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Insert_Pegawai_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Update_Pegawai_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Insert_Pegawai_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Pegawai\Update_Pegawai_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kategori_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kategori_UC.baml

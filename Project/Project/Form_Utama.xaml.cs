@@ -22,10 +22,10 @@ namespace Project
     public partial class Form_Utama : Window
     {
         OracleConnection conn;
-        public Form_Utama(OracleConnection conn)
+        public Form_Utama()
         {
             InitializeComponent();
-            this.conn = conn;
+            this.conn = App.Connection;
         }
         public void checkConnection(OracleConnection connection)
         {
@@ -57,7 +57,7 @@ namespace Project
         private void tbInsertPegawai_Click(object sender, RoutedEventArgs e)
         {
             canvas.Children.Clear();
-            Insert_Pegawai_UC panel = new Insert_Pegawai_UC();
+            Master_Pegawai_UC panel = new Master_Pegawai_UC(canvas);
             canvas.Children.Add(panel);
         }
     }
