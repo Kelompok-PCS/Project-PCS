@@ -29,6 +29,7 @@ namespace Project.Master_paket
             InitializeComponent();
             connection = App.Connection;
             this.canvas = canvas;
+            gridMenu.IsReadOnly = true;
         }
 
         DataTable tableMenu;

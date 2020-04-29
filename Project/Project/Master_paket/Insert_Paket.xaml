@@ -8,17 +8,19 @@
              d:DesignHeight="494" d:DesignWidth="651"
              Background="#FFEFEFEF">
     <Grid Loaded="Grid_Loaded">
-        <Label Content="Insert Paket" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="lbJudul" Content="Insert Paket" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="5,37,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
         <Label Content="Nama Paket" HorizontalAlignment="Left" Margin="21,81,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="25,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
         <Label Content="Harga Paket" HorizontalAlignment="Left" Margin="21,141,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="25,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
         <Label Content="Kategori Paket" HorizontalAlignment="Left" Margin="21,195,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="26,228,0,0" VerticalAlignment="Top" Width="606"/>
+        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="26,248,0,0" VerticalAlignment="Top" Width="606"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="26,390,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click"/>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="26,465,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
-        <Label Content="Kategori Promo" HorizontalAlignment="Left" Margin="21,262,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox x:Name="cmbPro" HorizontalAlignment="Left" Margin="26,295,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Kategori Promo" HorizontalAlignment="Left" Margin="25,275,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbPro" HorizontalAlignment="Left" Margin="25,330,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label x:Name="lbPrevData1" Content="Label" HorizontalAlignment="Left" Margin="26,224,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Label x:Name="lbPrevData2" Content="Label" HorizontalAlignment="Left" Margin="21,304,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
     </Grid>
 </UserControl>

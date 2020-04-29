@@ -24,57 +24,93 @@ namespace Project.Master_paket
     {
         OracleConnection connection;
         Canvas canvas;
-        public Insert_Paket(Canvas canvas)
+        string kodeMenu;
+
+        public Insert_Paket(Canvas canvas, string kodeMenu)
         {
             InitializeComponent();
             connection = App.Connection;
             this.canvas = canvas;
+            this.kodeMenu = kodeMenu;
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1 && cmbPro.SelectedIndex != -1)
+            if (kodeMenu == " ")
             {
-                try
+                if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1 && cmbPro.SelectedIndex != -1)
                 {
-                    int harga = Convert.ToInt32(tbHarga.Text);
+                    try
+                    {
+                        int harga = Convert.ToInt32(tbHarga.Text);
+                        connection.Open();
+                        OracleTransaction trans = connection.BeginTransaction();
+                        try
+                        {
+                            string kode = "PK";
+                            string query =
+                                "SELECT LPAD(NVL(MAX(SUBSTR(ID_PAKET,-3,3)),0)+1,3,0) " +
+                                "FROM PAKET " +
+                                $"WHERE ID_PAKET LIKE '{kode}%'";
+                            OracleCommand cmd = new OracleCommand(query, connection);
+                            kode += cmd.ExecuteScalar();
+                            query =
+                                $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{cmbKat.SelectedValue}','{cmbPro.SelectedValue}','1')";
+                            cmd = new OracleCommand(query, connection);
+                            cmd.ExecuteNonQuery();
+
+                            trans.Commit();
+                            connection.Close();
+                            MessageBox.Show("Berhasil Masukan Paket");
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            connection.Close();
+                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("Gagal Masukan Paket");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Harga tidak valid");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Data belum lengkap");
+                }
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Apakah Anda Yakin Update Paket ini ?", "Konfirmasi", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
                     connection.Open();
                     OracleTransaction trans = connection.BeginTransaction();
                     try
                     {
-                        string kode = "PK";
                         string query =
-                            "SELECT LPAD(NVL(MAX(SUBSTR(ID_PAKET,-3,3)),0)+1,3,0) " +
-                            "FROM PAKET " +
-                            $"WHERE ID_PAKET LIKE '{kode}%'";
+                            $"UPDATE paket SET NAMA_PAKET = '{tbNama.Text}',HARGA_PAKET = '{tbHarga.Text}',ID_KATEGORI = '{cmbKat.SelectedValue}', ID_PROMO = '{cmbPro.SelectedValue}' WHERE ID_PAKET = '{kodeMenu}'";
                         OracleCommand cmd = new OracleCommand(query, connection);
-                        kode += cmd.ExecuteScalar();
-                        query =
-                            $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{cmbKat.SelectedValue}','{cmbPro.SelectedValue}','1')";
-                        cmd = new OracleCommand(query, connection);
                         cmd.ExecuteNonQuery();
-
                         trans.Commit();
                         connection.Close();
-                        MessageBox.Show("Berhasil Masukan Paket");
+                        MessageBox.Show("Berhasil update data paket");
                     }
                     catch (Exception ex)
                     {
+                        MessageBox.Show(ex.Message);
                         trans.Rollback();
                         connection.Close();
-                        MessageBox.Show(ex.Message);
-                        MessageBox.Show("Gagal Masukan Paket");
                     }
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Harga tidak valid");
+                    MessageBox.Show("yahhh sedihhh");
+                    MessageBox.Show("Abort Update Paket");
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("Data belum lengkap");
             }
         }
 
@@ -82,8 +118,21 @@ namespace Project.Master_paket
         {
             fillKategori();
             fillpromo();
-            cmbKat.SelectedIndex = 0;
-            cmbPro.SelectedIndex = 0;
+            if (kodeMenu == " ")
+            {
+                cmbKat.SelectedIndex = 0;
+                cmbPro.SelectedIndex = 0;
+                btnSubmit.Content = "Insert";
+                lbJudul.Content = "Insert Menu";
+            }
+            else
+            {
+                loadMenu();
+                btnSubmit.Content = "Update";
+                lbJudul.Content = "Update Menu";
+            }
+            lbPrevData1.Content = prevName1;
+            lbPrevData2.Content = prevName2;
         }
 
         private class Promo
@@ -167,6 +216,46 @@ namespace Project.Master_paket
             canvas.Children.Clear();
             Paket paket = new Paket(canvas);
             canvas.Children.Add(paket);
+        }
+
+        string prevName1 = "";
+        string prevName2 = "";
+        private void loadMenu()
+        {
+            connection.Open();
+            string query =
+              $"SELECT * FROM PAKET WHERE ID_PAKET = '{kodeMenu}'";
+            OracleCommand cmd = new OracleCommand(query, connection);
+            OracleDataReader reader = cmd.ExecuteReader();
+            string kodeKategori = "";
+            string kodePromo = "";
+            while (reader.Read())
+            {
+                tbNama.Text = reader.GetString(1);
+                tbHarga.Text = reader.GetString(2);
+                kodeKategori = reader.GetString(3);
+                kodePromo = reader.GetString(4);
+            }
+
+            for (int i = 0; i < kategoris.Count; i++)
+            {
+                if (kategoris[i].kode == kodeKategori)
+                {
+                    cmbKat.SelectedIndex = i;
+                    prevName1 = $"Kategori yang ingin diupdate : {kategoris[i].nama}";
+                }
+            }
+
+            for (int i = 0; i < promos.Count; i++)
+            {
+                if (promos[i].kode == kodePromo)
+                {
+                    cmbPro.SelectedIndex = i;
+                    prevName2 = $"Promo yang ingin diupdate : {promos[i].nama}";
+                }
+            }
+
+            connection.Close();
         }
     }
 }
