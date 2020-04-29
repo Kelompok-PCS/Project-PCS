@@ -1,0 +1,162 @@
+﻿using Oracle.DataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Project
+{
+    /// <summary>
+    /// Interaction logic for Menu_makanan_UC.xaml
+    /// </summary>
+    public partial class Menu_Promo : UserControl
+    {
+        OracleConnection conn;
+        Canvas canvas;
+        public Menu_Promo(Canvas canvas)
+        {
+            InitializeComponent();
+            conn = App.Connection;
+            this.canvas = canvas;
+            gridMenu.IsReadOnly = true;
+        }
+
+        DataTable tableMenuActive;
+        DataTable tableMenuPurge;
+        List<string> kodeMenuActive;
+        List<string> kodeMenuPurge;
+        private void loadMenu(int status,DataGrid grid,DataTable tableMenu,List<string> kodeMenu)
+        {
+            try
+            {
+                
+                conn.Open();
+                string query =
+                    $"SELECT nama_promo \"Nama Promo\",harga_promo \"Harga Promo\",periode_awal\"Awal Periode\" , periode_akhir\"Akhir Periode\" FROM promo WHERE status_promo = '{status}'";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+                adapter.Fill(tableMenu);
+                foreach (DataRow dataRow in tableMenu.Rows)
+                {
+                    string money = "Rp ";
+                    //int harga = Convert.ToInt32(dataRow[1].ToString());
+                    //string depan = (harga / 1000).ToString();
+                    //string belakang = ".000,00";
+                    //money += depan + belakang;
+                    //dataRow[1] = money;
+                    Button btn = new Button();
+                }
+                grid.ItemsSource = tableMenu.DefaultView;
+
+                query =
+                    $"SELECT ID_PROMO FROM promo WHERE status_promo = {status}";
+                tbFilter.Text = query;
+                cmd = new OracleCommand(query,conn);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    kodeMenu.Add(reader.GetString(0));
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("ada kesalahan saat load promo");
+                conn.Close();
+            }
+        }
+
+        private void gridMenu_Loaded(object sender, RoutedEventArgs e)
+        {
+            tableMenuActive = new DataTable();
+            kodeMenuActive = new List<string>();
+            loadMenu(1,gridMenu,tableMenuActive,kodeMenuActive);
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Insert_Promo insert_promo = new Insert_Promo(conn,"null");
+            canvas.Children.Add(insert_promo);
+        }
+
+        private void gridPurgatory_Loaded(object sender, RoutedEventArgs e)
+        {
+            tableMenuPurge = new DataTable();
+            kodeMenuPurge = new List<string>();
+            loadMenu(0,gridPurgatory,tableMenuPurge,kodeMenuPurge);
+        }
+
+        private void Grid_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            
+        }
+
+        private void gridMenu_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (gridMenu.SelectedIndex != -1)
+            {
+                lbKode.Content = kodeMenuActive[gridMenu.SelectedIndex];
+                DataRow dr = tableMenuActive.Rows[gridMenu.SelectedIndex];
+                tbNama.Text = dr[0].ToString();
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if(lbKode.Content.ToString() != "Kosong")
+            {
+                if(rdUpdate.IsChecked == true)
+                {
+                    canvas.Children.Clear();
+                   Insert_Promo update_promo = new Insert_Promo(conn, lbKode.Content.ToString());
+                  canvas.Children.Add(update_promo);
+                }
+                else
+                {
+                    conn.Open();
+                    string query =
+                            $"UPDATE promo SET status_promo = 0 WHERE id_promo = '{lbKode.Content}'";
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    tableMenuActive = new DataTable();
+                    kodeMenuActive = new List<string>();
+                    loadMenu(1, gridMenu, tableMenuActive, kodeMenuActive);
+
+                    tableMenuPurge = new DataTable();
+                    kodeMenuPurge = new List<string>();
+                    loadMenu(0, gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                }
+            }
+            else
+            {
+                MessageBox.Show("tidak ada menu yang dipilih");
+            }
+        }
+
+        private void rdDelete_Checked(object sender, RoutedEventArgs e)
+        {
+            btnEdit.Content = "Delete";
+        }
+
+        private void rdUpdate_Checked(object sender, RoutedEventArgs e)
+        {
+            btnEdit.Content = "Edit";
+        }
+    }
+}

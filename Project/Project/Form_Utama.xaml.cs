@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Oracle.DataAccess.Client;
 using Project.Master_menu;
+using Project.Master_paket;
 
 namespace Project
 {
@@ -22,10 +23,10 @@ namespace Project
     public partial class Form_Utama : Window
     {
         OracleConnection conn;
-        public Form_Utama()
+        public Form_Utama(OracleConnection conn)
         {
             InitializeComponent();
-            this.conn = App.Connection;
+            this.conn = conn;
         }
         public void checkConnection(OracleConnection connection)
         {
@@ -57,8 +58,40 @@ namespace Project
         private void tbInsertPegawai_Click(object sender, RoutedEventArgs e)
         {
             canvas.Children.Clear();
-            Master_Pegawai_UC panel = new Master_Pegawai_UC(canvas);
+            Insert_Pegawai_UC panel = new Insert_Pegawai_UC();
+            canvas.Children.Add(panel);
+            
+        }
+
+        private void Insert_Paket_Click(object sender, RoutedEventArgs e)
+        {
+            checkConnection(conn);
+            canvas.Children.Clear();
+            Insert_Paket panel = new Insert_Paket(canvas," ");
             canvas.Children.Add(panel);
         }
-    }
+
+        private void btnPaket_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Paket panel = new Paket(canvas);
+            canvas.Children.Add(panel);
+        }
+
+		private void TbInsertPromo_Click(object sender, RoutedEventArgs e)
+		{
+			checkConnection(conn);
+			canvas.Children.Clear();
+			Insert_Promo panel = new Insert_Promo(conn,"null");
+			canvas.Children.Add(panel);
+		}
+
+		private void TbSHowPromo_Click(object sender, RoutedEventArgs e)
+		{
+			checkConnection(conn);
+			canvas.Children.Clear();
+			Menu_Promo panel = new Menu_Promo(canvas);
+			canvas.Children.Add(panel);
+		}
+	}
 }
