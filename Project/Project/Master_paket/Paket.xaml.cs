@@ -30,6 +30,7 @@ namespace Project.Master_paket
             connection = App.Connection;
             this.canvas = canvas;
             gridMenu.IsReadOnly = true;
+            gridPurgatory.IsReadOnly = true;
         }
 
         DataTable tableMenu;
@@ -44,7 +45,7 @@ namespace Project.Master_paket
             {
                 connection.Open();
                 string query =
-                    $"SELECT NAMA_PAKET \"Nama Paket\",HARGA_PAKET \"Harga Paket\" FROM PAKET WHERE status = '{status}'";
+                    $"SELECT NAMA_PAKET \"Nama Paket\", TO_CHAR(HARGA_PAKET) \"Harga Paket\" FROM PAKET WHERE status = '{status}'";
                 tbFilter.Text = query;
                 OracleCommand cmd = new OracleCommand(query, connection);
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd);
@@ -118,14 +119,14 @@ namespace Project.Master_paket
                 if (rdUpdate.IsChecked == true)
                 {
                     canvas.Children.Clear();
-                    //Insert_menu_UC update_menu = new Insert_menu_UC(canvas, lbKode.Content.ToString());
-                    //canvas.Children.Add(update_menu);
+                    Insert_Paket update_paket = new Insert_Paket(canvas, lbKode.Content.ToString());
+                    canvas.Children.Add(update_paket);
                 }
                 else
                 {
                     connection.Open();
                     string query =
-                            $"UPDATE menu SET status = 0 WHERE id_menu = '{lbKode.Content}'";
+                            $"UPDATE PAKET SET status = 0 WHERE ID_PAKET = '{lbKode.Content}'";
                     OracleCommand cmd = new OracleCommand(query, connection);
                     cmd.ExecuteNonQuery();
                     connection.Close();
@@ -141,7 +142,7 @@ namespace Project.Master_paket
             }
             else
             {
-                MessageBox.Show("tidak ada menu yang dipilih");
+                MessageBox.Show("tidak ada paket yang dipilih");
             }
         }
 

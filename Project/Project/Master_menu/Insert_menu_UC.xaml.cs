@@ -24,6 +24,7 @@ namespace Project.Master_menu
         OracleConnection connection;
         Canvas canvas;
         string kodeMenu;
+        int harga;
         public Insert_menu_UC(Canvas canvas,string kodeMenu)
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Project.Master_menu
                 {
                     try
                     {
-                        int harga = Convert.ToInt32(tbHarga.Text);
+                        harga = Convert.ToInt32(tbHarga.Text);
                         connection.Open();
                         OracleTransaction trans = connection.BeginTransaction();
                         try
@@ -53,7 +54,7 @@ namespace Project.Master_menu
                             OracleCommand cmd = new OracleCommand(query, connection);
                             kode += cmd.ExecuteScalar();
                             query =
-                                $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
+                                $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}',{harga},'{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
                             cmd = new OracleCommand(query, connection);
                             cmd.ExecuteNonQuery();
 
@@ -90,7 +91,7 @@ namespace Project.Master_menu
                     try
                     {
                         string query =
-                            $"UPDATE menu SET NAMA_MENU = '{tbNama.Text}',HARGA_MENU = '{tbHarga.Text}',DESKRIPSI = '{tbDesc.Text}' WHERE id_menu = '{kodeMenu}'";
+                            $"UPDATE menu SET NAMA_MENU = '{tbNama.Text}',HARGA_MENU = '{harga}',DESKRIPSI = '{tbDesc.Text}' WHERE id_menu = '{kodeMenu}'";
                         OracleCommand cmd = new OracleCommand(query,connection);
                         cmd.ExecuteNonQuery();
                         trans.Commit();

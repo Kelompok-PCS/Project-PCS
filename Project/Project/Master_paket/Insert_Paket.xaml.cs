@@ -25,7 +25,7 @@ namespace Project.Master_paket
         OracleConnection connection;
         Canvas canvas;
         string kodeMenu;
-
+        int harga;
         public Insert_Paket(Canvas canvas, string kodeMenu)
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace Project.Master_paket
                 {
                     try
                     {
-                        int harga = Convert.ToInt32(tbHarga.Text);
+                        harga = Convert.ToInt32(tbHarga.Text);
                         connection.Open();
                         OracleTransaction trans = connection.BeginTransaction();
                         try
@@ -55,7 +55,7 @@ namespace Project.Master_paket
                             OracleCommand cmd = new OracleCommand(query, connection);
                             kode += cmd.ExecuteScalar();
                             query =
-                                $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}','{tbHarga.Text}','{cmbKat.SelectedValue}','{cmbPro.SelectedValue}','1')";
+                                $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}',{harga},'{cmbKat.SelectedValue}','{cmbPro.SelectedValue}','1')";
                             cmd = new OracleCommand(query, connection);
                             cmd.ExecuteNonQuery();
 
@@ -92,7 +92,7 @@ namespace Project.Master_paket
                     try
                     {
                         string query =
-                            $"UPDATE paket SET NAMA_PAKET = '{tbNama.Text}',HARGA_PAKET = '{tbHarga.Text}',ID_KATEGORI = '{cmbKat.SelectedValue}', ID_PROMO = '{cmbPro.SelectedValue}' WHERE ID_PAKET = '{kodeMenu}'";
+                            $"UPDATE paket SET NAMA_PAKET = '{tbNama.Text}',HARGA_PAKET = {harga}, ID_KATEGORI = '{cmbKat.SelectedValue}', ID_PROMO = '{cmbPro.SelectedValue}' WHERE ID_PAKET = '{kodeMenu}'";
                         OracleCommand cmd = new OracleCommand(query, connection);
                         cmd.ExecuteNonQuery();
                         trans.Commit();
