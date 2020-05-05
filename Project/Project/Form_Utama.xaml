@@ -5,18 +5,532 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Form_Utama" Height="535.025" Width="898" WindowState="Maximized">
+        Title="Form Admin" Height="700" Width="751"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <!--// Toggle Button Style Template //-->
+
+
+
+        <!--// Text font style //-->
+
+        <Style x:Key="font_style" TargetType="TextBlock">
+
+            <Setter Property="FontFamily"
+                    Value="Fonts/Roboto-Light.ttf #Roboto"/>
+
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="FontSize"
+                    Value="20"/>
+
+        </Style>
+
+        <!--// Tooltip Style Template //-->
+
+        <Style TargetType="ToolTip" x:Key="tt_style">
+
+            <Setter Property="Placement" Value="Right"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="Background" Value="#4A5668"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Fonts/Roboto-Light.ttf #Roboto"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="PlacementRectangle" Value="60,0,0,0"/>
+            <Setter Property="HorizontalOffset" Value="15"/>
+            <Setter Property="VerticalOffset" Value="6"/>
+            <Setter Property="HasDropShadow" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+        </Style>
+
+        <!--// App Close Button Style Template //-->
+
+        <Style x:Key="Close_btn" TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="button"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+
+                        </Border>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+
+
+
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+
+                        <Border  x:Name="border"
+                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                 Background="{TemplateBinding Background}"
+                                 SnapsToDevicePixels="True">
+
+                        </Border>
+
+
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
-        <Button x:Name="tbInsertKategori" Content="Insert Kategori" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="125" Click="Insert_Kategori_Click"/>
-        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="494" Margin="229,0,0,0" VerticalAlignment="Top" Width="651"/>
-        <Button x:Name="tbShowMembers" Content="Show Members" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top" Width="125" Click="tbShowMembers_Click"/>
-        <Button x:Name="btnMenu" Content="Master Menu" HorizontalAlignment="Left" Margin="30,147,0,0" VerticalAlignment="Top" Width="75" Click="btnMenu_Click"/>
-        <Button x:Name="tbInsertPegawai" Content="Insert Pegawai" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
-        <Button x:Name="tbInsertPromo" Content="Insert Promo" HorizontalAlignment="Left" Margin="30,219,0,0" VerticalAlignment="Top" Width="125" Click="TbInsertPromo_Click" />
-        <Button x:Name="tbSHowPromo" Content="Show Promos" HorizontalAlignment="Left" Margin="30,255,0,0" VerticalAlignment="Top" Width="125" Click="TbSHowPromo_Click" />
-        <Button x:Name="tbInsertPegawais" Content="Insert Menu" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="125" Click="tbInsertPegawai_Click" />
-        <Button x:Name="tbInsertPaket" Content="Insert Paket" HorizontalAlignment="Left" Margin="30,320,0,0" VerticalAlignment="Top" Width="125" Click="Insert_Paket_Click"/>
-        <Button x:Name="btnPaket" Content="Master Paket" HorizontalAlignment="Left" Margin="30,290,0,0" VerticalAlignment="Top" Width="125" Click="btnPaket_Click"/>
+
+        <!--// Background Color //-->
+
+        <Grid Background="Black">
+            <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="650" Margin="70,10,-76.2,0" VerticalAlignment="Top" Width="751"/>
+            <!--// App Close Button //-->
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+
+
+            <!--// Navigation Panel //-->
+
+            <Grid   x:Name="nav_pnl"
+                    HorizontalAlignment="Left"
+                    Width="65"
+                    Background="#2E333A">
+
+                <StackPanel x:Name="st_pnl">
+
+                    <!--// Grid for the Menu Toggle Button //-->
+
+                    <Grid Height="90">
+
+                        <!--// Menu title text //-->
+
+                        <TextBlock  Grid.Row="1"
+                                    Grid.Column="0"
+                                    Margin="73,-20,0,0"
+                                    Text="ADMIN"
+                                    Foreground="White"
+                                    FontSize="22"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Style="{StaticResource font_style}">
+                            
+                            <!--// Shadow Effect //-->
+
+                            <TextBlock.Effect>
+
+                                <DropShadowEffect  BlurRadius="10"
+                                                   ShadowDepth="1"
+                                                   Direction="-90"
+                                                   Color="White"/>
+
+                            </TextBlock.Effect>
+
+                        </TextBlock>
+
+                        <!--// Toggle Button //-->
+
+                        <ToggleButton x:Name="Tg_Btn"
+                                      Grid.Column="0"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Left"
+                                      Margin="18,-20,0,0"
+                                      Height="30"
+                                      Width="30"
+                                      BorderThickness="0"
+                                      Style="{StaticResource tb_style}" Unchecked="Tg_Btn_Unchecked" Checked="Tg_Btn_Checked">
+
+                            <!--// Toggle button default background image //-->
+
+
+
+                            <!--// Toggle Button - Checked, Unchecked events //-->
+
+                            <ToggleButton.Triggers>
+
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+
+                                    <BeginStoryboard>
+
+                                        <Storyboard x:Name="HideStackPanel">
+
+                                            <DoubleAnimation    
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="230" To="65"
+                                                Duration="0:0:0.2">
+
+                                            </DoubleAnimation>
+
+                                        </Storyboard>
+
+                                    </BeginStoryboard>
+
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+
+                                    <BeginStoryboard>
+
+                                        <Storyboard x:Name="ShowStackPanel">
+
+                                            <DoubleAnimation
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="65" To="230"
+                                                Duration="0:0:0.3">
+
+                                            </DoubleAnimation>
+
+                                        </Storyboard>
+
+                                    </BeginStoryboard>
+
+                                </EventTrigger>
+
+                            </ToggleButton.Triggers>
+
+
+                        </ToggleButton>
+
+                    </Grid>
+
+                    <!--// ListView with menu list items //-->
+
+                    <ListView  x:Name="LV"
+                               Background="Transparent"
+                               BorderBrush="Transparent"
+                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                        <!--// Home //-->
+
+                        <ListViewItem HorizontalAlignment="Left" 
+                                      Margin="0,0,0,10" MouseEnter="to_menu_MouseEnter"
+                                      >
+                            <StackPanel Orientation="Horizontal" x:Name="to_menu"
+                                        Width="230" Height="43" MouseDown="to_menu_MouseDown_1">
+
+                                <TextBlock Text="Master Menu"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_menu"
+                                         Content="Menu"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <!--// Contacts //-->
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_kategori"
+                                        Width="230" Height="48" MouseDown="to_kategori_MouseDown">
+
+                                <TextBlock Text="Master Kategori"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_contacts"
+                                         Content="Kategori"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <!--// Messages //-->
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_paket"
+                                        Width="230" Height="45" MouseDown="to_paket_MouseDown">
+
+                                <TextBlock Text="Master Paket"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_messages"
+                                         Content="Paket"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <!--// Maps //-->
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_promo"
+                                        Width="230" Height="50" MouseDown="to_promo_MouseDown">
+
+                                <TextBlock Text="Master Promo"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_maps"
+                                         Content="Promo"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <!--// Settings //-->
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_kupon"
+                                        Width="230" MouseDown="to_kupon_MouseDown" Height="46">
+
+                                <TextBlock Text="Master Kupon"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_settings"
+                                         Content="Kupon"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <!--// Sign Out //-->
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_member"
+                                        Width="230" Height="45" MouseDown="to_member_MouseDown">
+
+                                <TextBlock Text="Master Member"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_signout"
+                                         Content="Member"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_pegawai"
+                                        Width="230" Height="45" MouseDown="to_pegawai_MouseDown">
+
+                                <TextBlock Text="Master Pegawai"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_signout1"
+                                         Content="Pegawai"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_laporan"
+                                        Width="230" Height="45" MouseDown="to_laporan_MouseDown">
+
+                                <TextBlock Text="Laporan"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="Laporan"
+                                         Content="Laporan"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+                        <!--// Listview items style template //-->
+
+                        <ListView.ItemContainerStyle>
+
+                            <Style TargetType="ListViewItem">
+
+                                <Setter Property="Template">
+
+                                    <Setter.Value>
+
+                                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+
+                                            <Border x:Name="Bd"
+                                                    Height="50"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    Background="{TemplateBinding Background}"
+                                                    Padding="{TemplateBinding Padding}"
+                                                    SnapsToDevicePixels="True">
+
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                                            </Border>
+
+                                            <ControlTemplate.Triggers>
+
+                                                <MultiTrigger>
+
+                                                    <MultiTrigger.Conditions>
+
+                                                        <Condition Property="IsMouseOver" Value="True"/>
+
+                                                    </MultiTrigger.Conditions>
+
+                                                    <Setter Property="Background"
+                                                            TargetName="Bd"
+                                                            Value="#404D5B"/>
+
+                                                    <Setter Property="BorderBrush"
+                                                            TargetName="Bd"
+                                                            Value="#404D5B"/>
+
+                                                </MultiTrigger>
+
+                                            </ControlTemplate.Triggers>
+
+                                        </ControlTemplate>
+
+                                    </Setter.Value>
+
+                                </Setter>
+
+                            </Style>
+
+                        </ListView.ItemContainerStyle>
+
+                    </ListView>
+
+                </StackPanel>
+
+
+            </Grid>
+
+
+        </Grid>
 
     </Grid>
+
 </Window>

@@ -83,7 +83,6 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_p
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_paket.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Resources\search-icon.png
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.exe.config
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.exe
@@ -134,3 +133,16 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Pr
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Fonts\Roboto-Light.ttf
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_default.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_MouseOver.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_background.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_contact.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_home.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_map.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_message.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_setting.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_signout.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_default.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_MouseOver.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache

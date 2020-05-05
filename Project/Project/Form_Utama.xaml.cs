@@ -32,15 +32,87 @@ namespace Project
         {
             if (connection.State == System.Data.ConnectionState.Open) connection.Close();
         }
-        private void Insert_Kategori_Click(object sender, RoutedEventArgs e)
+
+        private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == true)
+            {
+                tt_menu.Visibility = Visibility.Collapsed;
+                tt_contacts.Visibility = Visibility.Collapsed;
+                tt_messages.Visibility = Visibility.Collapsed;
+                tt_maps.Visibility = Visibility.Collapsed;
+                tt_settings.Visibility = Visibility.Collapsed;
+                tt_signout.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                tt_menu.Visibility = Visibility.Visible;
+                tt_contacts.Visibility = Visibility.Visible;
+                tt_messages.Visibility = Visibility.Visible;
+                tt_maps.Visibility = Visibility.Visible;
+                tt_settings.Visibility = Visibility.Visible;
+                tt_signout.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Tg_Btn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void to_menu_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void to_menu_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            canvas.Children.Clear();
+            Master_menu.Menu_makanan_UC menu_Makanan = new Menu_makanan_UC(canvas);
+            canvas.Children.Add(menu_Makanan);
+        }
+
+        private void to_kategori_MouseDown(object sender, MouseButtonEventArgs e)
         {
             checkConnection(conn);
             canvas.Children.Clear();
             Insert_kategori panel = new Insert_kategori(conn);
             canvas.Children.Add(panel);
+
         }
 
-        private void tbShowMembers_Click(object sender, RoutedEventArgs e)
+        private void to_paket_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            checkConnection(conn);
+            canvas.Children.Clear();
+            Insert_Paket panel = new Insert_Paket(canvas, " ");
+            canvas.Children.Add(panel);
+        }
+
+        private void to_promo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            checkConnection(conn);
+            canvas.Children.Clear();
+            Menu_Promo panel = new Menu_Promo(canvas);
+            canvas.Children.Add(panel);
+        }
+
+        private void to_kupon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void to_member_MouseDown(object sender, MouseButtonEventArgs e)
         {
             checkConnection(conn);
             canvas.Children.Clear();
@@ -48,50 +120,16 @@ namespace Project
             canvas.Children.Add(panel);
         }
 
-        private void btnMenu_Click(object sender, RoutedEventArgs e)
-        {
-            canvas.Children.Clear();
-            Master_menu.Menu_makanan_UC menu_Makanan = new Menu_makanan_UC(canvas);
-            canvas.Children.Add(menu_Makanan);
-        }
-
-        private void tbInsertPegawai_Click(object sender, RoutedEventArgs e)
+        private void to_pegawai_MouseDown(object sender, MouseButtonEventArgs e)
         {
             canvas.Children.Clear();
             Insert_Pegawai_UC panel = new Insert_Pegawai_UC();
             canvas.Children.Add(panel);
-            
         }
 
-        private void Insert_Paket_Click(object sender, RoutedEventArgs e)
+        private void to_laporan_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            checkConnection(conn);
-            canvas.Children.Clear();
-            Insert_Paket panel = new Insert_Paket(canvas," ");
-            canvas.Children.Add(panel);
+
         }
-
-        private void btnPaket_Click(object sender, RoutedEventArgs e)
-        {
-            canvas.Children.Clear();
-            Paket panel = new Paket(canvas);
-            canvas.Children.Add(panel);
-        }
-
-		private void TbInsertPromo_Click(object sender, RoutedEventArgs e)
-		{
-			checkConnection(conn);
-			canvas.Children.Clear();
-			Insert_Promo panel = new Insert_Promo(conn,"null");
-			canvas.Children.Add(panel);
-		}
-
-		private void TbSHowPromo_Click(object sender, RoutedEventArgs e)
-		{
-			checkConnection(conn);
-			canvas.Children.Clear();
-			Menu_Promo panel = new Menu_Promo(canvas);
-			canvas.Children.Add(panel);
-		}
-	}
+    }
 }
