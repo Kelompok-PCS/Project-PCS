@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\App.xaml
-111535949324
+141967420739
 
-16-596823651
+19496089575
 15-1421739032
-Form_Utama.xaml;Insert_Pegawai_UC.xaml;Master Kateogri\Insert_kategori.xaml;Login.xaml;Master Promo\Insert_Promo.xaml;Master Promo\Menu_Promo.xaml;Master_menu\Insert_menu_UC.xaml;Master User\Master_User_UC.xaml;Master_menu\Menu_makanan_UC.xaml;Master_paket\Insert_Paket.xaml;Master_paket\Paket.xaml;
+Form_pegawai.xaml;Form_Utama.xaml;Homepage.xaml;Insert_Pegawai_UC.xaml;Master Kateogri\Insert_kategori.xaml;Login.xaml;Master Promo\Insert_Promo.xaml;Master Promo\Menu_Promo.xaml;Master_menu\Insert_menu_UC.xaml;Master User\Master_User_UC.xaml;Master_menu\Menu_makanan_UC.xaml;Master_paket\Insert_Paket.xaml;Master_paket\Paket.xaml;Pegawai_UC\Pemesanan.xaml;
 
-False
+True
 

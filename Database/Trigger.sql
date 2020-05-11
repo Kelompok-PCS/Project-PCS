@@ -1,0 +1,8 @@
+CREATE OR REPLACE TRIGGER checkMenu
+BEFORE INSERT ON menu 
+FOR EACH ROW
+DECLARE
+BEGIN
+    :NEW.nama_menu := INITCAP(:NEW.nama_menu);
+END;
+/

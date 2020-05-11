@@ -146,3 +146,10 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\im
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_default.png
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_MouseOver.png
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Form_pegawai.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Form_pegawai.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homepage.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Resources\layout.png
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml

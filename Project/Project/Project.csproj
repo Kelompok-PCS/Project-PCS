@@ -60,7 +60,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Form_pegawai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form_Utama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Homepage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -80,8 +88,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Form_pegawai.xaml.cs">
+      <DependentUpon>Form_pegawai.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form_Utama.xaml.cs">
       <DependentUpon>Form_Utama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.xaml.cs">
+      <DependentUpon>Homepage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Insert_Pegawai_UC.xaml.cs">
       <DependentUpon>Insert_Pegawai_UC.xaml</DependentUpon>
@@ -121,6 +135,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pegawai_UC\Pemesanan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master Promo\Insert_Promo.xaml.cs">
@@ -143,6 +161,9 @@
     </Compile>
     <Compile Include="Master_paket\Paket.xaml.cs">
       <DependentUpon>Paket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pegawai_UC\Pemesanan.xaml.cs">
+      <DependentUpon>Pemesanan.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -231,6 +252,17 @@
     <None Include="Assets\tgBtn_MouseOver.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tgBtn_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tgBtn_default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

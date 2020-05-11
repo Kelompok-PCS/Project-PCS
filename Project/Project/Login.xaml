@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Login" Height="360.609" Width="418.059" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="140,10,0,0" VerticalAlignment="Top" Height="64" Width="120" FontSize="36" FontWeight="Bold"/>
+        <Label Content="Login Database" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="64" Width="275" FontSize="36" FontWeight="Bold"/>
         <Label Content="Data Source" HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbData" HorizontalAlignment="Left" Height="23" Margin="184,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="orcl"/>
         <Label Content="User Id" HorizontalAlignment="Left" Margin="120,117,0,0" VerticalAlignment="Top" FontSize="14"/>

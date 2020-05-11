@@ -36,8 +36,8 @@ namespace Project
                 conn = new OracleConnection(datasource);
                 App.Connection = conn;
                 //TODO nanti ganti homepage
-                Form_Utama Form_Utama = new Form_Utama(conn);
-                Form_Utama.ShowDialog();
+                Homepage homepage = new Homepage();
+                homepage.ShowDialog();
             }
             catch (Exception ex)
             {
