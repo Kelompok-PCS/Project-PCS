@@ -27,9 +27,59 @@ namespace Project.Pegawai
         {
             InitializeComponent();
             this.conn = App.Connection;
+            if (Form_pegawai.lbtn.Count() > 0)
+            {
+                string detail = " ";
+                foreach (Button item in Form_pegawai.lbtn)
+                {
+                    detail += item.Content + ",";
+                }
+                MessageBox.Show(detail);
+                detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
+                jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
+            }
+            else
+            {
+                detail_meja_pesanan.Text = "-";
+                jumlah_meja.Text = "0";
+            }
+
+            MessageBox.Show("Yong taruh function update_meja() di submit mu yo");
         }
         List<kategori> kategoris;
         List<string> kodeMenuTrans;
+        private void getDetail_Meja()
+        {
+            //if (Form_pegawai.lbtn.Count()>0)
+            //{
+            //    string detail = " ";
+            //    foreach (Button item in Form_pegawai.lbtn)
+            //    {
+            //        detail += item.Content + ",";
+            //    }
+            //    MessageBox.Show(detail);
+            //    detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
+            //    jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
+            //}
+            //else
+            //{
+            //    detail_meja_pesanan.Text = "-";
+            //    jumlah_meja.Text = "0";
+            //}
+        }
+        private void update_meja()
+        {
+            string[] detail = detail_meja_pesanan.Text.Split(',');
+            foreach (string item in detail)
+            {
+                string query = $"UPDATE meja set status=2 where id_meja={item}";
+                OracleCommand cmd = new OracleCommand(query, App.Connection);
+                cmd.ExecuteNonQuery();
+            }
+            Form_pegawai.lbtn = new List<Button>();
+            detail_meja_pesanan.Text = "-";
+            jumlah_meja.Text = "0";
+        }
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             tbId.IsEnabled = false;
@@ -278,6 +328,40 @@ namespace Project.Pegawai
                 gridTrans.ItemsSource = tableTrans.DefaultView;
                 
             }
+        }
+
+        private void rdTake_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton rbt = (RadioButton)sender;
+            if(rbt.Content.ToString()=="Dine In")
+            {
+                //if (Form_pegawai.lbtn.Count() > 0)
+                //{
+                //    string detail = " ";
+                //    foreach (Button item in Form_pegawai.lbtn)
+                //    {
+                //        detail += item.Content + ",";
+                //    }
+                //    MessageBox.Show(detail);
+                //    detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
+                //    jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
+                //}
+                //else
+                //{
+                //    detail_meja_pesanan.Text = "-";
+                //    jumlah_meja.Text = "0";
+                //}
+            }
+            else
+            {
+                detail_meja_pesanan.Text = "-";
+                jumlah_meja.Text = "-";
+            }
+        }
+
+        private void r(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)

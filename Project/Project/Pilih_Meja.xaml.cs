@@ -31,8 +31,19 @@ namespace Project
             con = App.Connection;
             callMeja();
             DispatcherTimerSample();
+            this.lbtn = Form_pegawai.lbtn;
         }
         List<Button> lbtn = new List<Button>();
+        private void getDetail_Meja()
+        {
+            string detail=" ";
+            foreach (Button item in lbtn)
+            {
+                detail += item.Content + ",";
+            }
+            detail_meja.Text = detail.Substring(0,detail.Length-1);
+            jumlah_meja.Text = lbtn.Count().ToString();
+        }
         private void callMeja()
         {
             grid_meja.Children.Clear();
@@ -85,15 +96,16 @@ namespace Project
                 btn.Background = Brushes.Green;
                 lbtn.Remove(btn);
             }
+            getDetail_Meja();
         }
 
-        private void update_meja(int nomor,int kode)
+        private static void update_meja(int nomor,int kode)
         {
-            con.Open();
+            App.Connection.Open();
             string query = $"UPDATE meja set status={nomor} where id_meja={kode}";
-            OracleCommand cmd = new OracleCommand(query, con);
+            OracleCommand cmd = new OracleCommand(query, App.Connection);
             cmd.ExecuteNonQuery();
-            con.Close();
+            App.Connection.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

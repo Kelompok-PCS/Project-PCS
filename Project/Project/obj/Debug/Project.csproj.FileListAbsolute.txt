@@ -170,7 +170,10 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_p
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.g.cs
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Form_pegawai.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Resources\layout.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Form_pegawai.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml
