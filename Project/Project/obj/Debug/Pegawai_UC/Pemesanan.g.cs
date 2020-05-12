@@ -338,6 +338,12 @@ namespace Project.Pegawai {
             return;
             case 14:
             this.btnCancel = ((System.Windows.Controls.Button)(target));
+            
+            #line 29 "..\..\..\Pegawai_UC\Pemesanan.xaml"
+            this.btnCancel.Click += new System.Windows.RoutedEventHandler(this.btnCancel_Click);
+            
+            #line default
+            #line hidden
             return;
             case 15:
             this.rdPunya = ((System.Windows.Controls.RadioButton)(target));

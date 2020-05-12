@@ -70,7 +70,7 @@ CREATE TABLE djual (
   harga NUMBER NOT NULL,
   jumlah NUMBER NOT NULL,
   subtotal NUMBER NOT NULL,
-  id_hjual varchar(10) NOT NULL CONSTRAINTS fk_hjual REFERENCES hjual(id_hjual)
+  id_hjual varchar(14) NOT NULL CONSTRAINTS fk_hjual REFERENCES hjual(id_hjual)
 );
 
 CREATE TABLE promo (
@@ -140,6 +140,7 @@ INSERT INTO meja VALUES (16, 6, 3, '1');
 insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','12345678','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77',1234567890,'K0001','D0001',123123,'1');
 insert into members values('M000000002','San Widodo','SanKing','12345678','sanking@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'K0002','D0001',423421,'1');
 insert into members values('M000000003','Yongki Tanu','YoTa','12345678','yongkikun@gmail.com','Jalan Ngagel Madya 70-77',1234567890123,'K0001','D0001',523123,'1');
+insert into members values('M000000000','DEFAULT','DEFAULT','DEFAULT','DEFAULT','DEFAULT',555000555000,'DEFAULT','DEFAULT',555555,'1');
 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT001','Nasi','makanan','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT002','Cap Cay','makanan','1');
