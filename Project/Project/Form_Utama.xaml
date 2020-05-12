@@ -142,8 +142,12 @@
                     HorizontalAlignment="Left"
                     Width="65"
                     Background="#2E333A">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="160*"/>
+                    <RowDefinition Height="509*"/>
+                </Grid.RowDefinitions>
 
-                <StackPanel x:Name="st_pnl">
+                <StackPanel x:Name="st_pnl" Grid.RowSpan="2">
 
                     <!--// Grid for the Menu Toggle Button //-->
 
