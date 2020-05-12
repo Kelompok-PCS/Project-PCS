@@ -24,6 +24,8 @@ CREATE TABLE pegawai (
   status NUMBER NOT NULL
 );
 
+INSERT INTO pegawai VALUES('PEG001','Farhan','JAB00001','farhan@gmail.com','555000555000','PEG001555000555000','1');
+
 CREATE TABLE members (
   id_member varchar(10) NOT NULL CONSTRAINTS pk_member PRIMARY KEY,
   fullname varchar(50) NOT NULL,
@@ -180,6 +182,17 @@ insert into promo values('PRO003','Promo Ramadhan3',20000,to_date('2012-06-05', 
 insert into promo values('PRO004','Promo Ramadhan4',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 insert into promo values('PRO005','Promo Ramadhan5',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 
+
+INSERT INTO paket  VALUES('PK001', 'Steak', 50000, 'Image/beef-steak.jpg', 'KAT006', 1);
+INSERT INTO paket VALUES('PK002', 'Bubur', 10000, 'Image/pkt-b.jpg', 'KAT004', 1);
+INSERT INTO paket VALUES('PK003', 'Siang', 20000, 'Image/nasi-ayam-hemat.jpg', 'KAT001', 1);
+INSERT INTO paket VALUES('PK004', 'Agep Murmer', 15000, 'Image/aybak.jpg', 'KAT005', 1);
+INSERT INTO paket VALUES('PK005', 'Namikun', 25000, 'Image/pkt-nasi-kuning-ayam-goreng-suwir.jpg', 'KAT003', 1);
+INSERT INTO paket VALUES('PK006', 'Mie-Aygep', 22000, 'Image/mie.jpg', 'KAT005', 1);
+INSERT INTO paket VALUES('PK007', 'Ayam Kremes', 25000, 'Image/nasi-kotak-ayam-kremes.jpg', 'KAT005', 1);
+INSERT INTO paket VALUES('PK008', 'Nasgor', 12000, 'Image/nasgor2.jpg', 'KAT002', 1);
+
+
 create or replace function autogen_IDpegawai return varchar2
 is
     tampung varchar2(10);
@@ -195,4 +208,14 @@ begin
 insert into pegawai values(kode,nama,jabatan,email,nohp,password,'1');
 end;
 /
+
+CREATE OR REPLACE TRIGGER checkMenu
+BEFORE INSERT ON menu 
+FOR EACH ROW
+DECLARE
+BEGIN
+    :NEW.nama_menu := INITCAP(:NEW.nama_menu);
+END;
+/
+
 commit;

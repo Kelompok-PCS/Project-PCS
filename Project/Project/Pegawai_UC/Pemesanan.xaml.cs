@@ -43,8 +43,6 @@ namespace Project.Pegawai
                 detail_meja_pesanan.Text = "-";
                 jumlah_meja.Text = "0";
             }
-
-            MessageBox.Show("Yong taruh function update_meja() di submit mu yo");
         }
         List<kategori> kategoris;
         List<string> kodeMenuTrans;
@@ -69,16 +67,20 @@ namespace Project.Pegawai
         }
         private void update_meja()
         {
-            string[] detail = detail_meja_pesanan.Text.Split(',');
-            foreach (string item in detail)
+            if(rdDine.IsChecked == true)
             {
-                string query = $"UPDATE meja set status=2 where id_meja={item}";
-                OracleCommand cmd = new OracleCommand(query, App.Connection);
-                cmd.ExecuteNonQuery();
+                string[] detail = detail_meja_pesanan.Text.Split(',');
+                foreach (string item in detail)
+                {
+                    string query = $"UPDATE meja set status=2 where id_meja={item}";
+                    OracleCommand cmd = new OracleCommand(query, App.Connection);
+                    cmd.ExecuteNonQuery();
+                }
+                Form_pegawai.lbtn = new List<Button>();
+                detail_meja_pesanan.Text = "-";
+                jumlah_meja.Text = "0";
             }
-            Form_pegawai.lbtn = new List<Button>();
-            detail_meja_pesanan.Text = "-";
-            jumlah_meja.Text = "0";
+            
         }
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
@@ -293,6 +295,7 @@ namespace Project.Pegawai
                         cmd = new OracleCommand(query, conn);
                         cmd.ExecuteNonQuery();
                     }
+                    update_meja();
                     trans.Commit();
                     conn.Close();
                 }

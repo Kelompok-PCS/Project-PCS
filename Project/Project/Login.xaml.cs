@@ -35,8 +35,7 @@ namespace Project
                 string datasource = $"data source={tbData.Text}; user id={tbUser.Text}; password={tbPass.Text}";
                 conn = new OracleConnection(datasource);
                 App.Connection = conn;
-                //TODO nanti ganti homepage
-                Form_pegawai homepage = new Form_pegawai();
+                Homepage homepage = new Homepage();
                 homepage.ShowDialog();
             }
             catch (Exception ex)
