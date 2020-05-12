@@ -61,19 +61,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Homepage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master Kateogri\Master_Kategori_UC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Form_pegawai.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form_Utama.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Homepage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Insert_Pegawai_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,17 +89,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Homepage.xaml.cs" />
+    <Compile Include="Master Kateogri\Master_Kategori_UC.xaml.cs">
+      <DependentUpon>Master_Kategori_UC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form_pegawai.xaml.cs">
       <DependentUpon>Form_pegawai.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form_Utama.xaml.cs">
       <DependentUpon>Form_Utama.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Homepage.xaml.cs">
-      <DependentUpon>Homepage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Insert_Pegawai_UC.xaml.cs">
-      <DependentUpon>Insert_Pegawai_UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Master Kateogri\Insert_kategori.xaml.cs">
       <DependentUpon>Insert_kategori.xaml</DependentUpon>
@@ -136,6 +134,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Master_pegawai\Insert_pegawai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Master_pegawai\Update_Pegawai_UC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pilih_Meja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pegawai_UC\Pemesanan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +176,15 @@
     </Compile>
     <Compile Include="Master_paket\Paket.xaml.cs">
       <DependentUpon>Paket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_pegawai\Insert_pegawai.xaml.cs">
+      <DependentUpon>Insert_pegawai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_pegawai\Update_Pegawai_UC.xaml.cs">
+      <DependentUpon>Update_Pegawai_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pilih_Meja.xaml.cs">
+      <DependentUpon>Pilih_Meja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pegawai_UC\Pemesanan.xaml.cs">
       <DependentUpon>Pemesanan.xaml</DependentUpon>

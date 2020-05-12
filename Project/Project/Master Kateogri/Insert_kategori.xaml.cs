@@ -21,10 +21,12 @@ namespace Project
     public partial class Insert_kategori : UserControl
     {
         OracleConnection connection;
-        public Insert_kategori(OracleConnection conn)
+        Canvas can;
+        public Insert_kategori(OracleConnection conn,Canvas can)
         {
             InitializeComponent();
             connection = conn;
+            this.can = can;
         }
 
         private void btnSubmit_Click_1(object sender, RoutedEventArgs e)
@@ -71,6 +73,12 @@ namespace Project
             {
                 MessageBox.Show("Data belum lengkap");
             }
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Master_Kategori_UC panel = new Master_Kategori_UC(can);
+            can.Children.Add(panel);
         }
     }
 }

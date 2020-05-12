@@ -23,6 +23,7 @@ namespace Project
     public partial class Form_pegawai : Window
     {
         OracleConnection conn;
+        public static List<Button> lbtn = new List<Button>();
         public Form_pegawai()
         {
             InitializeComponent();
@@ -53,4 +54,11 @@ namespace Project
 			canvas.Children.Add(daftar);
 		}
 	}
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            canvas.Children.Clear();
+            Pilih_Meja Pilih_Meja = new Pilih_Meja();
+            canvas.Children.Add(Pilih_Meja);
+        }
+    }
 }

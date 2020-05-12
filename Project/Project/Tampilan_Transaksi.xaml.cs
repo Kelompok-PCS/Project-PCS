@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Project
 {
     /// <summary>
-    /// Interaction logic for Master_Kategori_UC.xaml
+    /// Interaction logic for Tampilan_Transaksi.xaml
     /// </summary>
-    public partial class Master_Kategori_UC : UserControl
+    public partial class Tampilan_Transaksi : UserControl
     {
-        public Master_Kategori_UC()
+        public Tampilan_Transaksi()
         {
             InitializeComponent();
-        }
-
-        private void btnSubmit_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -14,12 +14,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Oracle.DataAccess.Client;
 using System.Data;
-namespace Project
+namespace Project.Master_pegawai
 {
     /// <summary>
-    /// Interaction logic for Insert_Pegawai_UC.xaml
+    /// Interaction logic for Insert_pegawai.xaml
     /// </summary>
-    public partial class Insert_Pegawai_UC : UserControl
+    public partial class Insert_pegawai : UserControl
     {
         private class jabatan
         {
@@ -34,7 +34,7 @@ namespace Project
         }
         private void getJabatan()
         {
-            using(OracleDataAdapter adap = new OracleDataAdapter("SELECT * from jabatan", connection))
+            using (OracleDataAdapter adap = new OracleDataAdapter("SELECT * from jabatan", connection))
             {
                 DataTable dt = new DataTable();
                 adap.Fill(dt);
@@ -50,11 +50,13 @@ namespace Project
         }
         OracleConnection connection;
         List<jabatan> lsJabatan = new List<jabatan>();
-        public Insert_Pegawai_UC()
+        Canvas can;
+        public Insert_pegawai(Canvas can)
         {
             InitializeComponent();
             connection = App.Connection;
             getJabatan();
+            this.can = can;
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -67,7 +69,7 @@ namespace Project
                     OracleTransaction trans = connection.BeginTransaction();
                     try
                     {
-                        string kode="";
+                        string kode = "";
                         using (OracleCommand cmd = new OracleCommand())
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -95,7 +97,7 @@ namespace Project
                             cmd.Parameters.Add("jabatan", cbJabatan.SelectedValue);
                             cmd.Parameters.Add("email", tbEmail.Text);
                             cmd.Parameters.Add("nohp", tbNohp.Text);
-                            cmd.Parameters.Add("password", kode+tbNohp.Text);
+                            cmd.Parameters.Add("password", kode + tbNohp.Text);
 
                             cmd.ExecuteNonQuery();
                         }
@@ -121,6 +123,12 @@ namespace Project
             {
                 MessageBox.Show("Data belum lengkap");
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Pegawai_UC panel = new Update_Pegawai_UC(can);
+            can.Children.Add(panel);
         }
     }
 }

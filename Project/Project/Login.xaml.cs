@@ -35,7 +35,6 @@ namespace Project
                 string datasource = $"data source={tbData.Text}; user id={tbUser.Text}; password={tbPass.Text}";
                 conn = new OracleConnection(datasource);
                 App.Connection = conn;
-                //TODO nanti ganti homepage
                 Homepage homepage = new Homepage();
                 homepage.ShowDialog();
             }
