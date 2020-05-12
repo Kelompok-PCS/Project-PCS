@@ -84,7 +84,7 @@ namespace Project
         {
             checkConnection(conn);
             canvas.Children.Clear();
-            Insert_kategori panel = new Insert_kategori(conn);
+            Master_Kategori_UC panel = new Master_Kategori_UC(canvas);
             canvas.Children.Add(panel);
 
         }
@@ -121,7 +121,7 @@ namespace Project
         private void to_pegawai_MouseDown(object sender, MouseButtonEventArgs e)
         {
             canvas.Children.Clear();
-            Insert_Pegawai_UC panel = new Insert_Pegawai_UC();
+            Update_Pegawai_UC panel = new Update_Pegawai_UC(canvas);
             canvas.Children.Add(panel);
         }
 

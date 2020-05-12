@@ -46,12 +46,10 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_me
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_menu\Menu_makanan_UC.baml
-C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Resources\search-icon.png
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.exe.config
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.exe
@@ -146,10 +144,33 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\im
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_default.png
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_MouseOver.png
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Form_pegawai.g.cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Form_pegawai.baml
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homepage.baml
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.g.cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Resources\layout.png
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Fonts\Roboto-Light.ttf
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_default.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_MouseOver.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_background.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_contact.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_home.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_map.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_message.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_setting.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\img_signout.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_default.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_MouseOver.png
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_paket\Insert_Paket.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_paket\Paket.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.baml
