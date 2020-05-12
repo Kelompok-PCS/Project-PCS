@@ -87,7 +87,6 @@ C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.exe
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.pdb
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_Utama.g.cs
-C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
@@ -97,7 +96,6 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\App.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.cache
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.lref
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_Utama.baml
-C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
@@ -211,3 +209,11 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Homepage.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.baml

@@ -53,12 +53,13 @@ namespace Project
 			Regis_Member daftar = new Regis_Member();
 			canvas.Children.Add(daftar);
 		}
+		private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			canvas.Children.Clear();
+			Pilih_Meja Pilih_Meja = new Pilih_Meja();
+			canvas.Children.Add(Pilih_Meja);
+		}
 	}
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            canvas.Children.Clear();
-            Pilih_Meja Pilih_Meja = new Pilih_Meja();
-            canvas.Children.Add(Pilih_Meja);
-        }
-    }
+      
+    
 }
