@@ -26,7 +26,7 @@
         <Label Content="Jumlah" HorizontalAlignment="Left" Margin="376,276,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="853,465,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF151515" BorderBrush="#FF0B0A0A" Click="btnSubmit_Click"/>
         <Button x:Name="btnTrans" Content="&gt;" HorizontalAlignment="Left" Margin="366,337,0,0" VerticalAlignment="Top" Width="63" Click="btnTrans_Click"/>
-        <Button x:Name="btnCancel" Content="&lt;" HorizontalAlignment="Left" Margin="366,371,0,0" VerticalAlignment="Top" Width="63"/>
+        <Button x:Name="btnCancel" Content="&lt;" HorizontalAlignment="Left" Margin="366,371,0,0" VerticalAlignment="Top" Width="63" Click="btnCancel_Click"/>
         <RadioButton x:Name="rdPunya" Content="Punya" HorizontalAlignment="Left" Margin="428,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" Checked="rdPunya_Checked"/>
         <Label Content="Punya Member ?" HorizontalAlignment="Left" Margin="428,63,0,0" VerticalAlignment="Top" Foreground="#FFFAF6F6"/>
         <RadioButton x:Name="rdTdk" Content="Tidak Punya" HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" IsChecked="True" Checked="rdTdk_Checked"/>
