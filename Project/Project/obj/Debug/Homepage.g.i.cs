@@ -86,6 +86,15 @@ namespace Project {
             #line default
             #line hidden
             return;
+            case 3:
+            this.menu = ((System.Windows.Controls.Button)(target));
+            
+            #line 14 "..\..\Homepage.xaml"
+            this.menu.Click += new System.Windows.RoutedEventHandler(this.menu_Click);
+            
+            #line default
+            #line hidden
+            return;
             }
             this._contentLoaded = true;
         }
