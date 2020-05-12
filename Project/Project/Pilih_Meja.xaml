@@ -9,6 +9,9 @@
     <Grid x:Name="grid">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
         <Grid x:Name="grid_meja" HorizontalAlignment="Left" Height="310" Margin="10,10,0,0" VerticalAlignment="Top" Width="631"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,335,0,0" TextWrapping="Wrap" Text="Kursi yang di pesan             :" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,351,0,0" TextWrapping="Wrap" Text="Jumlah Kursi yang di pesan :" VerticalAlignment="Top"/>
+        <TextBlock x:Name="detail_meja" HorizontalAlignment="Left" Margin="170,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="jumlah_meja" HorizontalAlignment="Left" Margin="174,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

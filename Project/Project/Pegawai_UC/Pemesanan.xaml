@@ -36,8 +36,12 @@
         <Label Content="Jumlah Pesanan: " HorizontalAlignment="Left" Margin="465,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
         <Label x:Name="lbPesanan" Content="0" HorizontalAlignment="Left" Margin="564,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
         <Label x:Name="lbTotal" Content="0" HorizontalAlignment="Left" Margin="564,436,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
-        <RadioButton x:Name="rdDine" Content="Dine In" HorizontalAlignment="Left" Margin="615,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" IsChecked="True"/>
-        <RadioButton x:Name="rdTake" Content="Take Away" HorizontalAlignment="Left" Margin="677,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7"/>
-        <RadioButton x:Name="rdDelivery" Content="Delivery" HorizontalAlignment="Left" Margin="756,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7"/>
+        <RadioButton x:Name="rdDine" Content="Dine In" HorizontalAlignment="Left" Margin="615,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" IsChecked="True" Checked="rdTake_Checked"/>
+        <RadioButton x:Name="rdTake" Content="Take Away" HorizontalAlignment="Left" Margin="677,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked"/>
+        <RadioButton x:Name="rdDelivery" Content="Delivery" HorizontalAlignment="Left" Margin="756,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked"/>
+        <TextBlock x:Name="jumlah_meja" HorizontalAlignment="Left" Margin="174,416,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="19,416,0,0" TextWrapping="Wrap" Text="Jumlah Kursi Yang Di Pesan :" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="19,445,0,0" TextWrapping="Wrap" Text="Kursi Yang Di Pesan             :" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="detail_meja_pesanan" HorizontalAlignment="Left" Margin="173,448,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </UserControl>
