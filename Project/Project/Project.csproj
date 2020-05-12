@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Homemenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Homepage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +97,9 @@
     </Compile>
     <Compile Include="Form_Utama.xaml.cs">
       <DependentUpon>Form_Utama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Homemenu.xaml.cs">
+      <DependentUpon>Homemenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Homepage.xaml.cs">
       <DependentUpon>Homepage.xaml</DependentUpon>
@@ -263,6 +270,78 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="tgBtn_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\aybak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Aygep.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Aygor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\beef-steak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Bubur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Cumgor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Igbak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Jusalpukat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\kopi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Lteh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Megmen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\mie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Migor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Nasgor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\nasgor2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\nasi-ayam-hemat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\nasi-kotak-ayam-kremes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\non.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\pkt-b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\pkt-nasi-kuning-ayam-goreng-suwir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Scampur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Steh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\unnamed.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

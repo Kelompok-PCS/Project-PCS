@@ -5,7 +5,7 @@ DROP TABLE menu CASCADE CONSTRAINTS;
 DROP TABLE hjual CASCADE CONSTRAINTS;
 DROP TABLE djual CASCADE CONSTRAINTS;
 DROP TABLE promo CASCADE CONSTRAINTS;
-DROP TABLE paket CASCADE CONSTRAINTS;
+DROP TABLE  paket CASCADE CONSTRAINTS;
 DROP TABLE promo_menu CASCADE CONSTRAINTS;
 DROP TABLE daerah CASCADE CONSTRAINTS;
 DROP TABLE kota CASCADE CONSTRAINTS;
@@ -81,12 +81,12 @@ CREATE TABLE promo (
 );
 
 CREATE TABLE paket (
-  id_paket varchar(10) NOT NULL CONSTRAINTS PK_paket PRIMARY KEY,
+  id_paket varchar(10) NOT NULL,
   nama_paket varchar(50) NOT NULL,
-  harga_paket number NOT NULL,
-  id_kategori varchar(10) NOT NULL CONSTRAINTS FK_KATEGORI1 REFERENCES KATEGORI(ID_KATEGORI),
-  id_promo varchar(10) NOT NULL CONSTRAINTS fk_PROMO REFERENCES promo(id_promo),
-  status NUMBER NOT NULL
+  harga_paket number(11) NOT NULL,
+  gambar varchar(100) NOT NULL,
+  id_kategori varchar(10) NOT NULL,
+  status number(2) NOT NULL
 );
 
 CREATE TABLE promo_menu (
@@ -121,6 +121,28 @@ Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT005','Signature Menu','makanan','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT006','Kopi','minuman','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT007','Minuman','minuman','1');
+
+INSERT INTO menu VALUES('MEN001', 'Nasi Goreng Jawa', 20000, 'Image/Nasgor.jpg', 'Dengan Bumbu Jawa', 'KAT002', 1);
+INSERT INTO menu VALUES('MEN002', 'Ayam goreng', 5000, 'Image/Aygor.jpg', 'Dengan tambahan rempah-rempah', 'KAT001', 1);
+INSERT INTO menu VALUES('MEN003', 'Iga Bakar', 20000, 'Image/Igbak.jpg', 'Iga daging sapi yang berkualitas', 'KAT006', 1);
+INSERT INTO menu VALUES('MEN004', 'Cumi Goreng', 30000, 'Image/Cumgor.jpg', 'Bergizi, nikmat, dan krispi', 'KAT001', 1);
+INSERT INTO menu VALUES('MEN005', 'Mie Goreng', 15000, 'Image/Migor.jpg', 'Dengan kelezatan nikmat', 'KAT003', 1);
+INSERT INTO menu VALUES('MEN006', 'Ayam Geprek', 12000, 'Image/Aygep.jpg', 'Geprek, dengan tingkat kepedasan yang menggugah lidah', 'KAT005', 1);
+INSERT INTO menu VALUES('MEN007', 'Es Teh  Manis', 3000, 'Image/Steh.jpg', 'Dingin', 'KAT007', 1);
+INSERT INTO menu VALUES('MEN008', 'Es Lemon Tea', 5000, 'Image/Lteh.jpg', 'Jeruk Lemon', 'KAT007', 1);
+INSERT INTO menu VALUES('MEN009', 'Es Mega Mendung', 8000, 'Image/Megmen.jpg', 'Soda', 'KAT005', 1);
+INSERT INTO menu VALUES('MEN010', 'Kopi Luwak', 8000, 'Image/kopi.jpg', 'Luwak asli', 'KAT007', 1);
+INSERT INTO menu VALUES('MEN011', 'Jus Alpukat', 20000, 'Image/Jusalpukat.jpg', 'Alpukat terpercaya', 'KAT004', 1);
+INSERT INTO menu VALUES('MEN012', 'Bubur Ayam', 15000, 'Image/Bubur.jpg', 'Lembut', 'KAT004', 1);
+
+INSERT INTO paket  VALUES('PK001', 'Steak', 50000, 'Image/beef-steak.jpg', 'KAT006', 1);
+INSERT INTO paket VALUES('PK002', 'Bubur', 10000, 'Image/pkt-b.jpg', 'KAT004', 1);
+INSERT INTO paket VALUES('PK003', 'Siang', 20000, 'Image/nasi-ayam-hemat.jpg', 'KAT001', 1);
+INSERT INTO paket VALUES('PK004', 'Agep Murmer', 15000, 'Image/aybak.jpg', 'KAT005', 1);
+INSERT INTO paket VALUES('PK005', 'Namikun', 25000, 'Image/pkt-nasi-kuning-ayam-goreng-suwir.jpg', 'KAT003', 1);
+INSERT INTO paket VALUES('PK006', 'Mie-Aygep', 22000, 'Image/mie.jpg', 'KAT005', 1);
+INSERT INTO paket VALUES('PK007', 'Ayam Kremes', 25000, 'Image/nasi-kotak-ayam-kremes.jpg', 'KAT005', 1);
+INSERT INTO paket VALUES('PK008', 'Nasgor', 12000, 'Image/nasgor2.jpg', 'KAT002', 1);
 
 INSERT INTO daerah VALUES ('D0001', 'Jawa Timur');
 INSERT INTO daerah VALUES ('D0002', 'Jawa Barat');
@@ -168,3 +190,11 @@ insert into pegawai values(kode,nama,jabatan,email,nohp,password,'1');
 end;
 /
 commit;
+
+
+
+--
+-- Dumping data untuk tabel `paket`
+--
+
+
