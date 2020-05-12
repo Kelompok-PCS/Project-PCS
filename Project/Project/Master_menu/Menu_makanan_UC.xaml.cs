@@ -43,7 +43,7 @@ namespace Project.Master_menu
                 
                 conn.Open();
                 string query =
-                    $"SELECT nama_menu \"Nama Menu\",TO_CHAR(harga_menu) \"Harga Menu\",DESKRIPSI \"Deskripsi Menu\" FROM menu WHERE status = '{status}' ORDER BY id_menu DESC";
+                    $"SELECT nama_menu \"Nama Menu\",TO_CHAR(harga_menu) \"Harga Menu\",DESKRIPSI \"Deskripsi Menu\" FROM menu WHERE status = '{status}'";
                 OracleCommand cmd = new OracleCommand(query, conn);
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd);
                 adapter.Fill(tableMenu);

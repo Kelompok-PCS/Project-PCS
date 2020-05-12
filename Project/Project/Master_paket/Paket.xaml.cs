@@ -45,7 +45,7 @@ namespace Project.Master_paket
             {
                 connection.Open();
                 string query =
-                    $"SELECT NAMA_PAKET \"Nama Paket\", TO_CHAR(HARGA_PAKET) \"Harga Paket\" FROM PAKET WHERE status = '{status}' ORDER BY id_paket DESC";
+                    $"SELECT NAMA_PAKET \"Nama Paket\", TO_CHAR(HARGA_PAKET) \"Harga Paket\" FROM PAKET WHERE status = '{status}'";
                 tbFilter.Text = query;
                 OracleCommand cmd = new OracleCommand(query, connection);
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd);
