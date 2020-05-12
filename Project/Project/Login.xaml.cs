@@ -36,7 +36,7 @@ namespace Project
                 conn = new OracleConnection(datasource);
                 App.Connection = conn;
                 //TODO nanti ganti homepage
-                Homepage homepage = new Homepage();
+                Form_pegawai homepage = new Form_pegawai();
                 homepage.ShowDialog();
             }
             catch (Exception ex)
