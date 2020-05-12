@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Project.Pegawai.Regis_Member"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project.Pegawai"
+             mc:Ignorable="d" 
+             d:DesignHeight="494" d:DesignWidth="938" Background="AliceBlue">
+    <Grid Margin="0,0,0,-0.4" Background="#FF242D3E" >
+        <ComboBox x:Name="combokota" Margin="655,98,97.6,369.8" SelectionChanged="Combokota_SelectionChanged"/>
+        <Label x:Name="___No_Name_" Content="Nama Member: " HorizontalAlignment="Left" Margin="59,60,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <Label Content="Pendaftaran Member" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Emoji" FontSize="20" Foreground="#FFF6EFEF"/>
+        <Label x:Name="___No_Name__Copy" Content="Nama Lengkap:" HorizontalAlignment="Left" Margin="62,109,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <TextBox x:Name="tbEmail1" HorizontalAlignment="Left" Height="23" Margin="160,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+        <TextBox x:Name="userName" HorizontalAlignment="Left" Height="23" Margin="160,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+        <Label x:Name="___No_Name__Copy1" Content="No Telp: " HorizontalAlignment="Left" Margin="99,155,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" RenderTransformOrigin="0.55,1.289"/>
+        <TextBox x:Name="tbFullname" HorizontalAlignment="Left" Height="23" Margin="160,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+        <Label x:Name="___No_Name__Copy2" Content="Email:" HorizontalAlignment="Left" Margin="109,209,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <Label x:Name="___No_Name__Copy4" Content="Password:&#xA;" HorizontalAlignment="Left" Margin="88,310,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" RenderTransformOrigin="0.471,1.437"/>
+        <TextBox x:Name="tbTelp" HorizontalAlignment="Left" Height="23" Margin="160,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315"/>
+        <Label x:Name="___No_Name__Copy5" Content="Confirm:&#xA;" HorizontalAlignment="Left" Margin="97,369,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" RenderTransformOrigin="0.471,1.437"/>
+        <ComboBox x:Name="combokecamatan" Margin="655,154,97.6,314.8"/>
+        <TextBox x:Name="tbAlamat" HorizontalAlignment="Left" Height="23" Margin="655,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="kodepos" HorizontalAlignment="Left" Height="23" Margin="655,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <Label x:Name="___No_Name__Copy6" Content="Provinsi" HorizontalAlignment="Left" Margin="592,99,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <Label x:Name="___No_Name__Copy7" Content="Kota" HorizontalAlignment="Left" Margin="606,155,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <Label x:Name="___No_Name__Copy8" Content="Alamat&#xA;" HorizontalAlignment="Left" Margin="592,209,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <Label x:Name="___No_Name__Copy9" Content="Kode Pos&#xA;" HorizontalAlignment="Left" Margin="581,261,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="655,354,0,0" VerticalAlignment="Top" Width="125" Click="Save_Click"/>
+        <PasswordBox x:Name="tbPass"   HorizontalAlignment="Left" Margin="170,322,0,0" VerticalAlignment="Top" Width="305"/>
+        <PasswordBox x:Name="tbPass_Copy" HorizontalAlignment="Left" Margin="170,369,0,0" VerticalAlignment="Top" Width="305"/>
+    </Grid>
+</UserControl>

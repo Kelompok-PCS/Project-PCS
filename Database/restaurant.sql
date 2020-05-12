@@ -32,6 +32,7 @@ CREATE TABLE members (
   kota varchar(50) NOT NULL,
   kecematan varchar(50) NOT NULL,
   kode_pos NUMBER NOT NULL,
+  point NUMBER NOT NULL,
   status varchar(1) NOT NULL
 );
 

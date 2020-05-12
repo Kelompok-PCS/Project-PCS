@@ -45,5 +45,12 @@ namespace Project
             Pemesanan pemesanan = new Pemesanan();
             canvas.Children.Add(pemesanan);
         }
-    }
+
+		private void TbPendaftaran_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			canvas.Children.Clear();
+			Regis_Member daftar = new Regis_Member();
+			canvas.Children.Add(daftar);
+		}
+	}
 }
