@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project.Pegawai"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="AliceBlue">
+             d:DesignHeight="494" d:DesignWidth="938" Background="AliceBlue">
     <Grid Margin="0,0,0,-0.4" Background="#FF242D3E" Loaded="Grid_Loaded">
-        <Border BorderBrush="#FFF1E9E9" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="136" Margin="0,47,0,0" VerticalAlignment="Top" Width="800">
+        <Border BorderBrush="#FFF1E9E9" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="136" Margin="0,47,-0.4,0" VerticalAlignment="Top" Width="938">
             <Button x:Name="btnSearch" Content="Search" Margin="294,75,440,33.2" Click="btnSearch_Click" IsEnabled="False"/>
         </Border>
         <Label Content="Id Member: " HorizontalAlignment="Left" Margin="81,60,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
@@ -17,20 +17,24 @@
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="160,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label Content="Nama Kategori: " HorizontalAlignment="Left" Margin="69,188,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <ComboBox x:Name="cmbKategori" HorizontalAlignment="Left" Margin="170,191,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbKategori_SelectionChanged"/>
-        <DataGrid x:Name="gridTrans" HorizontalAlignment="Left" Height="140" Margin="465,266,0,0" VerticalAlignment="Top" Width="320"/>
+        <DataGrid x:Name="gridTrans" HorizontalAlignment="Left" Height="140" Margin="465,266,0,0" VerticalAlignment="Top" Width="463"/>
         <Label Content="Nama Menu: " HorizontalAlignment="Left" Margin="83,229,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <TextBox x:Name="tbMenu" HorizontalAlignment="Left" Height="23" Margin="170,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnFilter" Content="Filter Menu" HorizontalAlignment="Left" Margin="307,233,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF151515" BorderBrush="#FF0B0A0A" Click="btnFilter_Click"/>
         <DataGrid x:Name="gridMenu" HorizontalAlignment="Left" Height="140" Margin="19,266,0,0" VerticalAlignment="Top" Width="320"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="374,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+        <TextBox x:Name="tbjumlah" HorizontalAlignment="Left" Height="23" Margin="374,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="0"/>
         <Label Content="Jumlah" HorizontalAlignment="Left" Margin="376,276,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="710,421,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF151515" BorderBrush="#FF0B0A0A"/>
-        <Button x:Name="btnTrans" Content="&gt;" HorizontalAlignment="Left" Margin="366,337,0,0" VerticalAlignment="Top" Width="63"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="853,465,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF151515" BorderBrush="#FF0B0A0A" Click="btnSubmit_Click"/>
+        <Button x:Name="btnTrans" Content="&gt;" HorizontalAlignment="Left" Margin="366,337,0,0" VerticalAlignment="Top" Width="63" Click="btnTrans_Click"/>
         <Button x:Name="btnCancel" Content="&lt;" HorizontalAlignment="Left" Margin="366,371,0,0" VerticalAlignment="Top" Width="63"/>
         <RadioButton x:Name="rdPunya" Content="Punya" HorizontalAlignment="Left" Margin="428,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" Checked="rdPunya_Checked"/>
         <Label Content="Punya Member ?" HorizontalAlignment="Left" Margin="428,63,0,0" VerticalAlignment="Top" Foreground="#FFFAF6F6"/>
         <RadioButton x:Name="rdTdk" Content="Tidak Punya" HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" IsChecked="True" Checked="rdTdk_Checked"/>
         <Label x:Name="___No_Name__Copy" Content="No Telp: " HorizontalAlignment="Left" Margin="99,121,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <TextBox x:Name="tbTelp" HorizontalAlignment="Left" Height="23" Margin="160,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Jumlah Total: " HorizontalAlignment="Left" Margin="486,435,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
+        <Label Content="Jumlah Pesanan: " HorizontalAlignment="Left" Margin="465,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
+        <Label x:Name="lbPesanan" Content="0" HorizontalAlignment="Left" Margin="564,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
+        <Label x:Name="lbTotal" Content="0" HorizontalAlignment="Left" Margin="564,436,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
     </Grid>
 </UserControl>

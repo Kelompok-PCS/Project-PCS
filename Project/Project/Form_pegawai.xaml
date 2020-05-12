@@ -6,9 +6,7 @@
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
         Title="Pegawai
-        " Height="481.744" Width="1008
-        
-        " WindowStartupLocation="CenterScreen">
+        " Height="523.184" Width="1144.408" WindowStartupLocation="CenterScreen">
     <Window.Resources>
 
         <!--// Toggle Button Style Template //-->
@@ -155,8 +153,8 @@
     </Window.Resources>
 
     <Grid>
-        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="452" Margin="200,0,-0.4,0" VerticalAlignment="Top" Width="802" Background="#FF242D3E"/>
-        <Grid HorizontalAlignment="Left" Height="452" VerticalAlignment="Top" Width="201" Background="#FF1B2029">
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="494" Margin="200,0,0,-0.4" VerticalAlignment="Top" Width="938" Background="#FF242D3E"/>
+        <Grid HorizontalAlignment="Left" Height="494" VerticalAlignment="Top" Width="201" Background="#FF1B2029" Margin="0,0,0,-0.4">
             <TextBlock HorizontalAlignment="Left" Margin="66,2,0,0" TextWrapping="Wrap" Text="Pegawai" VerticalAlignment="Top" Style="{StaticResource font_style}" FontWeight="Bold" FontSize="24" FontFamily="Adobe Gothic Std B"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,83,0,0" TextWrapping="Wrap" Text="Meja" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23"/>
             <TextBlock x:Name="tbPemesan" HorizontalAlignment="Left" Margin="0,161,0,0" TextWrapping="Wrap" Text="Pemesanan" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23" MouseDown="tbPemesan_MouseDown"/>

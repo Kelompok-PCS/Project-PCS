@@ -29,10 +29,20 @@ namespace Project.Pegawai
             this.conn = App.Connection;
         }
         List<kategori> kategoris;
+        List<string> kodeMenuTrans;
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             tbId.IsEnabled = false;
             kategoris = new List<kategori>();
+            tableTrans = new DataTable();
+            kodeMenuTrans = new List<string>();
+            tableTrans.Columns.Add("Nama Menu");
+            tableTrans.Columns.Add("Harga Menu");
+            tableTrans.Columns.Add("Deskripsi Menu");
+            tableTrans.Columns.Add("Jumlah");
+            tableTrans.Columns.Add("Subtotal");
+            gridMenu.IsReadOnly = true;
+            gridTrans.IsReadOnly = true;
             try
             {
                 conn.Open();
@@ -89,12 +99,12 @@ namespace Project.Pegawai
         private void cmbKategori_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string query =
-                "SELECT nama_menu,harga_menu,deskripsi " +
+                "SELECT nama_menu \"Nama Menu\",harga_menu \"Harga Menu\",deskripsi " +
                 "FROM menu " +
                 $"WHERE id_kategori = '{cmbKategori.SelectedValue}' AND status = '1'";
             loadMenu(query);
         }
-
+        List<string> kodeMenu;
         private void loadMenu(string query)
         {
             
@@ -104,6 +114,17 @@ namespace Project.Pegawai
             tableMenu = new DataTable();
             adapter.Fill(tableMenu);
             gridMenu.ItemsSource = tableMenu.DefaultView;
+
+            kodeMenu = new List<string>();
+            query =
+                "SELECT id_menu " +
+                "FROM menu ";
+            cmd = new OracleCommand(query,conn);
+            OracleDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                kodeMenu.Add(reader.GetString(0));
+            }
             conn.Close();
         }
 
@@ -114,6 +135,50 @@ namespace Project.Pegawai
                "FROM menu " +
                $"WHERE nama_menu LIKE INITCAP('%{tbMenu.Text}%') AND status = '1'";
             loadMenu(query);
+        }
+        int grandtotal = 0;
+        int jumlahPesanan = 0;
+        private void btnTrans_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int jumlah = Convert.ToInt32(tbjumlah.Text);
+                if (gridMenu.SelectedIndex != -1)
+                {
+                    if (jumlah <= 0)
+                    {
+                        MessageBox.Show("jumlah harus lebih besar dari 0");
+                    }
+                    else
+                    {
+                        DataRow newTrans = tableTrans.NewRow();
+                        newTrans[0] = tableMenu.Rows[gridMenu.SelectedIndex][0].ToString();
+                        newTrans[1] = tableMenu.Rows[gridMenu.SelectedIndex][1].ToString();
+                        newTrans[2] = tableMenu.Rows[gridMenu.SelectedIndex][2].ToString();
+                        newTrans[3] = tbjumlah.Text;
+                        newTrans[4] = Convert.ToInt32(newTrans[1].ToString()) * jumlah;
+                        jumlahPesanan += jumlah;
+                        grandtotal += Convert.ToInt32(newTrans[4].ToString());
+                        lbPesanan.Content = jumlahPesanan;
+                        lbTotal.Content = grandtotal;
+                        tableTrans.Rows.Add(newTrans);
+                        kodeMenuTrans.Add(kodeMenu[gridMenu.SelectedIndex]);
+                        gridTrans.ItemsSource = tableTrans.DefaultView;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("salah input jumlah");
+            }
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            tableTrans = new DataTable();
+            gridTrans.ItemsSource = tableTrans.DefaultView;
+            kodeMenuTrans.Clear();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
