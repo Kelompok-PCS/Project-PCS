@@ -1,0 +1,168 @@
+﻿<Window x:Class="Project.Form_pegawai"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Pegawai
+        " Height="523.184" Width="1144.408" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+
+        <!--// Toggle Button Style Template //-->
+
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="Assets/tgBtn_MouseOver.png"/>
+
+        <!--// Text font style //-->
+
+        <Style x:Key="font_style" TargetType="TextBlock">
+
+            <Setter Property="FontFamily"
+                    Value="Fonts/Roboto-Light.ttf #Roboto"/>
+
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="FontSize"
+                    Value="20"/>
+
+        </Style>
+
+        <!--// Tooltip Style Template //-->
+
+        <Style TargetType="ToolTip" x:Key="tt_style">
+
+            <Setter Property="Placement" Value="Right"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="Background" Value="#4A5668"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Fonts/Roboto-Light.ttf #Roboto"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="PlacementRectangle" Value="60,0,0,0"/>
+            <Setter Property="HorizontalOffset" Value="15"/>
+            <Setter Property="VerticalOffset" Value="6"/>
+            <Setter Property="HasDropShadow" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+        </Style>
+
+        <!--// App Close Button Style Template //-->
+
+        <ImageBrush x:Key="CloseBtn_MouseOver" ImageSource="Assets/closeBtn_MouseOver.png"/>
+
+        <Style x:Key="Close_btn" TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="button"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="button"
+                                        Value="{StaticResource CloseBtn_MouseOver}"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+
+
+
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+
+                        <Border  x:Name="border"
+                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                 Background="{TemplateBinding Background}"
+                                 SnapsToDevicePixels="True">
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="true">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="494" Margin="200,0,0,-0.4" VerticalAlignment="Top" Width="938" Background="#FF242D3E"/>
+        <Grid HorizontalAlignment="Left" Height="494" VerticalAlignment="Top" Width="201" Background="#FF1B2029" Margin="0,0,0,-0.4">
+            <TextBlock HorizontalAlignment="Left" Margin="66,2,0,0" TextWrapping="Wrap" Text="Pegawai" VerticalAlignment="Top" Style="{StaticResource font_style}" FontWeight="Bold" FontSize="24" FontFamily="Adobe Gothic Std B"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,83,0,0" TextWrapping="Wrap" Text="Meja" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23"/>
+            <TextBlock x:Name="tbPemesan" HorizontalAlignment="Left" Margin="0,161,0,0" TextWrapping="Wrap" Text="Pemesanan" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23" MouseDown="tbPemesan_MouseDown"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,239,0,0" TextWrapping="Wrap" Text="Reservasi" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,317,0,0" TextWrapping="Wrap" Text="Pendaftaran Member" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="13"/>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="42" Source="tgBtn_default.png" Margin="6,7,0,0" MouseDown="Image_MouseDown"/>
+
+    </Grid>
+
+</Window>

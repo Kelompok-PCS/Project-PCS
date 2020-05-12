@@ -56,7 +56,7 @@ CREATE TABLE menu (
 );
 
 CREATE TABLE hjual (
-  id_hjual varchar(10) NOT NULL CONSTRAINTS pk_hjual PRIMARY KEY,
+  id_hjual varchar(14) NOT NULL CONSTRAINTS pk_hjual PRIMARY KEY,
   tanggal_transaksi date NOT NULL,
   total NUMBER NOT NULL,
   jenis_pemesanan varchar(10) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE hjual (
 );
 
 CREATE TABLE djual (
-  id_djual varchar(10) NOT NULL CONSTRAINTS pk_djual PRIMARY KEY,
+  id_djual varchar(20) NOT NULL CONSTRAINTS pk_djual PRIMARY KEY,
   id_menu varchar(10) NOT NULL CONSTRAINTS fk_menu REFERENCES MENU(ID_MENU),
   harga NUMBER NOT NULL,
   jumlah NUMBER NOT NULL,

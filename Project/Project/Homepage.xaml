@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Homepage" Height="600" Width="800">
+        Title="Homepage
+        " Height="360.609" Width="418.059" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="792"/>
+        <Button Content="Admin" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="Button_Click"/>
+        <Button Content="Pegawai" HorizontalAlignment="Left" Margin="138,147,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="Button_Click_1"/>
+        <Label Content="Pilih Halaman" HorizontalAlignment="Left" Margin="130,33,0,0" VerticalAlignment="Top" FontSize="20"/>
 
     </Grid>
 </Window>

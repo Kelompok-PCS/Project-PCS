@@ -115,7 +115,7 @@
 
         <!--// Background Color //-->
 
-        <Grid Background="Black">
+        <Grid >
             <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="650" Margin="70,10,-76.2,0" VerticalAlignment="Top" Width="751"/>
             <!--// App Close Button //-->
 
@@ -264,7 +264,6 @@
                                       >
                             <StackPanel Orientation="Horizontal" x:Name="to_menu"
                                         Width="230" Height="43" MouseDown="to_menu_MouseDown_1">
-
                                 <TextBlock Text="Master Menu"
                                            Margin="25,0,0,0"
                                            Style="{StaticResource font_style}"/>
@@ -358,33 +357,6 @@
 
                                 <ToolTip x:Name="tt_maps"
                                          Content="Promo"
-                                         Style="{StaticResource tt_style}"/>
-
-                            </ListViewItem.ToolTip>
-
-                        </ListViewItem>
-
-                        <!--// Settings //-->
-
-                        <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
-                                      >
-
-                            <StackPanel Orientation="Horizontal" x:Name="to_kupon"
-                                        Width="230" MouseDown="to_kupon_MouseDown" Height="46">
-
-                                <TextBlock Text="Master Kupon"
-                                           Margin="25,0,0,0"
-                                           Style="{StaticResource font_style}"/>
-
-                            </StackPanel>
-
-                            <!--// Tooltip //-->
-
-                            <ListViewItem.ToolTip>
-
-                                <ToolTip x:Name="tt_settings"
-                                         Content="Kupon"
                                          Style="{StaticResource tt_style}"/>
 
                             </ListViewItem.ToolTip>
@@ -531,6 +503,7 @@
 
 
             </Grid>
+            
 
 
         </Grid>

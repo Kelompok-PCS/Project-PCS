@@ -79,7 +79,20 @@ namespace Project {
             switch (connectionId)
             {
             case 1:
-            this.canvas = ((System.Windows.Controls.Canvas)(target));
+            
+            #line 11 "..\..\Homepage.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 2:
+            
+            #line 12 "..\..\Homepage.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click_1);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

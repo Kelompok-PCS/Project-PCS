@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +19,23 @@ namespace Project
     /// </summary>
     public partial class Homepage : Window
     {
+        OracleConnection conn;
         public Homepage()
         {
             InitializeComponent();
-            Pilih_Meja panel = new Pilih_Meja();
-            canvas.Children.Add(panel);
+            this.conn = App.Connection;
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Form_Utama Form_Utama = new Form_Utama(conn);
+            Form_Utama.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Form_pegawai pegawai = new Form_pegawai();
+            pegawai.ShowDialog();
         }
     }
 }
