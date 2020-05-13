@@ -300,5 +300,31 @@
   <ItemGroup>
     <Resource Include="tgBtn_default.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\aybak.jpg" />
+    <Resource Include="Image\Aygep.jpg" />
+    <Resource Include="Image\Aygor.jpg" />
+    <Resource Include="Image\beef-steak.jpg" />
+    <Resource Include="Image\Bubur.jpg" />
+    <Resource Include="Image\Cumgor.jpg" />
+    <Resource Include="Image\Igbak.jpg" />
+    <Resource Include="Image\Jusalpukat.jpg" />
+    <Resource Include="Image\kopi.jpg" />
+    <Resource Include="Image\Lteh.jpg" />
+    <Resource Include="Image\Megmen.jpg" />
+    <Resource Include="Image\mie.jpg" />
+    <Resource Include="Image\Migor.jpg" />
+    <Resource Include="Image\Nasgor.jpg" />
+    <Resource Include="Image\nasgor2.jpg" />
+    <Resource Include="Image\nasi-ayam-hemat.jpg" />
+    <Resource Include="Image\nasi-kotak-ayam-kremes.jpg" />
+    <Resource Include="Image\non.jpg" />
+    <Resource Include="Image\pkt-b.jpg" />
+    <Resource Include="Image\pkt-nasi-kuning-ayam-goreng-suwir.jpg" />
+    <Resource Include="Image\s.jpg" />
+    <Resource Include="Image\Scampur.jpg" />
+    <Resource Include="Image\Steh.jpg" />
+    <Resource Include="Image\unnamed.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
