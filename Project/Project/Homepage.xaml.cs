@@ -38,5 +38,11 @@ namespace Project
             Form_pegawai pegawai = new Form_pegawai();
             pegawai.ShowDialog();
         }
+
+        private void menu_Click(object sender, RoutedEventArgs e)
+        {
+            Homemenu menu = new Homemenu();
+            menu.ShowDialog();
+        }
     }
 }

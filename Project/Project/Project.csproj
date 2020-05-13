@@ -61,6 +61,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Homemenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Homepage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,7 +93,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Homepage.xaml.cs" />
+    <Compile Include="Homemenu.xaml.cs">
+      <DependentUpon>Homemenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.xaml.cs">
+      <DependentUpon>Homepage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Master Kateogri\Master_Kategori_UC.xaml.cs">
       <DependentUpon>Master_Kategori_UC.xaml</DependentUpon>
     </Compile>
