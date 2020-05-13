@@ -91,7 +91,7 @@ namespace Project.Master_menu
                     try
                     {
                         string query =
-                            $"UPDATE menu SET NAMA_MENU = '{tbNama.Text}',HARGA_MENU = '{harga}',DESKRIPSI = '{tbDesc.Text}' WHERE id_menu = '{kodeMenu}'";
+                            $"UPDATE menu SET NAMA_MENU = '{tbNama.Text}',HARGA_MENU = '{tbHarga.Text}',DESKRIPSI = '{tbDesc.Text}' WHERE id_menu = '{kodeMenu}'";
                         OracleCommand cmd = new OracleCommand(query,connection);
                         cmd.ExecuteNonQuery();
                         trans.Commit();
