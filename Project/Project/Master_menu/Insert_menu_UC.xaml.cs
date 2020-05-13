@@ -180,16 +180,16 @@ namespace Project.Master_menu
         {
             connection.Open();
             string query =
-              $"SELECT * FROM menu WHERE id_menu = '{kodeMenu}'";
+              $"SELECT nama_menu,TO_CHAR(harga_menu),DESKRIPSI,id_kategori FROM menu WHERE id_menu = '{kodeMenu}'";
             OracleCommand cmd = new OracleCommand(query,connection);
             OracleDataReader reader = cmd.ExecuteReader();
             string kodeKategori = "";
             while (reader.Read())
             {
-                tbNama.Text = reader.GetString(1);
-                tbHarga.Text = reader.GetString(2);
-                tbDesc.Text = reader.GetString(4);
-                kodeKategori = reader.GetString(5);
+                tbNama.Text = reader.GetString(0);
+                tbHarga.Text = reader.GetString(1);
+                tbDesc.Text = reader.GetString(2);
+                kodeKategori = reader.GetString(3);
             }
 
             for (int i = 0; i < kategoris.Count; i++)

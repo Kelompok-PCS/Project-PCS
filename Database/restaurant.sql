@@ -176,13 +176,11 @@ INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
 INSERT INTO jabatan VALUES ('JAB00001', 'Waiter');
 INSERT INTO jabatan VALUES ('JAB00002', 'Host');
 
-
 insert into promo values('PRO001','Promo Ramadhan1',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 insert into promo values('PRO002','Promo Ramadhan2',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 insert into promo values('PRO003','Promo Ramadhan3',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 insert into promo values('PRO004','Promo Ramadhan4',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 insert into promo values('PRO005','Promo Ramadhan5',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-
 
 INSERT INTO paket  VALUES('PK001', 'Steak', 50000, 'Image/beef-steak.jpg', 'KAT006', 1);
 INSERT INTO paket VALUES('PK002', 'Bubur', 10000, 'Image/pkt-b.jpg', 'KAT004', 1);
@@ -192,6 +190,90 @@ INSERT INTO paket VALUES('PK005', 'Namikun', 25000, 'Image/pkt-nasi-kuning-ayam-
 INSERT INTO paket VALUES('PK006', 'Mie-Aygep', 22000, 'Image/mie.jpg', 'KAT005', 1);
 INSERT INTO paket VALUES('PK007', 'Ayam Kremes', 25000, 'Image/nasi-kotak-ayam-kremes.jpg', 'KAT005', 1);
 INSERT INTO paket VALUES('PK008', 'Nasgor', 12000, 'Image/nasgor2.jpg', 'KAT002', 1);
+
+Insert into DAERAH (KODE_DAERAH,NAMA_DAERAH) values ('D0001','Jawa Timur');
+Insert into DAERAH (KODE_DAERAH,NAMA_DAERAH) values ('D0002','Jawa Barat');
+Insert into DAERAH (KODE_DAERAH,NAMA_DAERAH) values ('D0003','Jawa Tengah');
+
+Insert into DJUAL (ID_DJUAL,ID_MENU,HARGA,JUMLAH,SUBTOTAL,ID_HJUAL) values ('HJ20200512003_01','MEN002','20000','2','40000','HJ20200512003');
+Insert into DJUAL (ID_DJUAL,ID_MENU,HARGA,JUMLAH,SUBTOTAL,ID_HJUAL) values ('HJ20200512001_01','MEN002','20000','3','60000','HJ20200512001');
+Insert into DJUAL (ID_DJUAL,ID_MENU,HARGA,JUMLAH,SUBTOTAL,ID_HJUAL) values ('HJ20200512001_02','MEN001','10000','2','20000','HJ20200512001');
+Insert into DJUAL (ID_DJUAL,ID_MENU,HARGA,JUMLAH,SUBTOTAL,ID_HJUAL) values ('HJ20200512002_01','MEN001','10000','2','20000','HJ20200512002');
+
+Insert into HJUAL (ID_HJUAL,TANGGAL_TRANSAKSI,TOTAL,JENIS_PEMESANAN,ID_PEGAWAI,ID_MEMBER) values ('HJ20200512003',to_date('12-05-2020','DD-MM-RRRR'),'40000','Take Away','PEG001','M000000000');
+Insert into HJUAL (ID_HJUAL,TANGGAL_TRANSAKSI,TOTAL,JENIS_PEMESANAN,ID_PEGAWAI,ID_MEMBER) values ('HJ20200512001',to_date('12-05-2020','DD-MM-RRRR'),'80000','Take Away','PEG001','M000000000');
+Insert into HJUAL (ID_HJUAL,TANGGAL_TRANSAKSI,TOTAL,JENIS_PEMESANAN,ID_PEGAWAI,ID_MEMBER) values ('HJ20200512002',to_date('12-05-2020','DD-MM-RRRR'),'20000','Dine In','PEG001','M000000000');
+
+Insert into JABATAN (ID_JABATAN,NAMA_JABATAN) values ('JAB00001','Waiter');
+Insert into JABATAN (ID_JABATAN,NAMA_JABATAN) values ('JAB00002','Host');
+
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT001','Nasi','makanan','1');
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT002','Cap Cay','makanan','1');
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT003','Bakmi','makanan','1');
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT004','Mihun','makanan','1');
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT005','Signature Menu','makanan','1');
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT006','Kopi','minuman','1');
+Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT007','Minuman','minuman','1');
+
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0001','Surabaya','D0001');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0002','Malang','D0001');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0003','Probolinggo','D0001');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0004','Batu','D0001');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0005','Malang','D0001');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0006','Bandung','D0002');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0007','Bekasi','D0002');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0008','Cirebon','D0002');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0009','Indramayu','D0002');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0010','Depok','D0002');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0011','Magelang','D0003');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0012','Pekalongan','D0003');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0013','Salatiga','D0003');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0014','Semarang','D0003');
+Insert into KOTA (KODE_KOTA,NAMA_KOTA,KODE_DAERAH) values ('K0015','Surakarta','D0003');
+
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('1','1','1','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('2','2','1','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('3','5','1','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('4','6','1','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('5','1','4','1');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('6','2','4','1');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('7','5','4','1');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('8','6','4','1');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('9','1','2','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('10','3','2','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('11','4','2','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('12','6','2','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('13','1','3','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('14','3','3','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('15','4','3','2');
+Insert into MEJA (ID_MEJA,BARIS,KOLOM,STATUS) values ('16','6','3','1');
+
+Insert into MEMBERS (ID_MEMBER,FULLNAME,USERNAME,PASSWORD,EMAIL,ALAMAT,NO_HP,KOTA,KECEMATAN,KODE_POS,STATUS) values ('M000000001','Fendy Sugiarto','FendyGanteng','12345678','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77','1234567890','K0001','D0001','123123','1');
+Insert into MEMBERS (ID_MEMBER,FULLNAME,USERNAME,PASSWORD,EMAIL,ALAMAT,NO_HP,KOTA,KECEMATAN,KODE_POS,STATUS) values ('M000000002','San Widodo','SanKing','12345678','sanking@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0002','D0001','423421','1');
+Insert into MEMBERS (ID_MEMBER,FULLNAME,USERNAME,PASSWORD,EMAIL,ALAMAT,NO_HP,KOTA,KECEMATAN,KODE_POS,STATUS) values ('M000000003','Yongki Tanu','YoTa','12345678','yongkikun@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0001','D0001','523123','1');
+Insert into MEMBERS (ID_MEMBER,FULLNAME,USERNAME,PASSWORD,EMAIL,ALAMAT,NO_HP,KOTA,KECEMATAN,KODE_POS,STATUS) values ('M000000000','DEFAULT','DEFAULT','DEFAULT','DEFAULT','DEFAULT','555000555000','DEFAULT','DEFAULT','555555','1');
+
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN001','Nasi Goreng','10000','temp gambar','nasi goreng enak','KAT001','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN002','Sushi Goreng','20000','temp gambar','sushi yang dimasak','KAT005','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN007','Strawberry Sensation','25000','temp gambar','milk, sprite, lime, strawberry syrup','KAT007','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN008','Orange Blush','25000','temp gambar','milk, sprite, lime, orange syrup','KAT007','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN009','Container Blue','25000','temp gambar','pepsi blue strawberry syrup','KAT007','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN010','Bakmie Goreng Seafood','35454','temp gambar','seafood fried noodle','KAT003','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN011','Bakmie Goreng / Kuah','29000','temp gambar','fried noodle','KAT003','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN012','Bakmie Goreng Casiew','35000','temp gambar','Casiew Fried Noodle','KAT003','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN013','Bakmie Goreng Bebek','35000','temp gambar','Roasted Duck Fried Noodle','KAT003','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN003','Espresso','5000','temp gambar','espresso delicate foam 30 ml','KAT006','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN004','Marocchino','6000','temp gambar','cocoa powder milk espresso','KAT006','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN005','Americano','5000','temp gambar','espresso water 150ml','KAT006','1');
+Insert into MENU (ID_MENU,NAMA_MENU,HARGA_MENU,GAMBAR,DESKRIPSI,ID_KATEGORI,STATUS) values ('MEN006','Antoccino','0','temp gambar','espresso milk 150ml','KAT006','1');
+
+Insert into PEGAWAI (ID_PEGAWAI,NAMA,JABATAN,EMAIL,NOHP,PASSWORD,STATUS) values ('PEG001','Farhan','JAB00001','farhan@gmail.com','555000555000','PEG001555000555000','1');
+
+Insert into PROMO (ID_PROMO,NAMA_PROMO,HARGA_PROMO,PERIODE_AWAL,PERIODE_AKHIR,GAMBAR_PROMO,STATUS_PROMO) values ('PRO001','Promo Ramadhan1','20000',to_date('05-06-2012','DD-MM-RRRR'),to_date('05-06-2012','DD-MM-RRRR'),'a','1');
+Insert into PROMO (ID_PROMO,NAMA_PROMO,HARGA_PROMO,PERIODE_AWAL,PERIODE_AKHIR,GAMBAR_PROMO,STATUS_PROMO) values ('PRO002','Promo Ramadhan2','20000',to_date('05-06-2012','DD-MM-RRRR'),to_date('05-06-2012','DD-MM-RRRR'),'a','1');
+Insert into PROMO (ID_PROMO,NAMA_PROMO,HARGA_PROMO,PERIODE_AWAL,PERIODE_AKHIR,GAMBAR_PROMO,STATUS_PROMO) values ('PRO003','Promo Ramadhan3','20000',to_date('05-06-2012','DD-MM-RRRR'),to_date('05-06-2012','DD-MM-RRRR'),'a','1');
+Insert into PROMO (ID_PROMO,NAMA_PROMO,HARGA_PROMO,PERIODE_AWAL,PERIODE_AKHIR,GAMBAR_PROMO,STATUS_PROMO) values ('PRO004','Promo Ramadhan4','20000',to_date('05-06-2012','DD-MM-RRRR'),to_date('05-06-2012','DD-MM-RRRR'),'a','1');
+Insert into PROMO (ID_PROMO,NAMA_PROMO,HARGA_PROMO,PERIODE_AWAL,PERIODE_AKHIR,GAMBAR_PROMO,STATUS_PROMO) values ('PRO005','Promo Ramadhan5','20000',to_date('05-06-2012','DD-MM-RRRR'),to_date('05-06-2012','DD-MM-RRRR'),'a','1');
 
 
 create or replace function autogen_IDpegawai return varchar2
