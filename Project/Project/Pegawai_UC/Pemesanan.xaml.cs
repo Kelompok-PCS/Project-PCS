@@ -314,6 +314,10 @@ namespace Project.Pegawai
                 lbTotal.Content = grandtotal;
                 gridMenu.SelectedIndex = -1;
             }
+            else
+            {
+                MessageBox.Show("tidak ada yang dipilih");
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
