@@ -252,3 +252,5 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
