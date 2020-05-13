@@ -34,7 +34,6 @@ namespace Project.Pegawai
                 {
                     detail += item.Content + ",";
                 }
-                MessageBox.Show(detail);
                 detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
                 jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
             }

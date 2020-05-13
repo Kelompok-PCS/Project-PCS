@@ -87,7 +87,6 @@ C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.exe
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Project.pdb
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_Utama.g.cs
-C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.g.cs
@@ -97,7 +96,6 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\App.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.cache
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project_MarkupCompile.lref
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_Utama.baml
-C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Insert_Pegawai_UC.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_menu\Insert_menu_UC.baml
@@ -190,3 +188,36 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_U
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homepage.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Form_pegawai.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Fonts\Roboto-Light.ttf
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_default.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_MouseOver.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_background.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_contact.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_home.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_map.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_message.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_setting.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\img_signout.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_default.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_MouseOver.png
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\Resources\layout.png
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_pegawai.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Form_pegawai.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Homepage.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
