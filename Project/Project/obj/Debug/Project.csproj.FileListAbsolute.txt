@@ -250,3 +250,5 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
