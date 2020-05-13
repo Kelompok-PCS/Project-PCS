@@ -116,7 +116,10 @@
         <!--// Background Color //-->
 
         <Grid >
-            <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="650" Margin="70,10,-76.2,0" VerticalAlignment="Top" Width="751"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="1142" Margin="70,10,-76.2,0" VerticalAlignment="Top" Width="751"/>    
+            </ScrollViewer>
+            
             <!--// App Close Button //-->
 
             <Grid>

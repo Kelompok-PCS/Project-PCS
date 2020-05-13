@@ -117,7 +117,7 @@ namespace Project.Master_menu
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if(lbKode.Content.ToString() != "Kosong")
+            if(lbKode.Content.ToString() != "Id Menu")
             {
                 if(rdUpdate.IsChecked == true)
                 {
@@ -141,6 +141,8 @@ namespace Project.Master_menu
                     tableMenuPurge = new DataTable();
                     kodeMenuPurge = new List<string>();
                     loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                    lbKode.Content = "Id Menu";
+                    tbNama.Text = "Kosong";
                 }
             }
             else
@@ -157,6 +159,43 @@ namespace Project.Master_menu
         private void rdUpdate_Checked(object sender, RoutedEventArgs e)
         {
             btnEdit.Content = "Edit";
+        }
+
+        private void btnPulihkan_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbKodePurge.Content.ToString() != "Id Menu")
+            {
+                conn.Open();
+                string query =
+                        $"UPDATE menu SET status = 1 WHERE id_menu = '{lbKode.Content}'";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                tableMenuActive = new DataTable();
+                kodeMenuActive = new List<string>();
+                loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
+
+                tableMenuPurge = new DataTable();
+                kodeMenuPurge = new List<string>();
+                loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                lbKodePurge.Content = "Id Menu";
+                tbNamaPulih.Text = "Kosong";
+            }
+            else
+            {
+                MessageBox.Show("tidak ada menu yang dipilih");
+            }
+        }
+
+        private void gridPurgatory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (gridPurgatory.SelectedIndex != -1)
+            {
+                lbKodePurge.Content = kodeMenuPurge[gridPurgatory.SelectedIndex];
+                DataRow dr = tableMenuActive.Rows[gridPurgatory.SelectedIndex];
+                tbNamaPulih.Text = dr[0].ToString();
+            }
         }
     }
 }
