@@ -32,6 +32,7 @@ namespace Project
             callMeja();
             DispatcherTimerSample();
             this.lbtn = Form_pegawai.lbtn;
+            getDetail_Meja();
         }
         List<Button> lbtn = new List<Button>();
         private void getDetail_Meja()
@@ -46,6 +47,7 @@ namespace Project
         }
         private void callMeja()
         {
+            
             grid_meja.Children.Clear();
             using(OracleDataAdapter adap = new OracleDataAdapter("select * from meja", con))
             {
@@ -59,6 +61,15 @@ namespace Project
                 btn.Height = 50;
                 if (item.ItemArray[3].ToString() == "2") btn.Background = Brushes.Red;
                 else btn.Background = Brushes.Green;
+
+                foreach (Button items in Form_pegawai.lbtn)
+                {
+                    if (items.Content.ToString()== item.ItemArray[0].ToString())
+                    {
+                        btn.Background = Brushes.Blue;
+                    }
+                }
+
                 btn.Tag = item.ItemArray[3].ToString();
                 btn.Content = item.ItemArray[0].ToString();
                 btn.HorizontalAlignment = HorizontalAlignment.Left;
@@ -99,7 +110,7 @@ namespace Project
             getDetail_Meja();
         }
 
-        private static void update_meja(int nomor,int kode)
+        private void update_meja(int nomor,int kode)
         {
             App.Connection.Open();
             string query = $"UPDATE meja set status={nomor} where id_meja={kode}";

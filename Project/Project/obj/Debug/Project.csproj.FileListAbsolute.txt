@@ -217,3 +217,7 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kat
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Insert_pegawai.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_pegawai\Update_Pegawai_UC.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pilih_Meja.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
