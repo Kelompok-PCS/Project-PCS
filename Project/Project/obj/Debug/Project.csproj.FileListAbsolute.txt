@@ -219,6 +219,8 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homepage.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Regis_Member.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Fonts\Roboto-Light.ttf
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_default.png
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Assets\closeBtn_MouseOver.png
