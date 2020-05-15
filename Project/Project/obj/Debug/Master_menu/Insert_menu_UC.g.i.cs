@@ -41,7 +41,7 @@ namespace Project.Master_menu {
     public partial class Insert_menu_UC : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 11 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 10 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbJudul;
         
@@ -49,7 +49,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 14 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 13 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox tbNama;
         
@@ -57,7 +57,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 16 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 15 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox tbHarga;
         
@@ -65,7 +65,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 18 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 17 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbKat;
         
@@ -73,7 +73,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 20 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 19 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox tbDesc;
         
@@ -81,7 +81,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 21 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 20 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnSubmit;
         
@@ -89,7 +89,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 22 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 21 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnBack;
         
@@ -97,7 +97,7 @@ namespace Project.Master_menu {
         #line hidden
         
         
-        #line 23 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+        #line 22 "..\..\..\Master_menu\Insert_menu_UC.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbPrevData;
         
@@ -152,7 +152,7 @@ namespace Project.Master_menu {
             {
             case 1:
             
-            #line 10 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+            #line 9 "..\..\..\Master_menu\Insert_menu_UC.xaml"
             ((System.Windows.Controls.Grid)(target)).Loaded += new System.Windows.RoutedEventHandler(this.Grid_Loaded);
             
             #line default
@@ -176,7 +176,7 @@ namespace Project.Master_menu {
             case 7:
             this.btnSubmit = ((System.Windows.Controls.Button)(target));
             
-            #line 21 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+            #line 20 "..\..\..\Master_menu\Insert_menu_UC.xaml"
             this.btnSubmit.Click += new System.Windows.RoutedEventHandler(this.btnSubmit_Click);
             
             #line default
@@ -185,7 +185,7 @@ namespace Project.Master_menu {
             case 8:
             this.btnBack = ((System.Windows.Controls.Button)(target));
             
-            #line 22 "..\..\..\Master_menu\Insert_menu_UC.xaml"
+            #line 21 "..\..\..\Master_menu\Insert_menu_UC.xaml"
             this.btnBack.Click += new System.Windows.RoutedEventHandler(this.btnBack_Click);
             
             #line default

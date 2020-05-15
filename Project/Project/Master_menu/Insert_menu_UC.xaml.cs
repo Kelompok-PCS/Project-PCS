@@ -1,6 +1,8 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Microsoft.Win32;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

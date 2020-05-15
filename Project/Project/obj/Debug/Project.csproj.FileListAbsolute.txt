@@ -137,7 +137,6 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\im
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\img_signout.png
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_default.png
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\Assets\tgBtn_MouseOver.png
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Master_Kategori_UC.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Promo\Insert_Promo.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master Promo\Menu_Promo.g.cs
@@ -254,3 +253,5 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.baml
