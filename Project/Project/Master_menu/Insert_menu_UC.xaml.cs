@@ -1,6 +1,8 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Microsoft.Win32;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +39,7 @@ namespace Project.Master_menu
         {
             if(kodeMenu == " ")
             {
-                if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1)
+                if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1 && lbGambar.Content.ToString()!= "None")
                 {
                     try
                     {
@@ -54,12 +56,20 @@ namespace Project.Master_menu
                             OracleCommand cmd = new OracleCommand(query, connection);
                             kode += cmd.ExecuteScalar();
                             query =
-                                $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}',{harga},'{"temp gambar"}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
+                                $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}',{harga},'{lbGambar.Content}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
                             cmd = new OracleCommand(query, connection);
                             cmd.ExecuteNonQuery();
 
                             trans.Commit();
                             connection.Close();
+
+                            //copy gambar ke project
+                            if (!File.Exists(target))
+                            {
+                                File.Copy(filename,target);
+                            }
+                            filename = "";
+                            lbGambar.Content = "None";
                             MessageBox.Show("Berhasil Masukan Menu");
                         }
                         catch (Exception ex)
@@ -202,6 +212,31 @@ namespace Project.Master_menu
             }
 
             connection.Close();
+        }
+        string filename = "";
+        string target = "";
+        private void btnGambar_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = ".png";
+            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                filename = dlg.FileName;
+                string[] paths =filename.Split('\\');
+                string strImage = paths[paths.Length - 1];
+                string directoryProject = Environment.CurrentDirectory;
+                paths = directoryProject.Split('\\');
+                for (int i = 0; i < 7; i++)
+                {
+                    target += paths[i]+"\\";
+                }
+                target += "Image\\" + strImage;
+                
+                lbGambar.Content = "Image/" + strImage;
+            }
         }
     }
 }
