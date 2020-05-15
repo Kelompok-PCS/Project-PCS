@@ -30,6 +30,7 @@ namespace Project.Master_menu
             conn = App.Connection;
             this.canvas = canvas;
             gridMenu.IsReadOnly = true;
+            gridPurgatory.IsReadOnly = true;
         }
 
         DataTable tableMenuActive;
@@ -167,7 +168,7 @@ namespace Project.Master_menu
             {
                 conn.Open();
                 string query =
-                        $"UPDATE menu SET status = 1 WHERE id_menu = '{lbKode.Content}'";
+                        $"UPDATE menu SET status = 1 WHERE id_menu = '{lbKodePurge.Content}'";
                 OracleCommand cmd = new OracleCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -193,7 +194,7 @@ namespace Project.Master_menu
             if (gridPurgatory.SelectedIndex != -1)
             {
                 lbKodePurge.Content = kodeMenuPurge[gridPurgatory.SelectedIndex];
-                DataRow dr = tableMenuActive.Rows[gridPurgatory.SelectedIndex];
+                DataRow dr = tableMenuPurge.Rows[gridPurgatory.SelectedIndex];
                 tbNamaPulih.Text = dr[0].ToString();
             }
         }

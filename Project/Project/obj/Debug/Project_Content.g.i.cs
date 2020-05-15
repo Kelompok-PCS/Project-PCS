@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tgbtn_default.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/unnamed.jpg")]
 
 

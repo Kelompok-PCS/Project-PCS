@@ -93,7 +93,7 @@ namespace Project
         {
             checkConnection(conn);
             canvas.Children.Clear();
-            Insert_Paket panel = new Insert_Paket(canvas, " ");
+            Paket panel = new Paket(canvas);
             canvas.Children.Add(panel);
         }
 

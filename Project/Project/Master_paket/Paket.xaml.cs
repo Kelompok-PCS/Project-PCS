@@ -165,5 +165,47 @@ namespace Project.Master_paket
                 tbNama.Text = dr[0].ToString();
             }
         }
+
+        private void gridPurgatory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (gridPurgatory.SelectedIndex != -1)
+            {
+                lbKodePurge.Content = kodeMenuPurge[gridPurgatory.SelectedIndex];
+                DataRow dr = tableMenuPurge.Rows[gridPurgatory.SelectedIndex];
+                tbNamaPulih.Text = dr[0].ToString();
+            }
+        }
+
+        private void btnPulihkan_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbKodePurge.Content.ToString() != "Id Menu")
+            {
+                connection.Open();
+                string query =
+                        $"UPDATE paket SET status = 1 WHERE id_paket = '{lbKodePurge.Content}'";
+                OracleCommand cmd = new OracleCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                tableMenuActive = new DataTable();
+                kodeMenuActive = new List<string>();
+                loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
+
+                tableMenuPurge = new DataTable();
+                kodeMenuPurge = new List<string>();
+                loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                lbKodePurge.Content = "Id Menu";
+                tbNamaPulih.Text = "Kosong";
+            }
+            else
+            {
+                MessageBox.Show("tidak ada paket yang dipilih");
+            }
+        }
+
+        private void gridPurgatory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,17 +10,30 @@
     <Grid Loaded="Grid_Loaded">
         <Label x:Name="lbJudul" Content="Insert Menu" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="5,37,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
-        <Label Content="Nama Menu" HorizontalAlignment="Left" Margin="21,81,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="25,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
-        <Label Content="Harga Menu" HorizontalAlignment="Left" Margin="21,141,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="25,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
-        <Label Content="Kategori Menu" HorizontalAlignment="Left" Margin="21,195,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="26,249,0,0" VerticalAlignment="Top" Width="606"/>
-        <Label Content="Deskripsi Menu" HorizontalAlignment="Left" Margin="21,283,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbDesc" HorizontalAlignment="Left" Height="76" Margin="25,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="26,411,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click"/>
-        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="26,465,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
-        <Label x:Name="lbPrevData" Content="Label" HorizontalAlignment="Left" Margin="26,224,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Label Content="Nama Menu" HorizontalAlignment="Left" Margin="22,71,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="26,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Harga Menu" HorizontalAlignment="Left" Margin="21,126,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="25,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Kategori Menu" HorizontalAlignment="Left" Margin="21,181,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="26,235,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Deskripsi Menu" HorizontalAlignment="Left" Margin="21,336,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbDesc" HorizontalAlignment="Left" Height="76" Margin="21,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="557,464,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" Background="#FF0046FF" Foreground="White"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="25,464,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click" Foreground="White" Background="#FF0046FF"/>
+        <Label x:Name="lbPrevData" Content="Label" HorizontalAlignment="Left" Margin="26,210,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Button x:Name="loadfile" Content="Load File" HorizontalAlignment="Left" Height="23" Margin="26,298,0,0" VerticalAlignment="Top" Width="75" Click="loadfile_Click"/>
+        <Label Content="Nama File&#x9;: " HorizontalAlignment="Left" Height="23" Margin="116,297,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.031"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Gambar Menu" HorizontalAlignment="Left" Margin="22,269,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="sourcetxt" HorizontalAlignment="Left" Height="23" Margin="235,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" IsEnabled="False"/>
 
     </Grid>
 </UserControl>
