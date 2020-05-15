@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +16,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
-using Oracle.DataAccess.Client;
 
 namespace Project.Master_paket
 {
@@ -27,9 +29,7 @@ namespace Project.Master_paket
         string kodeMenu;
         int harga;
         string filename;
-        string gambardbase;
-        string source;
-        string dest;
+        string target;
         public Insert_Paket(Canvas canvas, string kodeMenu)
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace Project.Master_paket
                         OracleTransaction trans = connection.BeginTransaction();
                         try
                         {
-                            System.IO.File.Copy(source, dest);
+                            System.IO.File.Copy(filename, target);
                             try
                             {
                                 string kode = "PK";
@@ -139,13 +139,13 @@ namespace Project.Master_paket
             {
                 cmbKat.SelectedIndex = 0;
                 btnSubmit.Content = "Insert";
-                lbJudul.Content = "Insert Menu";
+                lbJudul.Content = "Insert Paket";
             }
             else
             {
                 loadMenu();
                 btnSubmit.Content = "Update";
-                lbJudul.Content = "Update Menu";
+                lbJudul.Content = "Update Paket";
             }
             lbPrevData1.Content = prevName1;
         }
@@ -227,15 +227,25 @@ namespace Project.Master_paket
 
         private void loadfile_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog();
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = ".png";
+            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
 
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
             {
-                source = fileDialog.FileName;
-                filename = System.IO.Path.GetFileName(source);
-                dest = @"C:\xampp\htdocs\coba\Project-PCS\Project\Project\Image\" + filename;
-                gambardbase = "Image/" + filename;
-                sourcetxt.Text = gambardbase;
+                filename = dlg.FileName;
+                string[] paths = filename.Split('\\');
+                string strImage = paths[paths.Length - 1];
+                string directoryProject = Environment.CurrentDirectory;
+                paths = directoryProject.Split('\\');
+                for (int i = 0; i < 7; i++)
+                {
+                    target += paths[i] + "\\";
+                }
+                target += "Image\\" + strImage;
+
+                sourcetxt.Text = "Image/" + strImage;
             }
         }
     }

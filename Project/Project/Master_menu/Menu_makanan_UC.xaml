@@ -24,9 +24,9 @@
         <TextBox x:Name="tbNamaPulih" HorizontalAlignment="Left" Height="23" Margin="103,1087,0,0" TextWrapping="Wrap" Text="Kosong" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Button x:Name="btnPulihkan" Content="Pulihkan" HorizontalAlignment="Left" Margin="237,1090,0,0" VerticalAlignment="Top" Width="75" Click="btnPulihkan_Click"/>
         <Rectangle Fill="#FF004CF0" HorizontalAlignment="Left" Height="28" Margin="-1,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="800"/>
-        <Label Content="Paket Aktif" HorizontalAlignment="Left" Margin="-1,86,0,0" VerticalAlignment="Top" Width="105" FontSize="18" Foreground="White"/>
+        <Label Content="Menu Aktif" HorizontalAlignment="Left" Margin="-1,86,0,0" VerticalAlignment="Top" Width="105" FontSize="18" Foreground="White"/>
         <Rectangle Fill="#FFF50D0D" HorizontalAlignment="Left" Height="28" Margin="0,633,-49,0" Stroke="Black" VerticalAlignment="Top" Width="800"/>
-        <Label Content="Paket Tidak Aktif" HorizontalAlignment="Left" Margin="0,630,0,0" VerticalAlignment="Top" Width="158" FontSize="18" Foreground="White"/>
+        <Label Content="Menu Tidak Aktif" HorizontalAlignment="Left" Margin="0,630,0,0" VerticalAlignment="Top" Width="158" FontSize="18" Foreground="White"/>
 
     </Grid>
 </UserControl>

@@ -29,9 +29,7 @@ namespace Project.Master_menu
         string kodeMenu;
         int harga;
         string filename;
-        string gambardbase;
-        string source;
-        string dest;
+        string target;
         public Insert_menu_UC(Canvas canvas,string kodeMenu)
         {
             InitializeComponent();
@@ -53,7 +51,7 @@ namespace Project.Master_menu
                         OracleTransaction trans = connection.BeginTransaction();
                         try
                         { 
-                            System.IO.File.Copy(source, dest);
+                            System.IO.File.Copy(filename, target);
                             try
                             {
                                 string kode = "MEN";
@@ -64,7 +62,7 @@ namespace Project.Master_menu
                                 OracleCommand cmd = new OracleCommand(query, connection);
                                 kode += cmd.ExecuteScalar();
                                 query =
-                                    $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}',{harga},'{gambardbase}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
+                                    $"INSERT INTO menu VALUES ('{kode}','{tbNama.Text}',{harga},'{sourcetxt.Text}','{tbDesc.Text}','{cmbKat.SelectedValue}','1')";
                                 cmd = new OracleCommand(query, connection);
                                 cmd.ExecuteNonQuery();
 
@@ -228,17 +226,28 @@ namespace Project.Master_menu
             connection.Close();
         }
 
+        
         private void loadfile_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.OpenFileDialog fileDialog = new System.Windows.Forms.OpenFileDialog();
-            
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = ".png";
+            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
             {
-                source = fileDialog.FileName;
-                filename = System.IO.Path.GetFileName(source);
-                dest = @"C:\xampp\htdocs\coba\Project-PCS\Project\Project\Image\" + filename;
-                gambardbase = "Image/" + filename;
-                sourcetxt.Text = gambardbase;
+                filename = dlg.FileName;
+                string[] paths = filename.Split('\\');
+                string strImage = paths[paths.Length - 1];
+                string directoryProject = Environment.CurrentDirectory;
+                paths = directoryProject.Split('\\');
+                for (int i = 0; i < 7; i++)
+                {
+                    target += paths[i] + "\\";
+                }
+                target += "Image\\" + strImage;
+
+                sourcetxt.Text = "Image/" + strImage;
             }
 
         }

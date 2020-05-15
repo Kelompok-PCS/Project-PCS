@@ -255,3 +255,5 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Transaction.baml
