@@ -15,7 +15,7 @@
         <Label Content="Jenis Kategori" HorizontalAlignment="Left" Margin="30,151,0,0" VerticalAlignment="Top" FontSize="14"/>
         <RadioButton x:Name="rbMakanan" Content="Makanan" HorizontalAlignment="Left" Margin="35,185,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbMinuman" Content="Minuman" HorizontalAlignment="Left" Margin="147,185,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="35,400,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" />
-        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="125,400,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" />
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="26,410,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" />
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="26,465,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" />
     </Grid>
 </UserControl>

@@ -254,3 +254,5 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homemenu.baml

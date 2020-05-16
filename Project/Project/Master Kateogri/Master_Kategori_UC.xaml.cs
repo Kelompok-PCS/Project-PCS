@@ -82,5 +82,17 @@ namespace Project
 
             }
         }
+
+        private void btnSubmit_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            can.Children.Clear();
+            Insert_kategori panel = new Insert_kategori(con,can);
+            can.Children.Add(panel);
+        }
     }
 }

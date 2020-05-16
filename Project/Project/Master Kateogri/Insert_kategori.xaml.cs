@@ -77,6 +77,7 @@ namespace Project
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            can.Children.Clear();
             Master_Kategori_UC panel = new Master_Kategori_UC(can);
             can.Children.Add(panel);
         }

@@ -5,19 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project"
              mc:Ignorable="d" 
+             Background="AliceBlue"
              d:DesignHeight="494" d:DesignWidth="651">
     <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="545*"/>
+            <ColumnDefinition Width="106*"/>
+        </Grid.ColumnDefinitions>
+        
         <Label Content="Master Members" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
-        <DataGrid x:Name="dtgKategori" HorizontalAlignment="Left" Height="206" Margin="8,74,0,0" VerticalAlignment="Top" Width="636" SelectionChanged="dtgKategori_SelectionChanged" />
+        <DataGrid x:Name="dtgKategori" HorizontalAlignment="Left" Height="206" Margin="8,74,0,0" VerticalAlignment="Top" Width="636" SelectionChanged="dtgKategori_SelectionChanged" Grid.ColumnSpan="2" />
         <Label Content="Nama Kategori" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="15,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="15,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606" Grid.ColumnSpan="2"/>
         <Label Content="Jenis Kategori" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" FontSize="14"/>
         <RadioButton x:Name="rbMakanan" Content="Makanan" HorizontalAlignment="Left" Margin="15,385,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbMinuman" Content="Minuman" HorizontalAlignment="Left" Margin="127,385,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="21,406,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" />
-        <Button x:Name="btnSubmit_Copy" Content="Submit" HorizontalAlignment="Left" Margin="110,406,0,0" VerticalAlignment="Top" Width="75" />
+        <Button x:Name="btnSubmit" Content="Edit" HorizontalAlignment="Left" Margin="10,405,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" />
+        <Button x:Name="btnInsert" Content="Insert New Kategori" HorizontalAlignment="Left" Margin="15,3,0,0" VerticalAlignment="Top" Width="137" Background="#FF0069D9" Foreground="#FFF7EFEF" Height="34" Click="btnInsert_Click"/>
         <CheckBox x:Name="cbxStatus" Content="Status" HorizontalAlignment="Left" Margin="244,385,0,0" VerticalAlignment="Top"/>
         <Label Content="Status" HorizontalAlignment="Left" Margin="242,351,0,0" VerticalAlignment="Top" FontSize="14"/>
     </Grid>
