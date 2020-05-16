@@ -118,11 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="aybak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\aybak.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aygep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Aygep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aygor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Aygor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beef_steak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\beef-steak.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bubur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Bubur.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="closeBtn_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\closeBtn_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="closeBtn_MouseOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\closeBtn_MouseOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cumgor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Cumgor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Igbak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Igbak.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\img_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,19 +166,67 @@
   <data name="img_signout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\img_signout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Jusalpukat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Jusalpukat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kopi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\kopi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="layout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lteh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Lteh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Megmen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Megmen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\mie.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Migor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Migor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nasgor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Nasgor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nasgor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\nasgor2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nasi_ayam_hemat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\nasi-ayam-hemat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nasi_kotak_ayam_kremes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\nasi-kotak-ayam-kremes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pkt_b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\pkt-b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pkt_nasi_kuning_ayam_goreng_suwir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\pkt-nasi-kuning-ayam-goreng-suwir.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Roboto_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Fonts\Roboto-Light.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\s.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Scampur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Scampur.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Steh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tgBtn_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\tgBtn_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tgBtn_MouseOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\tgBtn_MouseOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unnamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\unnamed.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

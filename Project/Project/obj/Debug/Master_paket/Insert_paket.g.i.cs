@@ -89,15 +89,7 @@ namespace Project.Master_paket {
         #line hidden
         
         
-        #line 22 "..\..\..\Master_paket\Insert_Paket.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox cmbPro;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 23 "..\..\..\Master_paket\Insert_Paket.xaml"
+        #line 21 "..\..\..\Master_paket\Insert_Paket.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lbPrevData1;
         
@@ -105,9 +97,17 @@ namespace Project.Master_paket {
         #line hidden
         
         
-        #line 24 "..\..\..\Master_paket\Insert_Paket.xaml"
+        #line 22 "..\..\..\Master_paket\Insert_Paket.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lbPrevData2;
+        internal System.Windows.Controls.Button loadfile;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 34 "..\..\..\Master_paket\Insert_Paket.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox sourcetxt;
         
         #line default
         #line hidden
@@ -181,13 +181,19 @@ namespace Project.Master_paket {
             #line hidden
             return;
             case 8:
-            this.cmbPro = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 9:
             this.lbPrevData1 = ((System.Windows.Controls.Label)(target));
             return;
+            case 9:
+            this.loadfile = ((System.Windows.Controls.Button)(target));
+            
+            #line 22 "..\..\..\Master_paket\Insert_Paket.xaml"
+            this.loadfile.Click += new System.Windows.RoutedEventHandler(this.loadfile_Click);
+            
+            #line default
+            #line hidden
+            return;
             case 10:
-            this.lbPrevData2 = ((System.Windows.Controls.Label)(target));
+            this.sourcetxt = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;
