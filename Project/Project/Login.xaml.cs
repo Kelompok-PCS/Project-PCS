@@ -32,6 +32,9 @@ namespace Project
         {
             try
             {
+                App.user = tbUser.Text;
+                App.password = tbPass.Text;
+                App.source = tbData.Text;
                 string datasource = $"data source={tbData.Text}; user id={tbUser.Text}; password={tbPass.Text}";
                 conn = new OracleConnection(datasource);
                 App.Connection = conn;

@@ -264,10 +264,13 @@ namespace Project.Pegawai
                         jenisPemesanan = "Delivery";
                     }
 
+
+                    var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}";
+
                     //TODO ganti pegawai dengan pegawai asli
                     query =
                         "INSERT INTO hjual VALUES ( " +
-                        $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}') ";
+                        $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";
                     cmd = new OracleCommand(query, conn);
                     cmd.ExecuteNonQuery();
 

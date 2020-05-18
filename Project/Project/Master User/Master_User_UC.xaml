@@ -25,12 +25,14 @@
         <TextBlock HorizontalAlignment="Left" Margin="392,364,0,0" TextWrapping="Wrap" Text="Kota" VerticalAlignment="Top"/>
         <TextBox x:Name="tbKode_pos" HorizontalAlignment="Left" Height="23" Margin="521,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLines="6"/>
         <TextBlock HorizontalAlignment="Left" Margin="521,364,0,0" TextWrapping="Wrap" Text="Kode Pos" VerticalAlignment="Top"/>
-        <CheckBox x:Name="checkStatus" Content="Aktif" HorizontalAlignment="Left" Margin="392,427,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="392,406,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkStatus" Content="Aktif" HorizontalAlignment="Left" Margin="265,427,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="265,406,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top"/>
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="521,419,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="No Telepon" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNo_Hp" HorizontalAlignment="Left" Height="23" Margin="10,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
-        <TextBlock HorizontalAlignment="Left" Margin="265,408,0,0" TextWrapping="Wrap" Text="Point" VerticalAlignment="Top"/>
-        <TextBlock x:Name="point" HorizontalAlignment="Left" Margin="265,426,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="131,445,0,0" TextWrapping="Wrap" Text="Point" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,445,0,0" TextWrapping="Wrap" Text="Saldo" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPoint" HorizontalAlignment="Left" Height="23" Margin="130,461,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="tbSaldo" HorizontalAlignment="Left" Height="23" Margin="10,461,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
     </Grid>
 </UserControl>
