@@ -39,6 +39,7 @@ CREATE TABLE members (
   kecematan varchar(50) NOT NULL,
   kode_pos NUMBER NOT NULL,
   point NUMBER NOT NULL,
+  saldo NUMBER NOT NULL,
   status varchar(1) NOT NULL
 );
 CREATE TABLE kategori (
@@ -64,7 +65,8 @@ CREATE TABLE hjual (
   total NUMBER NOT NULL,
   jenis_pemesanan varchar(10) NOT NULL,
   id_pegawai varchar(10) NOT NULL CONSTRAINTS fk_pegawai REFERENCES pegawai(id_pegawai),
-  id_member varchar(10) NOT NULL CONSTRAINTS fk_members REFERENCES members(id_member)
+  id_member varchar(10) NOT NULL CONSTRAINTS fk_members REFERENCES members(id_member),
+  keterangan varchar(255) NOT NULL
 );
 
 CREATE TABLE djual (
@@ -147,10 +149,10 @@ INSERT INTO meja VALUES (16, 6, 3, '1');
 
 
 
-insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77','1234567890','K0001','D0001',123123,0,'1');
-insert into members values('M000000002','San Widodo','SanKing','sanking@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0002','D0001',423421,0,'1');
-insert into members values('M000000003','Yongki Tanu','YoTa','yongkikun@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0001','D0001',523123,0,'1');
-insert into members values('M000000000','DEFAULT','DEFAULT','DEFAULT','DEFAULT','555000555000','DEFAULT','DEFAULT',555555,0,'1');
+insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77','1234567890','K0001','D0001',123123,0,0,'1');
+insert into members values('M000000002','San Widodo','SanKing','sanking@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0002','D0001',423421,0,0,'1');
+insert into members values('M000000003','Yongki Tanu','YoTa','yongkikun@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0001','D0001',523123,0,0,'1');
+insert into members values('M000000000','DEFAULT','DEFAULT','DEFAULT','DEFAULT','555000555000','DEFAULT','DEFAULT',555555,0,0,'1');
 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT001','Nasi','makanan','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT002','Cap Cay','makanan','1');

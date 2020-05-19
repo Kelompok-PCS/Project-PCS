@@ -118,15 +118,30 @@ namespace Project
             connection.Open();
             try
             {
-                string status = "";
-                if ((bool)checkStatus.IsChecked)status = "1";
-                else status = "0";
-                string query = $"UPDATE MEMBERS SET fullname='{tbFullname.Text}',username='{tbUsername.Text}',email='{tbEmail.Text}',alamat='{tbAlamat.Text}',no_hp={tbNo_Hp.Text},kota='{cbKota.SelectedValue}',kecematan='{cbPronvinsi.SelectedValue}',kode_pos={tbKode_pos.Text},status='{status}' where id_member='{id_members}'";
-                OracleCommand cmd = new OracleCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                checkConnection(connection);
-                getTableMembers();
-                MessageBox.Show("Berhasil Update");
+                int ctr = 0;
+                try
+                {
+                    int point = Convert.ToInt32(tbPoint.Text);
+                    int saldo = Convert.ToInt32(tbSaldo.Text);
+                }
+                catch (Exception ex)
+                {
+                    ctr = 1;
+                    System.Windows.Forms.MessageBox.Show("Point Dan Saldo Harus Angka");
+                }
+                if (ctr == 0)
+                {
+
+                    string status = "";
+                    if ((bool)checkStatus.IsChecked) status = "1";
+                    else status = "0";
+                    string query = $"UPDATE MEMBERS SET fullname='{tbFullname.Text}',username='{tbUsername.Text}',email='{tbEmail.Text}',alamat='{tbAlamat.Text}',no_hp={tbNo_Hp.Text},kota='{cbKota.SelectedValue}',kecematan='{cbPronvinsi.SelectedValue}',kode_pos={tbKode_pos.Text},point={tbPoint.Text},saldo={tbSaldo.Text},status='{status}' where id_member='{id_members}'";
+                    OracleCommand cmd = new OracleCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    checkConnection(connection);
+                    getTableMembers();
+                    MessageBox.Show("Berhasil Update");
+                }
             }
             catch (Exception ex)
             {
@@ -162,9 +177,10 @@ namespace Project
 
                         tbKode_pos.Text = dt.Rows[0].ItemArray[8].ToString();
 
-                        point.Text = dt.Rows[0].ItemArray[9].ToString();
+                        tbPoint.Text = dt.Rows[0].ItemArray[9].ToString();
+                        tbSaldo.Text = dt.Rows[0].ItemArray[10].ToString();
 
-                        if (dt.Rows[0].ItemArray[10].ToString() == "1")
+                        if (dt.Rows[0].ItemArray[11].ToString() == "1")
                         {
                             checkStatus.IsChecked = true;
                         }
