@@ -14,19 +14,22 @@
         <TextBox x:Name="tbFilter" HorizontalAlignment="Left" Height="34" Margin="458,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
         <Label Content="Filter By" HorizontalAlignment="Left" Margin="400,3,0,0" VerticalAlignment="Top" Background="#FFE0A800" Height="33" Width="59"/>
         <Button x:Name="btnInsert" Content="Insert New Paket" HorizontalAlignment="Left" Margin="15,3,0,0" VerticalAlignment="Top" Width="137" Background="#FF0069D9" Foreground="#FFF7EFEF" Height="34" Click="btnInsert_Click"/>
-        <DataGrid x:Name="gridMenu" HorizontalAlignment="Left" Height="401" Margin="-1,115,0,0" VerticalAlignment="Top" Width="651" Loaded="gridMenu_Loaded" MouseDoubleClick="gridMenu_MouseDoubleClick"/>
-        <DataGrid x:Name="gridPurgatory" HorizontalAlignment="Left" Height="401" Margin="0,666,0,0" VerticalAlignment="Top" Width="651" Loaded="gridPurgatory_Loaded" MouseDoubleClick="gridPurgatory_MouseDoubleClick" SelectionChanged="gridPurgatory_SelectionChanged"/>
-        <Label x:Name="lbKode" Content="Id Menu" HorizontalAlignment="Left" Margin="23,551,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="gridMenu" HorizontalAlignment="Left" Height="401" Margin="-1,115,0,0" VerticalAlignment="Top" Width="441" Loaded="gridMenu_Loaded" MouseDoubleClick="gridMenu_MouseDoubleClick"/>
+        <DataGrid x:Name="gridPurgatory" HorizontalAlignment="Left" Height="401" Margin="0,666,0,0" VerticalAlignment="Top" Width="440" Loaded="gridPurgatory_Loaded" MouseDoubleClick="gridPurgatory_MouseDoubleClick" SelectionChanged="gridPurgatory_SelectionChanged"/>
+        <Label x:Name="lbKode" Content="Id Paket" HorizontalAlignment="Left" Margin="23,551,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="102,554,0,0" TextWrapping="Wrap" Text="Kosong" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="365,555,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click"/>
         <RadioButton x:Name="rdDelete" Content="Delete" HorizontalAlignment="Left" Margin="292,558,0,0" VerticalAlignment="Top" GroupName="option" Checked="rdDelete_Checked"/>
         <RadioButton x:Name="rdUpdate" Content="Edit" HorizontalAlignment="Left" Margin="236,558,0,0" VerticalAlignment="Top" GroupName="option" IsChecked="True" Checked="rdUpdate_Checked"/>
-        <Label x:Name="lbKodePurge" Content="Id Menu" HorizontalAlignment="Left" Margin="23,1084,0,-410" VerticalAlignment="Top"/>
+        <Label x:Name="lbKodePurge" Content="Id Paket" HorizontalAlignment="Left" Margin="23,1084,0,-410" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNamaPulih" HorizontalAlignment="Left" Height="23" Margin="103,1087,0,-410" TextWrapping="Wrap" Text="Kosong" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Button x:Name="btnPulihkan" Content="Pulihkan" HorizontalAlignment="Left" Margin="237,1090,0,-410" VerticalAlignment="Top" Width="75" Click="btnPulihkan_Click"/>
         <Rectangle Fill="#FF004CF0" HorizontalAlignment="Left" Height="28" Margin="-1,82,0,0" Stroke="Black" VerticalAlignment="Top" Width="800"/>
         <Label Content="Paket Aktif" HorizontalAlignment="Left" Margin="-1,79,0,0" VerticalAlignment="Top" Width="105" FontSize="18" Foreground="White"/>
         <Rectangle Fill="#FFF50D0D" HorizontalAlignment="Left" Height="28" Margin="0,633,0,0" Stroke="Black" VerticalAlignment="Top" Width="800"/>
         <Label Content="Paket Tidak Aktif" HorizontalAlignment="Left" Margin="0,630,0,0" VerticalAlignment="Top" Width="158" FontSize="18" Foreground="White"/>
+        <Label Content="Deskripsi Paket (klik 2x untuk melihat)" HorizontalAlignment="Left" Height="38" Margin="458,120,0,0" VerticalAlignment="Top" Width="335" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="menu1" Content="" HorizontalAlignment="Left" Margin="484,163,0,0" VerticalAlignment="Top" Width="271" FontSize="14"/>
+        <Label x:Name="menu2" Content="" HorizontalAlignment="Left" Margin="484,197,0,0" VerticalAlignment="Top" Width="271" FontSize="14"/>
     </Grid>
 </UserControl>
