@@ -114,7 +114,7 @@ namespace Project.Master_paket
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (lbKode.Content.ToString() != "Kosong")
+            if (lbKode.Content.ToString() != "Id Paket")
             {
                 if (rdUpdate.IsChecked == true)
                 {
@@ -142,6 +142,8 @@ namespace Project.Master_paket
                     tableMenuPurge = new DataTable();
                     kodeMenuPurge = new List<string>();
                     loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                    lbKode.Content = "Id Paket";
+                    tbNama.Text = "Kosong";
                 }
             }
             else
@@ -214,7 +216,7 @@ namespace Project.Master_paket
 
         private void btnPulihkan_Click(object sender, RoutedEventArgs e)
         {
-            if (lbKodePurge.Content.ToString() != "Id Menu")
+            if (lbKodePurge.Content.ToString() != "Id Paket")
             {
                 connection.Open();
                 string query =
@@ -230,7 +232,7 @@ namespace Project.Master_paket
                 tableMenuPurge = new DataTable();
                 kodeMenuPurge = new List<string>();
                 loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
-                lbKodePurge.Content = "Id Menu";
+                lbKodePurge.Content = "Id Paket";
                 tbNamaPulih.Text = "Kosong";
             }
             else

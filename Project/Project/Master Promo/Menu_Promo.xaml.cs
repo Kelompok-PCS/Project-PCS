@@ -36,7 +36,7 @@ namespace Project
         DataTable tableMenuPurge;
         List<string> kodeMenuActive;
         List<string> kodeMenuPurge;
-        private void loadMenu(int status,DataGrid grid,DataTable tableMenu,List<string> kodeMenu)
+        private void loadMenu(string status,DataGrid grid,DataTable tableMenu,List<string> kodeMenu)
         {
             try
             {
@@ -83,13 +83,13 @@ namespace Project
         {
             tableMenuActive = new DataTable();
             kodeMenuActive = new List<string>();
-            loadMenu(1,gridMenu,tableMenuActive,kodeMenuActive);
+            loadMenu("1",gridMenu,tableMenuActive,kodeMenuActive);
         }
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
             canvas.Children.Clear();
-            Insert_Promo insert_promo = new Insert_Promo(conn,"null");
+            Insert_Promo insert_promo = new Insert_Promo(canvas, " ");
             canvas.Children.Add(insert_promo);
         }
 
@@ -97,7 +97,7 @@ namespace Project
         {
             tableMenuPurge = new DataTable();
             kodeMenuPurge = new List<string>();
-            loadMenu(0,gridPurgatory,tableMenuPurge,kodeMenuPurge);
+            loadMenu("0",gridPurgatory,tableMenuPurge,kodeMenuPurge);
         }
 
         private void Grid_MouseWheel(object sender, MouseWheelEventArgs e)
@@ -117,12 +117,12 @@ namespace Project
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if(lbKode.Content.ToString() != "Kosong")
+            if(lbKode.Content.ToString() != "Id Promo")
             {
                 if(rdUpdate.IsChecked == true)
                 {
                     canvas.Children.Clear();
-                   Insert_Promo update_promo = new Insert_Promo(conn, lbKode.Content.ToString());
+                   Insert_Promo update_promo = new Insert_Promo(canvas, lbKode.Content.ToString());
                   canvas.Children.Add(update_promo);
                 }
                 else
@@ -136,16 +136,16 @@ namespace Project
 
                     tableMenuActive = new DataTable();
                     kodeMenuActive = new List<string>();
-                    loadMenu(1, gridMenu, tableMenuActive, kodeMenuActive);
+                    loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
 
                     tableMenuPurge = new DataTable();
                     kodeMenuPurge = new List<string>();
-                    loadMenu(0, gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                    loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
                 }
             }
             else
             {
-                MessageBox.Show("tidak ada menu yang dipilih");
+                MessageBox.Show("tidak ada promo yang dipilih");
             }
         }
 
@@ -157,6 +157,33 @@ namespace Project
         private void rdUpdate_Checked(object sender, RoutedEventArgs e)
         {
             btnEdit.Content = "Edit";
+        }
+
+        private void btnPulihkan_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbKodePurge.Content.ToString() != "Id Promo")
+            {
+                conn.Open();
+                string query =
+                        $"UPDATE prono SET status = 1 WHERE id_promo = '{lbKodePurge.Content}'";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                tableMenuActive = new DataTable();
+                kodeMenuActive = new List<string>();
+                loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
+
+                tableMenuPurge = new DataTable();
+                kodeMenuPurge = new List<string>();
+                loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                lbKodePurge.Content = "Id Promo";
+                tbNamaPulih.Text = "Kosong";
+            }
+            else
+            {
+                MessageBox.Show("tidak ada promo yang dipilih");
+            }
         }
     }
 }
