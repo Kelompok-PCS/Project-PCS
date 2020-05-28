@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project.Master_menu"
              mc:Ignorable="d" d:DesignWidth="651"
-             Background="#FFEFEFEF" Height="617.879">
+             Background="#FFEFEFEF" Height="500">
     <Grid Loaded="Grid_Loaded">
         <Label x:Name="lbJudul" Content="Insert Menu" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="5,37,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>

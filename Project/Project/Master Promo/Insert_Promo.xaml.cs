@@ -23,21 +23,24 @@ namespace Project
     {
         OracleConnection connection;
 		string id;
+        Canvas canvas;
 		DataTable db;
-        public Insert_Promo(OracleConnection conn, string id)
+        public Insert_Promo(Canvas canvas, string id)
         {
             InitializeComponent();
-            connection = conn;
+            connection = App.Connection;
+            this.canvas = canvas;
 			this.id = id;
-			if (id.Equals("null"))
+			if (id.Equals(" "))
 			{
 				judul.Content = "Insert Promo";
+                btnSubmit.Content = "Insert";
 			}
 			else
 			{
-				MessageBox.Show(id);
 				judul.Content = "Update Promo";
-				db = new DataTable();
+                btnSubmit.Content = "Update";
+                db = new DataTable();
 				loadpromo();
 			}
         }
@@ -188,5 +191,12 @@ namespace Project
 		{
 			
 		}
-	}
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Menu_Promo menu_promo = new Menu_Promo(canvas);
+            canvas.Children.Add(menu_promo);
+        }
+    }
 }

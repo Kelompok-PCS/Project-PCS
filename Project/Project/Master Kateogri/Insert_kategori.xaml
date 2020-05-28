@@ -5,17 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project"
              mc:Ignorable="d" 
-             d:DesignHeight="494" d:DesignWidth="651">
-    <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
-        <Label Content="Insert Kategori" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
+             d:DesignHeight="294" d:DesignWidth="651">
+    <Grid Loaded="Grid_Loaded">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="294" Stroke="Black" VerticalAlignment="Top" Width="651"/>
+        <Label x:Name="lbJudul" Content="Insert Kategori" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
         <Label Content="Nama Kategori" HorizontalAlignment="Left" Margin="30,91,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="35,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
         <Label Content="Jenis Kategori" HorizontalAlignment="Left" Margin="30,151,0,0" VerticalAlignment="Top" FontSize="14"/>
         <RadioButton x:Name="rbMakanan" Content="Makanan" HorizontalAlignment="Left" Margin="35,185,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbMinuman" Content="Minuman" HorizontalAlignment="Left" Margin="147,185,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="26,410,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" />
-        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="26,465,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" />
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="550,240,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" Background="#FF0046FF" Foreground="White" />
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="30,240,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click" Background="#FF0046FF" Foreground="White" />
     </Grid>
 </UserControl>

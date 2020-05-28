@@ -42,7 +42,7 @@ namespace Project.Master_paket
         {
             if (kodeMenu == " ")
             {
-                if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1 && sourcetxt.Text != "")
+                if (tbNama.Text != "" && tbHarga.Text != "" && cmbKat.SelectedIndex != -1 && sourcetxt.Text != "" && cmbMen1.SelectedIndex != cmbMen2.SelectedIndex)
                 {
                     try
                     {
@@ -51,7 +51,7 @@ namespace Project.Master_paket
                         OracleTransaction trans = connection.BeginTransaction();
                         try
                         {
-                            System.IO.File.Copy(filename, target);
+                            File.Copy(filename, target);
                             try
                             {
                                 string kode = "PK";
@@ -64,6 +64,16 @@ namespace Project.Master_paket
                                 query =
                                     $"INSERT INTO PAKET VALUES ('{kode}','{tbNama.Text}',{harga},'{sourcetxt.Text}','{cmbKat.SelectedValue}','1')";
                                 cmd = new OracleCommand(query, connection);
+                                cmd.ExecuteNonQuery();
+
+                                 string query2 =
+                                    $"INSERT INTO PAKET_MENU VALUES ('{kode}','{cmbMen1.SelectedValue}')";
+                                cmd = new OracleCommand(query2, connection);
+                                cmd.ExecuteNonQuery();
+
+                                string query3 =
+                                   $"INSERT INTO PAKET_MENU VALUES ('{kode}','{cmbMen2.SelectedValue}')";
+                                cmd = new OracleCommand(query3, connection);
                                 cmd.ExecuteNonQuery();
 
                                 trans.Commit();
@@ -97,7 +107,7 @@ namespace Project.Master_paket
                 }
                 else
                 {
-                    MessageBox.Show("Data belum lengkap");
+                    MessageBox.Show("Data belum lengkap/ Data Menu Kembar");
                 }
             }
             else
@@ -135,9 +145,13 @@ namespace Project.Master_paket
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             fillKategori();
+            fillmenu1();
+            fillmenu2();
             if (kodeMenu == " ")
             {
                 cmbKat.SelectedIndex = 0;
+                cmbMen1.SelectedIndex = 0;
+                cmbMen2.SelectedIndex = 0;
                 btnSubmit.Content = "Insert";
                 lbJudul.Content = "Insert Paket";
             }
@@ -148,12 +162,21 @@ namespace Project.Master_paket
                 lbJudul.Content = "Update Paket";
             }
             lbPrevData1.Content = prevName1;
+            lbPrevData2.Content = prevName2;
+            lbPrevData3.Content = prevName3;
         }
 
         
         List<Kategori> kategoris = new List<Kategori>();
+        List<Menu> menus = new List<Menu>();
 
         private class Kategori
+        {
+            public string kode { get; set; }
+            public string nama { get; set; }
+        }
+
+        private class Menu
         {
             public string kode { get; set; }
             public string nama { get; set; }
@@ -189,6 +212,68 @@ namespace Project.Master_paket
             }
         }
 
+        private void fillmenu1()
+        {
+            try
+            {
+                connection.Open();
+                string query =
+                    "SELECT ID_MENU,NAMA_MENU " +
+                    "FROM MENU ";
+                OracleCommand cmd = new OracleCommand(query, connection);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    menus.Add(new Menu()
+                    {
+                        kode = reader.GetString(0),
+                        nama = reader.GetString(0) + " - " + reader.GetString(1)
+                    });
+                }
+                cmbMen1.ItemsSource = menus;
+                cmbMen1.DisplayMemberPath = "nama";
+                cmbMen1.SelectedValuePath = "kode";
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("ada yang salah dengan menu");
+            }
+        }
+
+        private void fillmenu2()
+        {
+            try
+            {
+                connection.Open();
+                string query =
+                    "SELECT ID_MENU,NAMA_MENU " +
+                    "FROM MENU ";
+                OracleCommand cmd = new OracleCommand(query, connection);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    menus.Add(new Menu()
+                    {
+                        kode = reader.GetString(0),
+                        nama = reader.GetString(0) + " - " + reader.GetString(1)
+                    });
+                }
+                cmbMen2.ItemsSource = menus;
+                cmbMen2.DisplayMemberPath = "nama";
+                cmbMen2.SelectedValuePath = "kode";
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("ada yang salah dengan menu");
+            }
+        }
+
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             canvas.Children.Clear();
@@ -197,13 +282,21 @@ namespace Project.Master_paket
         }
 
         string prevName1 = "";
+        string prevName2 = "";
+        string prevName3 = "";
         private void loadMenu()
         {
             connection.Open();
             string query =
               $"SELECT nama_paket, TO_CHAR(harga_paket), gambar_paket, id_kategori FROM PAKET WHERE ID_PAKET = '{kodeMenu}'";
+
+            string query2 =
+              $"SELECT id_menu from PAKET_MENU WHERE ID_PAKET = '{kodeMenu}'";
+
             OracleCommand cmd = new OracleCommand(query, connection);
+            OracleCommand cmd2 = new OracleCommand(query2, connection);
             OracleDataReader reader = cmd.ExecuteReader();
+            OracleDataReader reader2 = cmd2.ExecuteReader();
             string kodeKategori = "";
             while (reader.Read())
             {
@@ -213,12 +306,36 @@ namespace Project.Master_paket
                 kodeKategori = reader.GetString(3);
             }
 
+            List<string> tmp = new List<string>();
+            tmp.Clear();
+
+            string kodemenu1 = "";
+            while (reader2.Read())
+            {
+                kodemenu1 = reader2.GetString(0);
+                tmp.Add(kodemenu1);
+            }
+
             for (int i = 0; i < kategoris.Count; i++)
             {
                 if (kategoris[i].kode == kodeKategori)
                 {
                     cmbKat.SelectedIndex = i;
                     prevName1 = $"Kategori yang ingin diupdate : {kategoris[i].nama}";
+                }
+            }
+
+            for (int i = 0; i < menus.Count; i++)
+            {
+                if (menus[i].kode == tmp[0])
+                {
+                    cmbMen1.SelectedIndex = i;
+                    prevName2 = $"Menu yang ingin diupdate : {menus[i].nama}";
+                }
+                if (menus[i].kode == tmp[1])
+                {
+                    cmbMen2.SelectedIndex = i;
+                    prevName3 = $"Menu yang ingin diupdate : {menus[i].nama}";
                 }
             }
 
