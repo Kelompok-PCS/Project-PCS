@@ -61,7 +61,7 @@ namespace Project
         //FUNCTION PROCEDURE
         private void getTableMembers()
         {
-            using (OracleDataAdapter adap = new OracleDataAdapter("SELECT m.fullname,m.username,m.email,k.nama_kota,m.status from members m join kota k on m.kota=k.kode_kota", connection))
+            using (OracleDataAdapter adap = new OracleDataAdapter("SELECT m.fullname,m.username,m.no_hp,m.email,k.nama_kota,m.status from members m join kota k on m.kota=k.kode_kota", connection))
             {
                 dsMembers = new DataSet();
                 adap.Fill(dsMembers);

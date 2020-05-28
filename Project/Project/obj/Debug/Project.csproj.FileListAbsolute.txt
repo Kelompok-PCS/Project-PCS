@@ -284,3 +284,5 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\sapbusin
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\AxShockwaveFlashObjects.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\laporan.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\laporan.baml
