@@ -284,6 +284,8 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\sapbusin
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\AxShockwaveFlashObjects.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\laporan.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\laporan.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
