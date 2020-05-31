@@ -132,7 +132,12 @@ namespace Project
                             $"UPDATE promo SET status_promo = 0 WHERE id_promo = '{lbKode.Content}'";
                     OracleCommand cmd = new OracleCommand(query, conn);
                     cmd.ExecuteNonQuery();
-                    conn.Close();
+
+					string query2 =
+							$"UPDATE promo_paket SET status = 0 WHERE id_promo = '{lbKode.Content}'";
+					OracleCommand cmd2 = new OracleCommand(query2, conn);
+					cmd2.ExecuteNonQuery();
+					conn.Close();
 
                     tableMenuActive = new DataTable();
                     kodeMenuActive = new List<string>();

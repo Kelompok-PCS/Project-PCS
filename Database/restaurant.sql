@@ -6,7 +6,7 @@ DROP TABLE hjual CASCADE CONSTRAINTS;
 DROP TABLE djual CASCADE CONSTRAINTS;
 DROP TABLE promo CASCADE CONSTRAINTS;
 DROP TABLE paket CASCADE CONSTRAINTS;
-DROP TABLE promo_menu CASCADE CONSTRAINTS;
+DROP TABLE promo_paket CASCADE CONSTRAINTS;
 DROP TABLE daerah CASCADE CONSTRAINTS;
 DROP TABLE kota CASCADE CONSTRAINTS;
 DROP TABLE jabatan CASCADE CONSTRAINTS;
@@ -26,7 +26,6 @@ CREATE TABLE pegawai (
   status NUMBER NOT NULL
 );
 
-INSERT INTO pegawai VALUES('PEG001','Farhan','JAB00001','farhan@gmail.com','555000555000','PEG001555000555000','1');
 
 CREATE TABLE members (
   id_member varchar(10) NOT NULL CONSTRAINTS pk_member PRIMARY KEY,
@@ -81,7 +80,6 @@ CREATE TABLE djual (
 CREATE TABLE promo (
   id_promo varchar(10) NOT NULL CONSTRAINTS pk_promo PRIMARY KEY,
   nama_promo varchar(50) NOT NULL,
-  harga_promo NUMBER NOT NULL,
   periode_awal date NOT NULL,
   periode_akhir date NOT NULL,
   gambar_promo varchar(200) NOT NULL,
@@ -102,9 +100,11 @@ CREATE TABLE paket_menu (
   id_menu varchar(10) NOT NULL
 );
 
-CREATE TABLE promo_menu (
-  id_menu varchar(10) NOT NULL CONSTRAINTS fk_menu1 REFERENCES MENU(ID_MENU),
-  id_promo varchar(10) NOT NULL CONSTRAINTS fk_PROMO1 REFERENCES promo(id_promo)
+CREATE TABLE promo_paket (
+  id_promo varchar(10) NOT NULL,
+  id_paket varchar(10) NOT NULL,
+  harga_promo_paket number(11) NOT NULL,
+  status number(2) NOT NULL
 );
 
 CREATE TABLE daerah (
@@ -147,12 +147,12 @@ INSERT INTO meja VALUES (14, 3, 3, '2');
 INSERT INTO meja VALUES (15, 4, 3, '2');
 INSERT INTO meja VALUES (16, 6, 3, '1');
 
-
-
 insert into members values('M000000001','Fendy Sugiarto','FendyGanteng','fendygantengsekaleh@gmail.com','Jalan Ngagel Madya 70-77','1234567890','K0001','D0001',123123,0,0,'1');
 insert into members values('M000000002','San Widodo','SanKing','sanking@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0002','D0001',423421,0,0,'1');
 insert into members values('M000000003','Yongki Tanu','YoTa','yongkikun@gmail.com','Jalan Ngagel Madya 70-77','1234567890123','K0001','D0001',523123,0,0,'1');
 insert into members values('M000000000','DEFAULT','DEFAULT','DEFAULT','DEFAULT','555000555000','DEFAULT','DEFAULT',555555,0,0,'1');
+
+INSERT INTO pegawai VALUES('PEG001','Farhan','JAB00001','farhan@gmail.com','555000555000','PEG001555000555000','1');
 
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT001','Nasi','Makanan','1');
 Insert into KATEGORI (ID_KATEGORI,NAMA_KATEGORI,JENIS_KATEGORI,STATUS_KATEGORI) values ('KAT002','Cap Cay','Makanan','1');
@@ -185,12 +185,14 @@ INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
 INSERT INTO jabatan VALUES ('JAB00001', 'Waiter');
 INSERT INTO jabatan VALUES ('JAB00002', 'Host');
 
-insert into promo values('PRO001','Promo Ramadhan1',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO002','Promo Ramadhan2',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO003','Promo Ramadhan3',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO004','Promo Ramadhan4',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO005','Promo Ramadhan5',20000,to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
+insert into promo values('PRO001','Promo Ramadhan1',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
+insert into promo values('PRO002','Promo Ramadhan2',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
+insert into promo values('PRO003','Promo Ramadhan3',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
+insert into promo values('PRO004','Promo Ramadhan4',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
+insert into promo values('PRO005','Promo Ramadhan5',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
 
+INSERT INTO promo_paket VALUES ('PRO001', 'MEN012', 7500, 1);
+INSERT INTO promo_paket VALUES ('PRO001', 'MEN011', 12000, 1);
 
 INSERT INTO menu VALUES('MEN001', 'Nasi Goreng Jawa', 20000, 'Image/Nasgor.jpg', 'Dengan Bumbu Jawa', 'KAT002', 1);
 INSERT INTO menu VALUES('MEN002', 'Ayam goreng', 5000, 'Image/Aygor.jpg', 'Dengan tambahan rempah-rempah', 'KAT001', 1);
@@ -243,6 +245,12 @@ INSERT INTO PAKET_MENU VALUES ('PK012', 'MEN012');
 INSERT INTO PAKET_MENU VALUES ('PK012', 'MEN014');
 INSERT INTO PAKET_MENU VALUES ('PK013', 'MEN010');
 INSERT INTO PAKET_MENU VALUES ('PK013', 'MEN014');
+
+INSERT INTO HJUAL VALUES('H001',TO_DATE('2020-05-30','YYYY-MM-DD'),10000,'Reservasi','PEG001','M000000001','A');
+
+INSERT INTO DJUAL VALUES ('DJ001', 'MEN001', 5000, 1, 5000, 'H001');
+INSERT INTO DJUAL VALUES ('DJ001', 'MEN001', 5000, 1, 5000, 'H001');
+INSERT INTO DJUAL VALUES ('DJ002', 'MEN002', 5000, 1, 5000, 'H001');
 
 create or replace function autogen_IDpegawai return varchar2
 is

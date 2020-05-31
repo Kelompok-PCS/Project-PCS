@@ -26,7 +26,7 @@ namespace Project.Master_paket
     {
         OracleConnection connection;
         Canvas canvas;
-        string kodeMenu;
+        string kodeMenu = "";
         int harga;
         string filename;
         string target;
@@ -76,7 +76,22 @@ namespace Project.Master_paket
                                 cmd = new OracleCommand(query3, connection);
                                 cmd.ExecuteNonQuery();
 
-                                trans.Commit();
+								if (cmbpro.SelectedIndex != -1 && hpromo.Text != "")
+								{
+									try
+									{
+										int harga2 = Convert.ToInt32(hpromo.Text);
+										string query4 = $"INSERT INTO PROMO_PAKET VALUES('{cmbpro.SelectedValue}','{kode}',{harga2}, 1)";
+										OracleCommand cmd2 = new OracleCommand(query4, connection);
+										cmd2.ExecuteNonQuery();
+									}
+									catch (Exception)
+									{
+										MessageBox.Show("Harga promo salah bukan angka");
+									}
+								}
+
+								trans.Commit();
                                 connection.Close();
                                 MessageBox.Show("Berhasil Masukan Paket");
                                 tbNama.Text = "";
@@ -144,12 +159,15 @@ namespace Project.Master_paket
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            fillKategori();
+			masukanidpromo();
+			fillKategori();
+			fillpromo();
             fillmenu1();
             fillmenu2();
             if (kodeMenu == " ")
             {
                 cmbKat.SelectedIndex = 0;
+                cmbpro.SelectedIndex = -1;
                 cmbMen1.SelectedIndex = 0;
                 cmbMen2.SelectedIndex = 0;
                 btnSubmit.Content = "Insert";
@@ -169,6 +187,7 @@ namespace Project.Master_paket
         
         List<Kategori> kategoris = new List<Kategori>();
         List<Menu> menus = new List<Menu>();
+        List<Promo> promos = new List<Promo>();
 
         private class Kategori
         {
@@ -181,7 +200,40 @@ namespace Project.Master_paket
             public string kode { get; set; }
             public string nama { get; set; }
         }
-        private void fillKategori()
+
+		private class Promo
+		{
+			public string kode { get; set; }
+			public string nama { get; set; }
+		}
+
+		List<string> idpromo = new List<string>();
+		List<string> idmenus = new List<string>();
+		private void masukanidpromo()
+		{
+			try
+			{
+				connection.Open();
+				idpromo.Clear();
+				idmenus.Clear();
+				string query = "SELECT ID_PROMO, ID_PAKET FROM PROMO_PAKET where status = 1";
+				OracleCommand cmd = new OracleCommand(query, connection);
+				OracleDataReader reader = cmd.ExecuteReader();
+				while (reader.Read())
+				{
+					idpromo.Add(reader.GetString(0));
+					idmenus.Add(reader.GetString(1));
+				}
+				connection.Close();
+			}
+			catch (Exception ex)
+			{
+				connection.Close();
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void fillKategori()
         {
             try
             {
@@ -212,7 +264,56 @@ namespace Project.Master_paket
             }
         }
 
-        private void fillmenu1()
+		private void fillpromo()
+		{
+			promos = new List<Promo>();
+
+			try
+			{
+				connection.Open();
+				string query =
+					"SELECT ID_PROMO,NAMA_PROMO " +
+					"FROM promo ";
+				OracleCommand cmd = new OracleCommand(query, connection);
+				OracleDataReader reader = cmd.ExecuteReader();
+				while (reader.Read())
+				{
+					promos.Add(new Promo()
+					{
+						kode = reader.GetString(0),
+						nama = reader.GetString(0) + " - " + reader.GetString(1)
+					});
+				}
+
+				if (!kodeMenu.Equals(""))
+				{
+					for (int i = 0; i < promos.Count; i++)
+					{
+						for (int j = 0; j < idpromo.Count; j++)
+						{
+							if (kodeMenu.Equals(idmenus[j]))
+							{
+								cmbpro.IsEnabled = false;
+								hpromo.IsEnabled = false;
+							}
+						}
+					}
+
+				}
+				cmbpro.ItemsSource = promos;
+				cmbpro.DisplayMemberPath = "nama";
+				cmbpro.SelectedValuePath = "kode";
+				connection.Close();
+			}
+			catch (Exception ex)
+			{
+				connection.Close();
+				MessageBox.Show(ex.Message);
+				MessageBox.Show("ada yang salah dengan promo");
+			}
+		}
+
+		private void fillmenu1()
         {
             try
             {
@@ -356,7 +457,7 @@ namespace Project.Master_paket
                 string strImage = paths[paths.Length - 1];
                 string directoryProject = Environment.CurrentDirectory;
                 paths = directoryProject.Split('\\');
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     target += paths[i] + "\\";
                 }
@@ -365,5 +466,18 @@ namespace Project.Master_paket
                 sourcetxt.Text = "Image/" + strImage;
             }
         }
-    }
+
+		private void Cmbpro_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (cmbpro.SelectedIndex != -1)
+			{
+				hpromo.IsEnabled = true;
+			}
+			else
+			{
+				hpromo.IsEnabled = false;
+				hpromo.Text = "";
+			}
+		}
+	}
 }

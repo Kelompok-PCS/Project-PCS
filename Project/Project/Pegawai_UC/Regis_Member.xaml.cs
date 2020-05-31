@@ -128,7 +128,7 @@ namespace Project.Pegawai
 				$"WHERE kode_daerah = '{combokota.SelectedValue}'";
 			loadkec(query);
 		}
-
+		//char ntl = '';
 		private void Save_Click(object sender, RoutedEventArgs e)
 		{
 			bool cek = false;
@@ -136,19 +136,34 @@ namespace Project.Pegawai
 			bool cek3 = false;
 			bool cek4 = false;
 			int tlp = 0;
+			List<char> tel = new List<char>();
 			
-				if (!tbFullname.Text.Equals(""))
+			for (int i = 0; i < tbTelp.Text.Length; i++)
+			{
+				if(tbTelp.Text[i] != '-')
+				{
+					tel.Add(tbTelp.Text[i]);
+				}
+				
+			}
+			
+			
+
+			if (!tbFullname.Text.Equals(""))
 				{
 					if (!tbTelp.Text.Equals(""))
 					{
-						if(tbTelp.Text.Length <= 13)
+						if(tbTelp.Text.Length <= 14)
 						{
 							try
 							{
-								tlp = Convert.ToInt32(tbTelp.Text);
+								for (int i = 0; i < tel.Count; i++)
+								{
+								tlp = Convert.ToInt32(tel[i]);
+								}
 
 								conn.Open();
-								string query = $"select count(*) from members where no_hp ={tlp} ";
+								string query = $"select count(*) from members where no_hp ='{tbTelp.Text}' ";
 								OracleCommand cmd = new OracleCommand(query, conn);
 								int banyak = 0;
 								banyak = Convert.ToInt32(cmd.ExecuteScalar().ToString());
@@ -159,22 +174,35 @@ namespace Project.Pegawai
 								}
 								else
 								{
-									cek = true;
+									if(tel[0] == '0' && tel[1] == '8')
+									{
+										cek = true;
+
+									}
+								else
+									{
+										MessageBox.Show("INput no Hp harus diawali '08'");
+
+									}
 								}
 
 								conn.Close();
 							}
 							catch (Exception ex)
 							{
-							MessageBox.Show("yang in ");
-								MessageBox.Show(ex.StackTrace);
+							//MessageBox.Show("yang in ");
+							MessageBox.Show(ex.StackTrace);
+							MessageBox.Show(ex.Message);
+								MessageBox.Show("NoTelp harus dalam bentuk angka");
 								tbTelp.Text = "";
+								tel = new List<char>();
 							}
 						}
 						else
 						{
 							MessageBox.Show("Nomor terlalu panjang");
 							tbTelp.Text = "";
+							tel = new List<char>();
 						}
 					}
 				}
@@ -182,28 +210,12 @@ namespace Project.Pegawai
 				{
 					MessageBox.Show("Full Name  masih Kosong");
 				}
-			
-			
-
-
-			if (!tbPass.Password.Equals(""))
-			{
-				if (tbPass.Password.Equals(tbPass_Copy.Password))
-				{
-					cek2 = true;
-				}
-				else
-				{
-					MessageBox.Show("Password tidak cocok dengan confirm password");
-					tbPass.Password = "";
-					tbPass_Copy.Password = "";
-				}
-			}
-			else
-			{
-				MessageBox.Show("Password tidak boleh kosong");
 				
-			}
+			
+			
+
+
+			
 
 			if (!tbEmail1.Text.Equals(""))
 			{
@@ -266,29 +278,24 @@ namespace Project.Pegawai
 
 
 
-			if(cek== true && cek2==true && cek3== true && cek4 == true)
+			if(cek== true && cek3== true && cek4 == true)
 			{
 				try
 				{
 					conn.Open();
-					string que = $"SELECT count(*) from members where id_member like '%{ userName.Text.Substring(0, 2).ToUpper() }%'  ";
+					string que = $"SELECT  LPAD(NVL(MAX(SUBSTR(id_member,3,5)),0)+1,5,0) from members where id_member like '%{ userName.Text.Substring(0, 2).ToUpper() }%'  ";
 					OracleCommand cmd = new OracleCommand(que, conn);
-					int banyak = Convert.ToInt32(cmd.ExecuteScalar().ToString())+1;
+					string banyak = cmd.ExecuteScalar().ToString();
 					string bk = "";
-					if(banyak < 10)
-					{
-						bk = "000" + banyak;
-					}
-					else
-					{
-						bk = "00" + banyak;
-					}
-					string id_baru = userName.Text.Substring(0, 2).ToUpper()+bk;
+					
+					string id_baru = userName.Text.Substring(0, 2).ToUpper()+banyak;
 
 
-					string query = $"INSERT INTO MEMBERS VALUES ('{id_baru}','{tbFullname.Text}','{userName.Text}','{tbPass.Password}','{tbEmail1.Text}','{tbAlamat.Text}',{tlp},'{prov}','{combokecamatan.SelectedValue}',{kdepos},0,'1')";
-					MessageBox.Show(query);
-					cmd = new OracleCommand(que, conn);
+					//string query = $"INSERT INTO MEMBERS VALUES ('{id_baru}','{tbFullname.Text}','{userName.Text}','{tbEmail1.Text}','{tbAlamat.Text}','{tbTelp.Text}','{prov}','{combokecamatan.SelectedValue}',{kdepos},0,0,'1')";
+					//MessageBox.Show(query);
+					//ye.Text = query;
+					cmd = new OracleCommand($"INSERT INTO MEMBERS VALUES ('{id_baru}','{tbFullname.Text}','{userName.Text}','{tbEmail1.Text}','{tbAlamat.Text}','{tbTelp.Text}','{prov}','{combokecamatan.SelectedValue}',{kdepos},0,0,'1')"
+					, conn);
 					cmd.ExecuteNonQuery();
 					MessageBox.Show("Berhasil mendaftar");
 					conn.Close();
@@ -297,9 +304,9 @@ namespace Project.Pegawai
 					userName.Text = "";
 					tbTelp.Text = "";
 					tbFullname.Text = "";
-					tbPass.Password = "";
+				//	tbPass.Password = "";
 					kodepos.Text = "";
-					tbPass_Copy.Password = "";
+					//tbPass_Copy.Password = "";
 					tbEmail1.Text = "";
 				}catch(Exception ex)
 				{
@@ -309,6 +316,108 @@ namespace Project.Pegawai
 				}
 			}
 
+		}
+		int ctr = 0;
+		//int tmpz = 0;
+		private void TbTelp_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			
+
+			
+			
+		}
+		bool lanjut = false;
+		int ctrtmp = 0;
+		int panjang = 0;
+		private void TbTelp_KeyDown(object sender, KeyEventArgs e)
+		{
+
+			//if (e.Key == Key.Back)
+			//{
+			//	if(tbTelp.CaretIndex-1== panjang)
+			//	{
+			//		ctr = ctrtmp;
+			//	}
+			//	else
+			//	{
+
+			//	}
+			//}
+			//if (ctr == 3 && lanjut ==false)
+			//{
+			//	ctr = 0;
+			//	tbTelp.Text = tbTelp.Text + "-";
+
+			//	tbTelp.CaretIndex = tbTelp.Text.Length;
+			//	ctr++;
+			//	ctrtmp = ctr;
+			//	panjang = tbTelp.Text.Length;
+
+			//}
+			//else if(tbTelp.Text.Length == 16)
+			//{
+			//	ctr = 0;
+			//	panjang = tbTelp.Text.Length;
+			//}
+			//else if (lanjut == false)
+			//{
+			//	ctr++;
+			//	ctrtmp = ctr;
+			//	panjang = tbTelp.Text.Length;
+			//}
+
+			//lek atas iki dibuka if e jadi 17 dna dek for dek bawah e jadi 15
+			//Beri pengecekan masukan foreach ada '-' atau hanya angka
+			if (tbTelp.Text.Length == 4)
+			{
+				tbTelp.Text = tbTelp.Text + "-";
+
+				tbTelp.CaretIndex = tbTelp.Text.Length;
+			}
+
+			if (tbTelp.Text.Length == 9)
+			{
+				tbTelp.Text = tbTelp.Text + "-";
+
+				tbTelp.CaretIndex = tbTelp.Text.Length;
+			}
+
+			if (tbTelp.Text.Length >=13 )
+			{
+				lanjut = true;
+				char[] ars = new char[15];
+				for (int i = 0; i < 13; i++)
+				{
+					ars[i] = tbTelp.Text[i];
+				}
+				tbTelp.Text = "";
+				for (int i = 0; i < 13; i++)
+				{
+					tbTelp.Text = tbTelp.Text + ars[i];
+				}
+				tbTelp.CaretIndex = tbTelp.Text.Length;
+				
+			}
+		}
+
+		private void Kodepos_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (kodepos.Text.Length >= 4)
+			{
+				lanjut = true;
+				char[] ars = new char[15];
+				for (int i = 0; i < 4; i++)
+				{
+					ars[i] = kodepos.Text[i];
+				}
+				kodepos.Text = "";
+				for (int i = 0; i < 4; i++)
+				{
+					kodepos.Text = kodepos.Text+ ars[i];
+				}
+				kodepos.CaretIndex = kodepos.Text.Length;
+
+			}
 		}
 	}
 }

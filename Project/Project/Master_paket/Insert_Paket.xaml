@@ -10,17 +10,17 @@
     <Grid Loaded="Grid_Loaded">
         <Label x:Name="lbJudul" Content="Insert Paket" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="5,37,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
-        <Label Content="Nama Paket" HorizontalAlignment="Left" Margin="21,67,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="25,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
-        <Label Content="Harga Paket" HorizontalAlignment="Left" Margin="21,127,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="25,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
-        <Label Content="Kategori Paket" HorizontalAlignment="Left" Margin="22,187,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="27,240,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Nama Paket" HorizontalAlignment="Left" Margin="23,51,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="27,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Harga Paket" HorizontalAlignment="Left" Margin="23,96,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="27,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Kategori Paket" HorizontalAlignment="Left" Margin="23,142,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbKat" HorizontalAlignment="Left" Margin="28,195,0,0" VerticalAlignment="Top" Width="606"/>
         <Button x:Name="btnSubmit" Content="Insert" HorizontalAlignment="Left" Margin="558,459,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" Background="#FF0046FF" Foreground="White"/>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="27,459,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click" Background="#FF0046FF" Foreground="White"/>
-        <Label x:Name="lbPrevData1" Content="Label" HorizontalAlignment="Left" Margin="27,216,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
-        <Button x:Name="loadfile" Content="Load File" HorizontalAlignment="Left" Height="23" Margin="27,410,0,0" VerticalAlignment="Top" Width="75" Click="loadfile_Click"/>
-        <Label Content="Nama File&#x9;: " HorizontalAlignment="Left" Height="23" Margin="117,409,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lbPrevData1" Content="Label" HorizontalAlignment="Left" Margin="28,171,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Button x:Name="loadfile" Content="Load File" HorizontalAlignment="Left" Height="23" Margin="28,365,0,0" VerticalAlignment="Top" Width="75" Click="loadfile_Click"/>
+        <Label Content="Nama File&#x9;: " HorizontalAlignment="Left" Height="23" Margin="118,364,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,13 +30,17 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="Gambar Paket" HorizontalAlignment="Left" Margin="23,381,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="sourcetxt" HorizontalAlignment="Left" Height="23" Margin="236,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" IsEnabled="False"/>
-        <Label Content="Menu 1" HorizontalAlignment="Left" Margin="22,267,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox x:Name="cmbMen1" HorizontalAlignment="Left" Margin="25,296,0,0" VerticalAlignment="Top" Width="606"/>
-        <Label Content="Menu 2" HorizontalAlignment="Left" Margin="22,321,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <ComboBox x:Name="cmbMen2" HorizontalAlignment="Left" Margin="27,355,0,0" VerticalAlignment="Top" Width="606"/>
-        <Label x:Name="lbPrevData2" Content="Label" HorizontalAlignment="Left" Margin="84,270,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
-        <Label x:Name="lbPrevData3" Content="Label" HorizontalAlignment="Left" Margin="84,324,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Label Content="Gambar Paket" HorizontalAlignment="Left" Margin="24,336,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="sourcetxt" HorizontalAlignment="Left" Height="23" Margin="237,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" IsEnabled="False"/>
+        <Label Content="Menu 1" HorizontalAlignment="Left" Margin="23,222,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbMen1" HorizontalAlignment="Left" Margin="26,251,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Menu 2" HorizontalAlignment="Left" Margin="23,276,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbMen2" HorizontalAlignment="Left" Margin="28,310,0,0" VerticalAlignment="Top" Width="606"/>
+        <Label x:Name="lbPrevData2" Content="Label" HorizontalAlignment="Left" Margin="85,225,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Label x:Name="lbPrevData3" Content="Label" HorizontalAlignment="Left" Margin="85,279,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontStyle="Italic"/>
+        <Label Content="Promo Paket" HorizontalAlignment="Left" Margin="29,387,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbpro" HorizontalAlignment="Left" Margin="29,418,0,0" VerticalAlignment="Top" Width="279" SelectionChanged="Cmbpro_SelectionChanged"/>
+        <Label Content="Harga Promo" HorizontalAlignment="Left" Margin="336,387,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="hpromo" HorizontalAlignment="Left" Height="23" Margin="336,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
     </Grid>
 </UserControl>

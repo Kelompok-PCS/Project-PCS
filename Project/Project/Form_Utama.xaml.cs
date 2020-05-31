@@ -127,7 +127,9 @@ namespace Project
 
         private void to_laporan_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
-        }
+			canvas.Children.Clear();
+			Laporan lap= new Laporan(canvas);
+			canvas.Children.Add(lap);
+		}
     }
 }
