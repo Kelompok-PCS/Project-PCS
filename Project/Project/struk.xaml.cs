@@ -28,9 +28,9 @@ namespace Project
         string id_hjual;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CrystalReport2 rpt = new CrystalReport2();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.SetDatabaseLogon(App.user, App.password, App.source, "");
-            //rpt.SetParameterValue("id_hjual", tbId.Text);
+            rpt.SetParameterValue("id_hjual", tbId.Text);
             viewer.ViewerCore.ReportSource = rpt;
 
             id_hjual = tbId.Text;
