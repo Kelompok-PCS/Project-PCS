@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Transaction" Height="450" Width="800">
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0"/>
+        </ScrollViewer>
+
+
     </Grid>
 </Window>

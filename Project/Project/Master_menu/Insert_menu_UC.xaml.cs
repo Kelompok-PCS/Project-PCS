@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+
 
 namespace Project.Master_menu
 {
@@ -70,6 +72,8 @@ namespace Project.Master_menu
                             }
                             filename = "";
                             lbGambar.Content = "None";
+
+                            
                             MessageBox.Show("Berhasil Masukan Menu");
                         }
                         catch (Exception ex)
@@ -140,7 +144,6 @@ namespace Project.Master_menu
             }
             lbPrevData.Content = prevName;
         }
-
         private class Kategori
         {
             public string kode { get; set; }
