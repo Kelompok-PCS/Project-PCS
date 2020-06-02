@@ -12,12 +12,11 @@
         <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
         <Label Content="Nama Promo" HorizontalAlignment="Left" Margin="30,91,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="35,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="35,400,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" />
-        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="35,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606" TextChanged="TbHarga_TextChanged"/>
-        <Label Content="Harga Promo" HorizontalAlignment="Left" Margin="30,148,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
-        <Label Content="Awal Periode" HorizontalAlignment="Left" Margin="35,216,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
-        <Label Content="Akhir Periode" HorizontalAlignment="Left" Margin="355,216,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
-        <DatePicker x:Name="awalP" HorizontalAlignment="Left" Margin="35,250,0,0" VerticalAlignment="Top" Width="240"/>
-        <DatePicker x:Name="akhirP" HorizontalAlignment="Left" Margin="355,250,0,0" VerticalAlignment="Top" Width="240"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="545,305,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" Background="#FF0046FF" Foreground="White" />
+        <Label Content="Awal Periode" HorizontalAlignment="Left" Margin="35,165,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
+        <Label Content="Akhir Periode" HorizontalAlignment="Left" Margin="355,165,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
+        <DatePicker x:Name="awalP" HorizontalAlignment="Left" Margin="35,194,0,0" VerticalAlignment="Top" Width="240"/>
+        <DatePicker x:Name="akhirP" HorizontalAlignment="Left" Margin="355,193,0,0" VerticalAlignment="Top" Width="240"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="35,300,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click" Foreground="White" Background="#FF0046FF"/>
     </Grid>
 </UserControl>

@@ -160,6 +160,7 @@
             <TextBlock x:Name="tbPemesan" HorizontalAlignment="Left" Margin="0,161,0,0" TextWrapping="Wrap" Text="Pemesanan" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23" MouseDown="tbPemesan_MouseDown"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,239,0,0" TextWrapping="Wrap" Text="Reservasi" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="23"/>
             <TextBlock x:Name="tbPendaftaran" HorizontalAlignment="Left" Margin="0,317,0,0" TextWrapping="Wrap" Text="Pendaftaran Member" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="13" MouseDown="TbPendaftaran_MouseDown"/>
+            <TextBlock x:Name="tbPendaftaran_Copy" HorizontalAlignment="Left" Margin="0,390,0,0" TextWrapping="Wrap" Text="Struk" VerticalAlignment="Top" Height="73" Width="201" Style="{StaticResource font_style}" TextAlignment="Center" Padding="13" MouseDown="Struk_mouseDown"/>
         </Grid>
         <Image HorizontalAlignment="Left" Height="55" VerticalAlignment="Top" Width="42" Source="tgBtn_default.png" Margin="6,7,0,0" MouseDown="Image_MouseDown"/>
 

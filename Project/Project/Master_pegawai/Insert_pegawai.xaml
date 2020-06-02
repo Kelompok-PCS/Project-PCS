@@ -8,7 +8,7 @@
              d:DesignHeight="494" d:DesignWidth="651">
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="641"/>
-        <Label Content="Insert Menu" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Insert Pegawai" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="5,37,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
         <Label Content="Nama Pegawai" HorizontalAlignment="Left" Margin="21,81,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="25,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>

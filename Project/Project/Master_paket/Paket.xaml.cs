@@ -114,7 +114,7 @@ namespace Project.Master_paket
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (lbKode.Content.ToString() != "Kosong")
+            if (lbKode.Content.ToString() != "Id Paket")
             {
                 if (rdUpdate.IsChecked == true)
                 {
@@ -129,6 +129,10 @@ namespace Project.Master_paket
                             $"UPDATE PAKET SET status = 0 WHERE ID_PAKET = '{lbKode.Content}'";
                     OracleCommand cmd = new OracleCommand(query, connection);
                     cmd.ExecuteNonQuery();
+                    string query2 =
+                            $"DELETE FROM PAKET_MENU SET WHERE ID_PAKET = '{lbKode.Content}'";
+                    OracleCommand cmd2 = new OracleCommand(query2, connection);
+                    cmd2.ExecuteNonQuery();
                     connection.Close();
 
                     tableMenuActive = new DataTable();
@@ -138,6 +142,8 @@ namespace Project.Master_paket
                     tableMenuPurge = new DataTable();
                     kodeMenuPurge = new List<string>();
                     loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                    lbKode.Content = "Id Paket";
+                    tbNama.Text = "Kosong";
                 }
             }
             else
@@ -163,7 +169,81 @@ namespace Project.Master_paket
                 lbKode.Content = kodeMenuActive[gridMenu.SelectedIndex];
                 DataRow dr = tableMenuActive.Rows[gridMenu.SelectedIndex];
                 tbNama.Text = dr[0].ToString();
+
+                connection.Open();
+                string query2 =
+                $"SELECT id_menu from PAKET_MENU WHERE ID_PAKET = '{lbKode.Content}'";
+
+                OracleCommand cmd2 = new OracleCommand(query2, connection);
+                OracleDataReader reader2 = cmd2.ExecuteReader();
+                List<string> tmp = new List<string>();
+                tmp.Clear();
+
+                string kodemenu1 = "";
+                while (reader2.Read())
+                {
+                    kodemenu1 = reader2.GetString(0);
+                    tmp.Add(kodemenu1);
+                }
+                string query3 = $"SELECT NAMA_MENU from MENU WHERE ID_MENU = '{tmp[0]}'";
+                cmd2 = new OracleCommand(query3, connection);
+                reader2 = cmd2.ExecuteReader();
+                while (reader2.Read())
+                {
+                    menu1.Content = "> " + reader2.GetString(0);
+                }
+
+                query3 = $"SELECT NAMA_MENU from MENU WHERE ID_MENU = '{tmp[1]}'";
+                cmd2 = new OracleCommand(query3, connection);
+                reader2 = cmd2.ExecuteReader();
+                while (reader2.Read())
+                {
+                    menu2.Content = "> " + reader2.GetString(0);
+                }
+                connection.Close();
             }
+        }
+
+        private void gridPurgatory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (gridPurgatory.SelectedIndex != -1)
+            {
+                lbKodePurge.Content = kodeMenuPurge[gridPurgatory.SelectedIndex];
+                DataRow dr = tableMenuPurge.Rows[gridPurgatory.SelectedIndex];
+                tbNamaPulih.Text = dr[0].ToString();
+            }
+        }
+
+        private void btnPulihkan_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbKodePurge.Content.ToString() != "Id Paket")
+            {
+                connection.Open();
+                string query =
+                        $"UPDATE paket SET status = 1 WHERE id_paket = '{lbKodePurge.Content}'";
+                OracleCommand cmd = new OracleCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                tableMenuActive = new DataTable();
+                kodeMenuActive = new List<string>();
+                loadMenu("1", gridMenu, tableMenuActive, kodeMenuActive);
+
+                tableMenuPurge = new DataTable();
+                kodeMenuPurge = new List<string>();
+                loadMenu("0", gridPurgatory, tableMenuPurge, kodeMenuPurge);
+                lbKodePurge.Content = "Id Paket";
+                tbNamaPulih.Text = "Kosong";
+            }
+            else
+            {
+                MessageBox.Show("tidak ada paket yang dipilih");
+            }
+        }
+
+        private void gridPurgatory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

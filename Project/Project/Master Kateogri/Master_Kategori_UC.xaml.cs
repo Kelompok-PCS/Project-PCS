@@ -22,65 +22,178 @@ namespace Project
     public partial class Master_Kategori_UC : UserControl
     {
         OracleConnection con;
-        DataSet ds;
         Canvas can;
-        string id_kategori;
         public Master_Kategori_UC(Canvas can)
         {
             InitializeComponent();
             this.can = can;
             con = App.Connection;
-            callKategori();
+            dtgKategori.IsReadOnly = true;
+            purgKategori.IsReadOnly = true;
         }
-        private void callKategori()
-        {
-            using(OracleDataAdapter adap = new OracleDataAdapter("SELECT * from kategori", con))
-            {
-                ds = new DataSet();
-                adap.Fill(ds);
-                dtgKategori.ItemsSource = ds.Tables[0].DefaultView;
-            }
-        }
-        private void btnSubmit_Click_1(object sender, RoutedEventArgs e)
-        {
 
+        DataTable tableMenuActive;
+        DataTable tableMenuPurge;
+        List<string> kodeMenuActive;
+        List<string> kodeMenuPurge;
+        private void callKategori(string status, DataGrid grid, DataTable tableMenu, List<string> kodeMenu)
+        {
+            try
+            { 
+                con.Open();
+                string query =
+                    $"SELECT nama_kategori \"Nama Kategori\", jenis_kategori \"Jenis Kategori\" FROM KATEGORI WHERE STATUS_KATEGORI = '{status}'";
+                OracleCommand cmd = new OracleCommand(query, con);
+                OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+                adapter.Fill(tableMenu);
+                grid.ItemsSource = tableMenu.DefaultView;
+
+                query =
+                    $"SELECT ID_KATEGORI FROM KATEGORI WHERE status_kategori = '{status}'";
+                tbFilter.Text = query;
+                cmd = new OracleCommand(query, con);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    kodeMenu.Add(reader.GetString(0));
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("ada kesalahan saat load kategori");
+                con.Close();
+            }
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            string nama = tbNama.Text;
-            string jenis = "";
-            if (rbMakanan.IsChecked==true)
+            
+        }
+
+        private void btnSubmit_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            can.Children.Clear();
+            Insert_kategori panel = new Insert_kategori(can,lbKode.Content.ToString());
+            can.Children.Add(panel);
+        }
+
+        private void dtgKategori_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (dtgKategori.SelectedIndex != -1)
             {
-                jenis = "makanan";
+                lbKode.Content = kodeMenuActive[dtgKategori.SelectedIndex];
+                DataRow dr = tableMenuActive.Rows[dtgKategori.SelectedIndex];
+                tbNama.Text = dr[0].ToString();
+            }
+        }
+
+        private void dtgKategori_Loaded(object sender, RoutedEventArgs e)
+        {
+            tableMenuActive = new DataTable();
+            kodeMenuActive = new List<string>();
+            callKategori("1", dtgKategori, tableMenuActive, kodeMenuActive);
+        }
+
+        private void purgKategori_Loaded(object sender, RoutedEventArgs e)
+        {
+            tableMenuPurge = new DataTable();
+            kodeMenuPurge = new List<string>();
+            callKategori("0", purgKategori, tableMenuPurge, kodeMenuPurge);
+        }
+
+        private void purgKategori_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (purgKategori.SelectedIndex != -1)
+            {
+                lbKodePurge.Content = kodeMenuPurge[purgKategori.SelectedIndex];
+                DataRow dr = tableMenuPurge.Rows[purgKategori.SelectedIndex];
+                tbNamaPulih.Text = dr[0].ToString();
+            }
+        }
+
+        private void rdUpdate_Checked(object sender, RoutedEventArgs e)
+        {
+            btnEdit.Content = "Edit";
+        }
+
+        private void rdDelete_Checked(object sender, RoutedEventArgs e)
+        {
+            btnEdit.Content = "Delete";
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbKode.Content.ToString() != "Id Kategori")
+            {
+                if (rdUpdate.IsChecked == true)
+                {
+                    can.Children.Clear();
+                    Insert_kategori update_kat = new Insert_kategori(can, lbKode.Content.ToString());
+                    can.Children.Add(update_kat);
+                }
+                else
+                {
+                    con.Open();
+                    string query =
+                            $"UPDATE kategori SET status_kategori = 0 WHERE id_kategori = '{lbKode.Content}'";
+                    OracleCommand cmd = new OracleCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    tableMenuActive = new DataTable();
+                    kodeMenuActive = new List<string>();
+                    callKategori("1", dtgKategori, tableMenuActive, kodeMenuActive);
+
+                    tableMenuPurge = new DataTable();
+                    kodeMenuPurge = new List<string>();
+                    callKategori("0", purgKategori, tableMenuPurge, kodeMenuPurge);
+                    lbKode.Content = "Id Kategori";
+                    tbNama.Text = "Kosong";
+                }
             }
             else
             {
-                jenis = "minuman";
+                MessageBox.Show("tidak ada kategori yang dipilih");
             }
-            string status = Convert.ToInt32(cbxStatus.IsChecked).ToString();
-            //MessageBox.Show(status);
-            con.Open();
-            string query = $"UPDATE kategori set nama_kategori='{nama}',jenis_kategori='{jenis}',status_kategori={status} where id_kategori='{id_kategori}'";
-            MessageBox.Show(query);
-            OracleCommand cmd = new OracleCommand(query, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            callKategori();
         }
 
-        private void dtgKategori_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnPulihkan_Click(object sender, RoutedEventArgs e)
         {
-            if (dtgKategori.SelectedIndex!=-1)
+            if (lbKodePurge.Content.ToString() != "Id Kategori")
             {
-                id_kategori = ds.Tables[0].Rows[dtgKategori.SelectedIndex]["id_kategori"].ToString();
-                tbNama.Text = ds.Tables[0].Rows[dtgKategori.SelectedIndex]["nama_kategori"].ToString();
-                string jenis = ds.Tables[0].Rows[dtgKategori.SelectedIndex]["jenis_kategori"].ToString();
-                if (jenis == "minuman") rbMinuman.IsChecked = true;
-                else rbMakanan.IsChecked = true;
-                cbxStatus.IsChecked = Convert.ToBoolean(Convert.ToInt32(ds.Tables[0].Rows[dtgKategori.SelectedIndex]["status_kategori"].ToString()));
+                con.Open();
+                string query =
+                        $"UPDATE kategori SET status_kategori = 1 WHERE id_kategori = '{lbKodePurge.Content}'";
+                OracleCommand cmd = new OracleCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
 
+                tableMenuActive = new DataTable();
+                kodeMenuActive = new List<string>();
+                callKategori("1", dtgKategori, tableMenuActive, kodeMenuActive);
+
+                tableMenuPurge = new DataTable();
+                kodeMenuPurge = new List<string>();
+                callKategori("0", purgKategori, tableMenuPurge, kodeMenuPurge);
+                lbKodePurge.Content = "Id Kategori";
+                tbNamaPulih.Text = "Kosong";
             }
+            else
+            {
+                MessageBox.Show("tidak ada kategori yang dipilih");
+            }
+        }
+
+        private void Grid_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+
         }
     }
 }

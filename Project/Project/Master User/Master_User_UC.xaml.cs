@@ -61,7 +61,7 @@ namespace Project
         //FUNCTION PROCEDURE
         private void getTableMembers()
         {
-            using (OracleDataAdapter adap = new OracleDataAdapter("SELECT m.fullname,m.username,m.email,k.nama_kota,m.status from members m join kota k on m.kota=k.kode_kota", connection))
+            using (OracleDataAdapter adap = new OracleDataAdapter("SELECT m.fullname,m.username,m.no_hp,m.email,k.nama_kota,m.status from members m join kota k on m.kota=k.kode_kota", connection))
             {
                 dsMembers = new DataSet();
                 adap.Fill(dsMembers);
@@ -118,15 +118,30 @@ namespace Project
             connection.Open();
             try
             {
-                string status = "";
-                if ((bool)checkStatus.IsChecked)status = "1";
-                else status = "0";
-                string query = $"UPDATE MEMBERS SET fullname='{tbFullname.Text}',username='{tbUsername.Text}',password='{tbPassword.Text}',email='{tbEmail.Text}',alamat='{tbAlamat.Text}',no_hp={tbNo_Hp.Text},kota='{cbKota.SelectedValue}',kecematan='{cbPronvinsi.SelectedValue}',kode_pos={tbKode_pos.Text},status='{status}' where id_member='{id_members}'";
-                OracleCommand cmd = new OracleCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                checkConnection(connection);
-                getTableMembers();
-                MessageBox.Show("Berhasil Update");
+                int ctr = 0;
+                try
+                {
+                    int point = Convert.ToInt32(tbPoint.Text);
+                    int saldo = Convert.ToInt32(tbSaldo.Text);
+                }
+                catch (Exception ex)
+                {
+                    ctr = 1;
+                    System.Windows.Forms.MessageBox.Show("Point Dan Saldo Harus Angka");
+                }
+                if (ctr == 0)
+                {
+
+                    string status = "";
+                    if ((bool)checkStatus.IsChecked) status = "1";
+                    else status = "0";
+                    string query = $"UPDATE MEMBERS SET fullname='{tbFullname.Text}',username='{tbUsername.Text}',email='{tbEmail.Text}',alamat='{tbAlamat.Text}',no_hp={tbNo_Hp.Text},kota='{cbKota.SelectedValue}',kecematan='{cbPronvinsi.SelectedValue}',kode_pos={tbKode_pos.Text},point={tbPoint.Text},saldo={tbSaldo.Text},status='{status}' where id_member='{id_members}'";
+                    OracleCommand cmd = new OracleCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    checkConnection(connection);
+                    getTableMembers();
+                    MessageBox.Show("Berhasil Update");
+                }
             }
             catch (Exception ex)
             {
@@ -150,19 +165,22 @@ namespace Project
                         id_members = dt.Rows[0].ItemArray[0].ToString();
                         tbFullname.Text = dt.Rows[0].ItemArray[1].ToString();
                         tbUsername.Text = dt.Rows[0].ItemArray[2].ToString();
-                        tbPassword.Text = dt.Rows[0].ItemArray[3].ToString();
-                        tbEmail.Text = dt.Rows[0].ItemArray[4].ToString();
-                        tbAlamat.Text = dt.Rows[0].ItemArray[5].ToString();
-                        tbNo_Hp.Text = dt.Rows[0].ItemArray[6].ToString();
+                        tbEmail.Text = dt.Rows[0].ItemArray[3].ToString();
+                        tbAlamat.Text = dt.Rows[0].ItemArray[4].ToString();
+                        tbNo_Hp.Text = dt.Rows[0].ItemArray[5].ToString();
 
-                        OracleCommand cmd = new OracleCommand($"SELECT NAMA_KOTA FROM KOTA WHERE KODE_KOTA='{dt.Rows[0].ItemArray[7].ToString()}'", connection);
+                        OracleCommand cmd = new OracleCommand($"SELECT NAMA_KOTA FROM KOTA WHERE KODE_KOTA='{dt.Rows[0].ItemArray[6].ToString()}'", connection);
                         cbKota.Text = cmd.ExecuteScalar().ToString();
 
-                        cmd = new OracleCommand($"SELECT NAMA_DAERAH FROM DAERAH WHERE KODE_DAERAH='{dt.Rows[0].ItemArray[8].ToString()}'", connection);
+                        cmd = new OracleCommand($"SELECT NAMA_DAERAH FROM DAERAH WHERE KODE_DAERAH='{dt.Rows[0].ItemArray[7].ToString()}'", connection);
                         cbPronvinsi.Text = cmd.ExecuteScalar().ToString();
 
-                        tbKode_pos.Text = dt.Rows[0].ItemArray[9].ToString();
-                        if (dt.Rows[0].ItemArray[10].ToString() == "1")
+                        tbKode_pos.Text = dt.Rows[0].ItemArray[8].ToString();
+
+                        tbPoint.Text = dt.Rows[0].ItemArray[9].ToString();
+                        tbSaldo.Text = dt.Rows[0].ItemArray[10].ToString();
+
+                        if (dt.Rows[0].ItemArray[11].ToString() == "1")
                         {
                             checkStatus.IsChecked = true;
                         }
@@ -178,6 +196,11 @@ namespace Project
                 }
             }
             connection.Close();
+        }
+
+        private void dtgMembers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
     

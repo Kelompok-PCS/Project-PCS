@@ -18,12 +18,13 @@
         <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="23" Margin="10,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="100"/>
         <CheckBox x:Name="checkStatus" Content="Aktif" HorizontalAlignment="Left" Margin="265,351,0,0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="265,330,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="265,385,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+        <Button x:Name="btnUpdate" Content="Edit" HorizontalAlignment="Left" Margin="265,385,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
         <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="23" Margin="10,385,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,411,0,0" TextWrapping="Wrap" Text="No Telepon" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNo_Hp" HorizontalAlignment="Left" Height="23" Margin="10,427,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
         <ComboBox x:Name="cbJabatan" HorizontalAlignment="Left" Margin="265,304,0,0" VerticalAlignment="Top" Width="331"/>
         <TextBlock HorizontalAlignment="Left" Margin="265,287,0,0" TextWrapping="Wrap" Text="Jabatan" VerticalAlignment="Top"/>
-        <Button x:Name="btnInsert" Content="To Insert Pegawai" HorizontalAlignment="Left" Margin="345,385,0,0" VerticalAlignment="Top" Width="120" Click="btnInsert_Click"/>
+        <Button x:Name="btnInsert" Content="Insert New Pegawai" HorizontalAlignment="Left" Margin="172,10,0,0" VerticalAlignment="Top" Width="137" Background="#FF0069D9" Foreground="#FFF7EFEF" Height="34" Click="btnInsert_Click"/>
+        
     </Grid>
 </UserControl>

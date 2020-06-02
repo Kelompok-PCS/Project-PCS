@@ -10,28 +10,29 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
         <Label Content="Master Members" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
-        <DataGrid x:Name="dtgMembers" HorizontalAlignment="Left" Height="206" Margin="8,74,0,0" VerticalAlignment="Top" Width="636" MouseDoubleClick="dtgMembers_MouseDoubleClick"/>
+        <DataGrid x:Name="dtgMembers" HorizontalAlignment="Left" Height="206" Margin="8,74,0,0" VerticalAlignment="Top" Width="636" MouseDoubleClick="dtgMembers_MouseDoubleClick" SelectionChanged="dtgMembers_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,287,0,0" TextWrapping="Wrap" Text="Fullname" VerticalAlignment="Top"/>
         <TextBox x:Name="tbFullname" HorizontalAlignment="Left" Height="23" Margin="10,303,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"/>
         <TextBox x:Name="tbUsername" HorizontalAlignment="Left" Height="23" Margin="10,341,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,364,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
         <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="23" Margin="10,380,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="265,287,0,0" TextWrapping="Wrap" Text="Alamat" VerticalAlignment="Top"/>
         <TextBox x:Name="tbAlamat" HorizontalAlignment="Left" Height="61" Margin="265,303,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="376" MaxLines="100"/>
-        <ComboBox HorizontalAlignment="Left" Margin="323,381,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cbPronvinsi" HorizontalAlignment="Left" Margin="265,381,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbPronvinsi_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="265,365,0,0" TextWrapping="Wrap" Text="Provinsi" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbKota" HorizontalAlignment="Left" Margin="392,381,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="392,364,0,0" TextWrapping="Wrap" Text="Kota" VerticalAlignment="Top"/>
         <TextBox x:Name="tbKode_pos" HorizontalAlignment="Left" Height="23" Margin="521,379,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLines="6"/>
         <TextBlock HorizontalAlignment="Left" Margin="521,364,0,0" TextWrapping="Wrap" Text="Kode Pos" VerticalAlignment="Top"/>
-        <CheckBox x:Name="checkStatus" Content="Aktif" HorizontalAlignment="Left" Margin="265,424,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="265,403,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkStatus" Content="Aktif" HorizontalAlignment="Left" Margin="265,427,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="265,406,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top"/>
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="521,419,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
-        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="23" Margin="10,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,445,0,0" TextWrapping="Wrap" Text="No Telepon" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbNo_Hp" HorizontalAlignment="Left" Height="23" Margin="10,461,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,403,0,0" TextWrapping="Wrap" Text="No Telepon" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNo_Hp" HorizontalAlignment="Left" Height="23" Margin="10,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" MaxLines="50"/>
+        <TextBlock HorizontalAlignment="Left" Margin="131,445,0,0" TextWrapping="Wrap" Text="Point" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,445,0,0" TextWrapping="Wrap" Text="Saldo" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPoint" HorizontalAlignment="Left" Height="23" Margin="130,461,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="tbSaldo" HorizontalAlignment="Left" Height="23" Margin="10,461,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
     </Grid>
 </UserControl>

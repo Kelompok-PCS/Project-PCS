@@ -23,21 +23,24 @@ namespace Project
     {
         OracleConnection connection;
 		string id;
+        Canvas canvas;
 		DataTable db;
-        public Insert_Promo(OracleConnection conn, string id)
+        public Insert_Promo(Canvas canvas, string id)
         {
             InitializeComponent();
-            connection = conn;
+            connection = App.Connection;
+            this.canvas = canvas;
 			this.id = id;
-			if (id.Equals("null"))
+			if (id.Equals(" "))
 			{
 				judul.Content = "Insert Promo";
+                btnSubmit.Content = "Insert";
 			}
 			else
 			{
-				MessageBox.Show(id);
 				judul.Content = "Update Promo";
-				db = new DataTable();
+                btnSubmit.Content = "Update";
+                db = new DataTable();
 				loadpromo();
 			}
         }
@@ -49,17 +52,16 @@ namespace Project
 
 				connection.Open();
 				string query =
-					$"SELECT nama_promo \"Nama Promo\",harga_promo \"Harga Promo\",periode_awal\"Awal Periode\" , periode_akhir\"Akhir Periode\" FROM promo WHERE id_promo = '{id}'";
+					$"SELECT nama_promo \"Nama Promo\",periode_awal\"Awal Periode\" , periode_akhir\"Akhir Periode\" FROM promo WHERE id_promo = '{id}'";
 				OracleCommand cmd = new OracleCommand(query, connection);
 				OracleDataAdapter adapter = new OracleDataAdapter(cmd);
 				adapter.Fill(db);
 				foreach (DataRow dataRow in db.Rows)
 				{
-					tbHarga.Text = dataRow[1].ToString();
 					tbNama.Text = dataRow[0].ToString();
-					DateTime t1 =(DateTime) dataRow[2];
+					DateTime t1 =(DateTime) dataRow[1];
 					//awalP.Text = t1.ToString("dd/mm/yyyy");
-					DateTime t2 = (DateTime)dataRow[3];
+					DateTime t2 = (DateTime)dataRow[2];
 					//akhirP.Text = t2.ToString("dd/mm/yyyy");
 
 					awalP.SelectedDate = t1;
@@ -81,23 +83,13 @@ namespace Project
 			DateTime date = (DateTime)awalP.SelectedDate;
 			DateTime date2 = (DateTime)akhirP.SelectedDate;
 			bool ch = false;
-			int harga = 0;
-			if (tbHarga.Text != "")
-			{
+		//	int harga = 0;
+			
 				if (date < date2)
 				{
 					if (tbNama.Text != "")
 					{
-						try
-						{
-							harga = Convert.ToInt32(tbHarga.Text);
-							ch = true;
-						}
-						catch
-						{
-							ch = false;
-							MessageBox.Show("format harga salah");
-						}
+					ch = true;
 					}
 					else
 					{
@@ -109,11 +101,8 @@ namespace Project
 					MessageBox.Show("format tanggal akhir salah");
 
 				}
-			}
-			else
-			{
-				MessageBox.Show("Harga masih kosong");
-			}
+			
+			
 
 
 			if (ch== true  && id.Equals("null"))
@@ -130,9 +119,9 @@ namespace Project
 					string waktu = date.ToString("yyyy-MM-dd");
 					string waktu2 = date2.ToString("yyyy-MM-dd");
 
-					int hargapromo = Convert.ToInt32(tbHarga.Text);
+					//int hargapromo = Convert.ToInt32(tbHarga.Text);
                     query =
-                        $"INSERT INTO promo VALUES ('{kode}','{tbNama.Text}',{hargapromo},to_Date('{waktu}','YYYY-MM-DD'),to_Date('{waktu2}','YYYY-MM-DD'),'a',1)";
+                        $"INSERT INTO promo VALUES ('{kode}','{tbNama.Text}',to_Date('{waktu}','YYYY-MM-DD'),to_Date('{waktu2}','YYYY-MM-DD'),'a',1)";
                     MessageBox.Show(query);
                     cmd = new OracleCommand(query, connection);
                     cmd.ExecuteNonQuery();
@@ -160,9 +149,8 @@ namespace Project
 					string waktu = date.ToString("yyyy-MM-dd");
 					string waktu2 = date2.ToString("yyyy-MM-dd");
 
-					int hargapromo = Convert.ToInt32(tbHarga.Text);
 					string query =
-						$"UPDATE promo SET nama_promo= '{tbNama.Text}',harga_promo = {hargapromo}, periode_awal= to_Date('{waktu}','YYYY-MM-DD'),periode_akhir = to_Date('{waktu2}','YYYY-MM-DD') WHERE id_promo = '{id}'";
+						$"UPDATE promo SET nama_promo= '{tbNama.Text}', periode_awal= to_Date('{waktu}','YYYY-MM-DD'),periode_akhir = to_Date('{waktu2}','YYYY-MM-DD') WHERE id_promo = '{id}'";
 					MessageBox.Show(query);
 					OracleCommand cmd = new OracleCommand(query, connection);
 					cmd.ExecuteNonQuery();
@@ -188,5 +176,12 @@ namespace Project
 		{
 			
 		}
-	}
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            canvas.Children.Clear();
+            Menu_Promo menu_promo = new Menu_Promo(canvas);
+            canvas.Children.Add(menu_promo);
+        }
+    }
 }
