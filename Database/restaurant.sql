@@ -4,6 +4,8 @@ DROP TABLE kategori CASCADE CONSTRAINTS;
 DROP TABLE menu CASCADE CONSTRAINTS;
 DROP TABLE hjual CASCADE CONSTRAINTS;
 DROP TABLE djual CASCADE CONSTRAINTS;
+DROP TABLE kupon CASCADE CONSTRAINTS;
+DROP TABLE kupon_member CASCADE CONSTRAINTS;
 DROP TABLE promo CASCADE CONSTRAINTS;
 DROP TABLE paket CASCADE CONSTRAINTS;
 DROP TABLE promo_paket CASCADE CONSTRAINTS;
@@ -77,12 +79,31 @@ CREATE TABLE djual (
   id_hjual varchar(14) NOT NULL CONSTRAINTS fk_hjual REFERENCES hjual(id_hjual)
 );
 
+CREATE TABLE kupon (
+  id_kupon varchar(10) NOT NULL,
+  nama_kupon varchar(50) NOT NULL,
+  id_menu varchar(10) NOT NULL,
+  harga_kupon number NOT NULL,
+  periode_awal_kupon date NOT NULL,
+  periode_akhir_kupon date NOT NULL,
+  sisa_kupon number NOT NULL,
+  status_kupon number NOT NULL
+);
+
+CREATE TABLE kupon_member (
+  id_kupon varchar(10) NOT NULL,
+  id_member varchar(10) NOT NULL,
+  status number NOT NULL
+);
+
 CREATE TABLE promo (
   id_promo varchar(10) NOT NULL CONSTRAINTS pk_promo PRIMARY KEY,
   nama_promo varchar(50) NOT NULL,
   periode_awal date NOT NULL,
   periode_akhir date NOT NULL,
   gambar_promo varchar(200) NOT NULL,
+  detail_promo varchar(200) NOT NULL,
+  jenis_promo varchar(10) NOT NULL,
   status_promo NUMBER NOT NULL
 );
 
@@ -185,11 +206,13 @@ INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
 INSERT INTO jabatan VALUES ('JAB00001', 'Waiter');
 INSERT INTO jabatan VALUES ('JAB00002', 'Host');
 
-insert into promo values('PRO001','Promo Ramadhan1',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO002','Promo Ramadhan2',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO003','Promo Ramadhan3',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO004','Promo Ramadhan4',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
-insert into promo values('PRO005','Promo Ramadhan5',to_date('2012-06-05', 'YYYY-MM-DD'),to_date('2012-06-05', 'YYYY-MM-DD'),'a',1);
+INSERT INTO PROMO VALUES ('PR001', 'Hemat 1', TO_DATE('2020-06-01','YYYY-MM-DD'), TO_DATE('2020-06-20','YYYY-MM-DD'), 'PrImage/ayam-bakar-dengan-es.jpg', 'enak', 'H', 1);
+INSERT INTO PROMO VALUES ('PR002', 'Hemat 2', TO_DATE('2020-04-02','YYYY-MM-DD'), TO_DATE('2020-05-20','YYYY-MM-DD'), 'PrImage/download.png', 'enak', 'H', 0);
+INSERT INTO PROMO VALUES ('PR003', 'Beef Time', TO_DATE('2020-04-08','YYYY-MM-DD'), TO_DATE('2020-04-23','YYYY-MM-DD'), 'PrImage/16214324-beef-steak-on-a-wooden-table.jpg', 'enak', 'M', 0);
+INSERT INTO PROMO VALUES ('PR004', 'Ramadhan Hemat', TO_DATE('2020-04-01','YYYY-MM-DD'), TO_DATE('2020-04-30','YYYY-MM-DD'), 'PrImage/ketupat-dan-opor-ayam-foto-resep-utama.jpg', 'enak', 'HR', 0);
+INSERT INTO PROMO VALUES ('PR005', 'Es Ceria', TO_DATE('2020-04-09','YYYY-MM-DD'), TO_DATE('2020-04-11','YYYY-MM-DD'), 'PrImage/easiest-ever-fruit-ice-cream-ghk-1532637317.jpg', 'enak', 'M', 0);
+INSERT INTO PROMO VALUES ('PR006', 'Hari Raya Penuh berkah', TO_DATE('2020-05-11','YYYY-MM-DD'), TO_DATE('2020-05-23','YYYY-MM-DD'), 'PrImage/LennyFace.jpg', 'Promo Ini sangat bagus dan hebat', 'HR', 0);
+INSERT INTO PROMO VALUES ('PR007', 'Promo Enak', TO_DATE('2020-05-15','YYYY-MM-DD'), TO_DATE('2020-05-31','YYYY-MM-DD'), 'PrImage/promoenak.jpg', 'lalala', 'H', 0);
 
 INSERT INTO promo_paket VALUES ('PRO001', 'MEN012', 7500, 1);
 INSERT INTO promo_paket VALUES ('PRO001', 'MEN011', 12000, 1);
@@ -249,8 +272,18 @@ INSERT INTO PAKET_MENU VALUES ('PK013', 'MEN014');
 INSERT INTO HJUAL VALUES('H001',TO_DATE('2020-05-30','YYYY-MM-DD'),10000,'Reservasi','PEG001','M000000001','A');
 
 INSERT INTO DJUAL VALUES ('DJ001', 'MEN001', 5000, 1, 5000, 'H001');
-INSERT INTO DJUAL VALUES ('DJ001', 'MEN001', 5000, 1, 5000, 'H001');
-INSERT INTO DJUAL VALUES ('DJ002', 'MEN002', 5000, 1, 5000, 'H001');
+INSERT INTO DJUAL VALUES ('DJ002', 'MEN001', 5000, 1, 5000, 'H001');
+INSERT INTO DJUAL VALUES ('DJ003', 'MEN002', 5000, 1, 5000, 'H001');
+
+INSERT INTO KUPON VALUES ('KUP001', 'Coba', 'MEN001', 5000, TO_DATE('2020-05-18','YYYY-MM-DD'), TO_DATE('2020-05-21','YYYY-MM-DD'), 5, 0);
+INSERT INTO KUPON VALUES ('KUP002', 'Coba2', 'MEN001', 5000, TO_DATE('2020-05-17','YYYY-MM-DD'), TO_DATE('2020-05-29','YYYY-MM-DD'), 3, 0);
+INSERT INTO KUPON VALUES ('KUP003', 'Coba3', 'MEN011', 8000, TO_DATE('2020-05-19','YYYY-MM-DD'), TO_DATE('2020-05-29','YYYY-MM-DD'), 4, 0);
+INSERT INTO KUPON VALUES ('KUP004', 'Murah', 'MEN012', 4000, TO_DATE('2020-05-19','YYYY-MM-DD'), TO_DATE('2020-05-21','YYYY-MM-DD'), 6, 0);
+
+INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'FA00002', 0);
+INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'FA00002', 0);
+INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'SH00001', 0);
+INSERT INTO KUPON_MEMBER VALUES ('KUP002', 'SH00001', 0);
 
 create or replace function autogen_IDpegawai return varchar2
 is

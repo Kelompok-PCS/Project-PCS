@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Project.Insert_Kupon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="494" d:DesignWidth="651">
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="494" Stroke="Black" VerticalAlignment="Top" Width="651"/>
+        <Label x:Name="judul" Content="Insert Kupon" HorizontalAlignment="Left" Margin="8,13,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="637" Background="#FF0069D9" Height="22"/>
+        <Label Content="Nama Kupon" HorizontalAlignment="Left" Margin="30,75,0,0" VerticalAlignment="Top" FontSize="14" Width="120"/>
+        <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="35,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="545,385,0,0" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click_1" Background="#FF0046FF" Foreground="White" />
+        <Label Content="Awal Periode" HorizontalAlignment="Left" Margin="35,300,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
+        <Label Content="Akhir Periode" HorizontalAlignment="Left" Margin="355,302,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.544,2.042"/>
+        <DatePicker x:Name="awalP" HorizontalAlignment="Left" Margin="35,329,0,0" VerticalAlignment="Top" Width="240"/>
+        <DatePicker x:Name="akhirP" HorizontalAlignment="Left" Margin="355,330,0,0" VerticalAlignment="Top" Width="240"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="35,380,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click" Foreground="White" Background="#FF0046FF"/>
+        <Label Content="Harga Kupon" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top" FontSize="14" Width="120"/>
+        <TextBox x:Name="tbHarga" HorizontalAlignment="Left" Height="23" Margin="35,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Stok Kupon" HorizontalAlignment="Left" Margin="30,247,0,0" VerticalAlignment="Top" FontSize="14" Width="120"/>
+        <TextBox x:Name="tbStok" HorizontalAlignment="Left" Height="23" Margin="35,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="606"/>
+        <Label Content="Menu" HorizontalAlignment="Left" Margin="32,191,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <ComboBox x:Name="cmbMen" HorizontalAlignment="Left" Margin="35,220,0,0" VerticalAlignment="Top" Width="606" Loaded="CmbMen_Loaded"/>
+    </Grid>
+</UserControl>

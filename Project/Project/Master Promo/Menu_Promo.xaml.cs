@@ -30,6 +30,7 @@ namespace Project
             conn = App.Connection;
             this.canvas = canvas;
             gridMenu.IsReadOnly = true;
+			gridPurgatory.IsReadOnly = true;
         }
 
         DataTable tableMenuActive;
@@ -43,7 +44,15 @@ namespace Project
                 
                 conn.Open();
                 string query =
-                    $"SELECT nama_promo \"Nama Promo\",harga_promo \"Harga Promo\",periode_awal\"Awal Periode\" , periode_akhir\"Akhir Periode\" FROM promo WHERE status_promo = '{status}'";
+                    $"SELECT nama_promo \"Nama Promo\",periode_awal\"Awal Periode\" , periode_akhir\"Akhir Periode\", detail_promo\"Detail\", " +
+					$" " +
+					$"case" +
+					$" when jenis_promo = 'H' then 'Hemat'" +
+					$" when jenis_promo = 'HR' then 'Hari Raya'" +
+					$" when jenis_promo = 'M' then 'Menu'" +
+					$"	else 'Buy 1 Get 1'" +
+					$"end \"Jenis Promo\"" +
+	 $"FROM promo WHERE status_promo = '{status}'";
                 OracleCommand cmd = new OracleCommand(query, conn);
                 OracleDataAdapter adapter = new OracleDataAdapter(cmd);
                 adapter.Fill(tableMenu);
@@ -170,7 +179,7 @@ namespace Project
             {
                 conn.Open();
                 string query =
-                        $"UPDATE prono SET status = 1 WHERE id_promo = '{lbKodePurge.Content}'";
+                        $"UPDATE promo SET status_promo = 1 WHERE id_promo = '{lbKodePurge.Content}'";
                 OracleCommand cmd = new OracleCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -190,5 +199,15 @@ namespace Project
                 MessageBox.Show("tidak ada promo yang dipilih");
             }
         }
-    }
+
+		private void GridPurgatory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+		{
+			if (gridPurgatory.SelectedIndex != -1)
+			{
+				lbKodePurge.Content = kodeMenuPurge[gridPurgatory.SelectedIndex];
+				DataRow dr = tableMenuPurge.Rows[gridPurgatory.SelectedIndex];
+				tbNamaPulih.Text = dr[0].ToString();
+			}
+		}
+	}
 }

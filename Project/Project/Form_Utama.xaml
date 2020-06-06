@@ -363,8 +363,39 @@
                                          Style="{StaticResource tt_style}"/>
 
                             </ListViewItem.ToolTip>
+                            
+                            
 
                         </ListViewItem>
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_kupon"
+                                        Width="230" Height="50" MouseDown="to_kupon_MouseDown">
+
+                                <TextBlock Text="Master Kupon"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="tt_kupon"
+                                         Content="Kupon"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+
+
+                        </ListViewItem>
+
+
 
                         <!--// Sign Out //-->
 

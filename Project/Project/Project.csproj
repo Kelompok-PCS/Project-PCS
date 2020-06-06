@@ -140,6 +140,12 @@
       <DependentUpon>LaporanHari.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Master_Kupon\Insert_Kupon.xaml.cs">
+      <DependentUpon>Insert_Kupon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Master_Kupon\Master_kupon.xaml.cs">
+      <DependentUpon>Master_kupon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pegawai_UC\Pemesanan - Copy.xaml.cs">
       <DependentUpon>Pemesanan - Copy.xaml</DependentUpon>
     </Compile>
@@ -209,6 +215,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Master Promo\Menu_Promo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master_Kupon\Insert_Kupon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Master_Kupon\Master_kupon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

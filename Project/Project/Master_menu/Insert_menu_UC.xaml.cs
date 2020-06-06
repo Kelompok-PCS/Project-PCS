@@ -105,7 +105,7 @@ namespace Project.Master_menu
                                 MessageBox.Show("Gagal Masukan Menu");
                             }
                             filename = "";
-                            lbGambar.Content = "None";
+                            //lbGambar.Content = "None";
 
 
                             MessageBox.Show("Berhasil Masukan Menu");

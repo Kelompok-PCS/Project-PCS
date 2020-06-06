@@ -317,10 +317,8 @@ C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\ShockwaveFlashObjects.dll
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\stdole.dll
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\struk.g.cs
-C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\struk.baml
-C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Transaction.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Project.csproj.CopyComplete
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Laporan.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Laporan.baml
@@ -336,3 +334,9 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
