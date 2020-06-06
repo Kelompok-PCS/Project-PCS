@@ -72,6 +72,7 @@ namespace Project
                 btn.Foreground = Brushes.Black;
                 btn.Content = db.Tables[0].Rows[i]["nama_menu"].ToString();
                 btn.Name = "btns" + ctr;
+                btn.Tag = db.Tables[0].Rows[i]["id_menu"].ToString();
                 btn.HorizontalAlignment = HorizontalAlignment.Left;
                 btn.VerticalAlignment = VerticalAlignment.Top;
                 btn.Margin = new Thickness((counter * 30) + posx, posy, 0, 0);
@@ -96,7 +97,7 @@ namespace Project
             }
             
         }
-
+        string id_menu = "";
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
             Button name = ((Button)sender);
@@ -113,8 +114,78 @@ namespace Project
             nmenu.Content = namamenu;
             hmenu.Content = hargamenu;
             dmenu.Content = desmenu;
+            id_menu = name.Tag.ToString();
             gambarmenu.Source = new BitmapImage(new Uri(db.Tables[0].Rows[row]["gambar"].ToString(), UriKind.Relative));
 
+        }
+
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.lMenu.Count != 0)
+            {
+                int ctr = 0;
+                for (int i = 0; i < App.lMenu.Count; i++)
+                {
+                    if (App.lMenu[i].nama == id_menu)
+                    {
+                        int jum = Convert.ToInt32(tbJumlah.Text);
+                        App.lMenu[i].jumlah += jum;
+                        ctr = 1;
+                        System.Windows.Forms.MessageBox.Show("berhasil tambah jumlah");
+                    }
+                }
+                if (ctr == 0)
+                {
+                    App.lMenu.Add(new App.menu(id_menu, Convert.ToInt32(tbJumlah.Text)));
+                    System.Windows.Forms.MessageBox.Show("berhasil tambah menu");
+                }
+            }
+            else
+            {
+                App.lMenu.Add(new App.menu(id_menu, Convert.ToInt32(tbJumlah.Text)));
+                System.Windows.Forms.MessageBox.Show("berhasil tambah menu");
+            }
+        }
+
+        private void jumlah_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                int jum = Convert.ToInt32(tbJumlah.Text);
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    tbJumlah.Text = tbJumlah.Text.Substring(0, tbJumlah.Text.Length - 1);
+                    if (tbJumlah.Text == "")
+                    {
+                        tbJumlah.Text = "0";
+                    }
+                }
+                catch (Exception)
+                {
+                    tbJumlah.Text = "0";
+                }
+            }
+        }
+
+        private void plus_Click(object sender, RoutedEventArgs e)
+        {
+            int jum = Convert.ToInt32(tbJumlah.Text);
+            jum++;
+            tbJumlah.Text = jum.ToString();
+        }
+
+        private void min_Click(object sender, RoutedEventArgs e)
+        {
+            int jum = Convert.ToInt32(tbJumlah.Text);
+            jum--;
+            if (jum < 0)
+            {
+                jum = 0;
+            }
+            tbJumlah.Text = jum.ToString();
         }
     }
 }

@@ -18,5 +18,18 @@ namespace Project
         public static string user ="";
         public static string password ="";
         public static string source ="";
+
+        public class menu
+        {
+            public string nama { get; set; }
+            public int jumlah { get; set; }
+
+            public menu(string nama, int jumlah)
+            {
+                this.nama = nama;
+                this.jumlah = jumlah;
+            }
+        }
+        public static List<menu> lMenu = new List<menu>();
     }
 }

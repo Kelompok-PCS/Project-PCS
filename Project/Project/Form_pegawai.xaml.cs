@@ -43,7 +43,7 @@ namespace Project
         private void tbPemesan_MouseDown(object sender, MouseButtonEventArgs e)
         {
             canvas.Children.Clear();
-            Pemesanan pemesanan = new Pemesanan();
+            Pemesanan_copy pemesanan = new Pemesanan_copy();
             canvas.Children.Add(pemesanan);
         }
 
