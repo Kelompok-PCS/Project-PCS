@@ -198,7 +198,7 @@ namespace Project
 						System.IO.File.Copy(filename, target);
 						try
 						{
-							string kode = "PRO";
+							string kode = "PR";
 							string query =
 								"SELECT LPAD(NVL(MAX(SUBSTR(id_promo,-3,3)),'0')+1,3,0) FROM promo ";
 							OracleCommand cmd = new OracleCommand(query, connection);

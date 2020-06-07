@@ -65,6 +65,14 @@ namespace Project
 			Pilih_Meja Pilih_Meja = new Pilih_Meja();
 			canvas.Children.Add(Pilih_Meja);
 		}
+
+		private void TbMenu_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			canvas.Children.Clear();
+			Homemenu menu = new Homemenu();
+			canvas.Children.Add(menu);
+			
+		}
 	}
       
     
