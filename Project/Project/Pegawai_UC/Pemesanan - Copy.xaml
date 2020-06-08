@@ -7,31 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="494" d:DesignWidth="938" Background="AliceBlue">
     <Grid Margin="0,0,0,-0.4" Background="#FF242D3E" Loaded="Grid_Loaded">
-        <Border BorderBrush="#FFF1E9E9" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="136" Margin="0,47,-0.4,0" VerticalAlignment="Top" Width="938">
-            <Button x:Name="btnSearch" Content="Search" Margin="294,75,440,33.2" Click="btnSearch_Click" IsEnabled="False"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#FFF1E9E9" BorderThickness="0,0,0,1" HorizontalAlignment="Left" Height="136" Margin="0,47,-0.4,0" VerticalAlignment="Top" Width="938" Grid.ColumnSpan="2">
+            <Button x:Name="btnSearch" Content="Search" Margin="294,75,447.6,33.2" Click="btnSearch_Click" IsEnabled="False"/>
         </Border>
         <Label Content="Id Member: " HorizontalAlignment="Left" Margin="81,60,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <Label x:Name="___No_Name_" Content="Nama Member: " HorizontalAlignment="Left" Margin="59,89,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <Label Content="Pemesanan Pegawai" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Emoji" FontSize="20" Foreground="#FFF6EFEF"/>
         <TextBox x:Name="tbId" HorizontalAlignment="Left" Height="23" Margin="160,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="M000000000" IsEnabled="False"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="160,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <DataGrid x:Name="gridTrans" HorizontalAlignment="Left" Height="218" Margin="19,188,0,0" VerticalAlignment="Top" Width="909"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="853,465,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF151515" BorderBrush="#FF0B0A0A" Click="btnSubmit_Click"/>
-        <RadioButton x:Name="rdPunya" Content="Punya" HorizontalAlignment="Left" Margin="428,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" Checked="rdPunya_Checked"/>
-        <Label Content="Punya Member ?" HorizontalAlignment="Left" Margin="428,63,0,0" VerticalAlignment="Top" Foreground="#FFFAF6F6"/>
-        <RadioButton x:Name="rdTdk" Content="Tidak Punya" HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" IsChecked="True" Checked="rdTdk_Checked"/>
+        <DataGrid x:Name="gridTrans" HorizontalAlignment="Left" Height="218" Margin="19,188,0,0" VerticalAlignment="Top" Width="909" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="468.218,465,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF151515" BorderBrush="#FF0B0A0A" Click="btnSubmit_Click" Grid.Column="1"/>
+        <RadioButton x:Name="rdPunya" Content="Punya" HorizontalAlignment="Left" Margin="43.218,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" Checked="rdPunya_Checked" Grid.Column="1"/>
+        <Label Content="Punya Member ?" HorizontalAlignment="Left" Margin="43.218,63,0,0" VerticalAlignment="Top" Foreground="#FFFAF6F6" Grid.Column="1"/>
+        <RadioButton x:Name="rdTdk" Content="Tidak Punya" HorizontalAlignment="Left" Margin="99.218,94,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" IsChecked="True" Checked="rdTdk_Checked" Grid.Column="1"/>
         <Label x:Name="___No_Name__Copy" Content="No Telp: " HorizontalAlignment="Left" Margin="99,121,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF"/>
         <TextBox x:Name="tbTelp" HorizontalAlignment="Left" Height="23" Margin="160,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Jumlah Total: " HorizontalAlignment="Left" Margin="486,435,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
-        <Label Content="Jumlah Pesanan: " HorizontalAlignment="Left" Margin="465,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
-        <Label x:Name="lbPesanan" Content="0" HorizontalAlignment="Left" Margin="564,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
-        <Label x:Name="lbTotal" Content="0" HorizontalAlignment="Left" Margin="564,436,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
-        <RadioButton x:Name="rdDine" Content="Dine In" HorizontalAlignment="Left" Margin="615,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" IsChecked="True" Checked="rdTake_Checked"/>
-        <RadioButton x:Name="rdTake" Content="Take Away" HorizontalAlignment="Left" Margin="677,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked"/>
-        <RadioButton x:Name="rdDelivery" Content="Delivery" HorizontalAlignment="Left" Margin="756,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked"/>
+        <Label Content="Jumlah Total: " HorizontalAlignment="Left" Margin="101.218,435,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Grid.Column="1"/>
+        <Label Content="Jumlah Pesanan: " HorizontalAlignment="Left" Margin="80.218,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Grid.Column="1"/>
+        <Label x:Name="lbPesanan" Content="0" HorizontalAlignment="Left" Margin="179.218,409,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Grid.Column="1"/>
+        <Label x:Name="lbTotal" Content="0" HorizontalAlignment="Left" Margin="179.218,436,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Grid.Column="1"/>
+        <RadioButton x:Name="rdDine" Content="Dine In" HorizontalAlignment="Left" Margin="230.218,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" IsChecked="True" Checked="rdTake_Checked" Grid.Column="1"/>
+        <RadioButton x:Name="rdTake" Content="Take Away" HorizontalAlignment="Left" Margin="292.218,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked" Grid.Column="1"/>
+        <RadioButton x:Name="rdDelivery" Content="Delivery" HorizontalAlignment="Left" Margin="371.218,415,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked" Grid.Column="1"/>
         <TextBlock x:Name="jumlah_meja" HorizontalAlignment="Left" Margin="174,416,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="19,416,0,0" TextWrapping="Wrap" Text="Jumlah Kursi Yang Di Pesan :" VerticalAlignment="Top" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="19,445,0,0" TextWrapping="Wrap" Text="Kursi Yang Di Pesan             :" VerticalAlignment="Top" Foreground="White"/>
         <TextBlock x:Name="detail_meja_pesanan" HorizontalAlignment="Left" Margin="173,448,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Foreground="White"/>
+        <ComboBox x:Name="cmbKupon" HorizontalAlignment="Left" Margin="230.218,125,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" SelectionChanged="cmbKupon_SelectionChanged"/>
+        <Label x:Name="___No_Name__Copy1" Content="Kupon Member" HorizontalAlignment="Left" Margin="230.218,96,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" Grid.Column="1"/>
+        <Button x:Name="btnCancel" Content="Hapus Pesanan Terpilih" HorizontalAlignment="Left" Margin="283,420,0,0" VerticalAlignment="Top" Width="134" Click="btnCancel_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>

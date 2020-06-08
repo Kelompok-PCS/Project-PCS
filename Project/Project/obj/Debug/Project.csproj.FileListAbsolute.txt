@@ -255,8 +255,6 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Transaction.baml
@@ -332,7 +330,6 @@ C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\FlashControlV71.dll
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Laporan.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\struk.g.cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction_UC.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportSource.dll
@@ -356,7 +353,6 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\stdole.dl
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\ShockwaveFlashObjects.dll
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Laporan.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\struk.baml
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction_UC.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.exe.config
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.g.cs
@@ -367,3 +363,9 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.baml

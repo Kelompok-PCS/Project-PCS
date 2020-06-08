@@ -35,7 +35,7 @@ CREATE TABLE members (
   username varchar(50) NOT NULL,
   email varchar(100) NOT NULL,
   alamat varchar(100) NOT NULL,
-  no_hp varchar(13) NOT NULL,
+  no_hp varchar(15) NOT NULL,
   kota varchar(50) NOT NULL,
   kecematan varchar(50) NOT NULL,
   kode_pos NUMBER NOT NULL,
