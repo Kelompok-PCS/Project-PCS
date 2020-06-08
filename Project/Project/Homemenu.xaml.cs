@@ -139,6 +139,7 @@ namespace Project
 				//MessageBox.Show(idkat);
 				string query = "";
 				string query2 = "";
+				string query3 = "";
 				if (rbmenu.IsChecked == true)
 				{
 					query = $"SELECT count(ID_MENU) from MENU where id_kategori ='{idkat}' and status = 1";
@@ -147,7 +148,7 @@ namespace Project
 				{
 					query = $"SELECT count(ID_paket) from paket where id_kategori ='{idkat}' and status = 1 ";
 					query2 = $"SELECT * FROM paket where id_kategori ='{idkat}' and status =1";
-				}
+                }
 				
                 OracleCommand cmd = new OracleCommand(query, conn);
                 jumlah = Convert.ToInt32(cmd.ExecuteScalar().ToString());
@@ -223,6 +224,8 @@ namespace Project
             
         }
         string id_menu = "";
+        List<string> listisi = new List<string>();
+        List<string> listisi2 = new List<string>();
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -247,7 +250,68 @@ namespace Project
 				gambarmenu.Source = new BitmapImage(new Uri(db.Tables[0].Rows[row]["gambar_paket"].ToString(), UriKind.Relative));
 			
 			}
+			id_menu = name.Tag.ToString();
+            string isi = "";
+            if (id_menu.Contains("PK"))
+            {
+                listisi.Clear();
+                listisi2.Clear();
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM PAKET_MENU WHERE ID_PAKET = '{id_menu}'";
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    OracleDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        listisi.Add(reader.GetString(1));
+                    }
+                    try
+                    {
+                        for (int i = 0; i < listisi.Count(); i++)
+                        {
+                            string query2 = $"SELECT NAMA_MENU FROM MENU WHERE ID_MENU = '{listisi[i]}'";
+                            OracleCommand cmd2 = new OracleCommand(query2, conn);
+                            OracleDataReader reader2 = cmd2.ExecuteReader();
+                            while (reader2.Read())
+                            {
+                                listisi2.Add(reader2.GetString(0));
+                            }
+                        }
+                        for (int i = 0; i < listisi2.Count(); i++)
+                        {
+                            if (i == listisi2.Count - 1)
+                            {
+                                isi += listisi2[i];
 
+                            }
+                            else
+                            {
+                                isi += listisi2[i] + ", ";
+                            }
+
+                        }
+
+                        conn.Close();   
+                        dmenu.Content = isi;
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        MessageBox.Show(ex.StackTrace);
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    MessageBox.Show(ex.StackTrace);
+                }
+            }
+            else
+            {
+                dmenu.Content = desmenu;
+            }
 			string hargamenu = "Rp ";
            
             string depan = (harga / 1000).ToString();
@@ -256,7 +320,6 @@ namespace Project
             hargamenu += depan + belakang;
             nmenu.Content = namamenu;
             hmenu.Content = hargamenu;
-            dmenu.Content = desmenu;
 			if(rbmenu.IsChecked== true)
 			{
 				cekpromo(db.Tables[0].Rows[row]["id_menu"].ToString());
@@ -265,7 +328,7 @@ namespace Project
 				cekpromo(db.Tables[0].Rows[row]["id_paket"].ToString());
 			}
 			
-			id_menu = name.Tag.ToString();
+            
 
         }
 

@@ -382,16 +382,16 @@ namespace Project.Pegawai
 				tbTelp.CaretIndex = tbTelp.Text.Length;
 			}
 
-			if (tbTelp.Text.Length >=13 )
+			if (tbTelp.Text.Length >=12 )
 			{
 				lanjut = true;
 				char[] ars = new char[15];
-				for (int i = 0; i < 13; i++)
+				for (int i = 0; i < 12; i++)
 				{
 					ars[i] = tbTelp.Text[i];
 				}
 				tbTelp.Text = "";
-				for (int i = 0; i < 13; i++)
+				for (int i = 0; i < 12; i++)
 				{
 					tbTelp.Text = tbTelp.Text + ars[i];
 				}
