@@ -144,25 +144,50 @@ namespace Project.Pegawai
             foreach (App.menu item in App.lMenu)
             {
                 DataRow dr = tableTrans.NewRow();
-                string query = $"SELECT * from menu where id_menu='{item.nama}'";
-                using(OracleDataAdapter adap = new OracleDataAdapter(query, conn))
+                if (item.nama.Substring(0, 2) == "ME")
                 {
-                    DataTable dt = new DataTable();
-                    adap.Fill(dt);
-                    string id = dt.Rows[0].ItemArray[0].ToString();
-                    string nama = dt.Rows[0].ItemArray[1].ToString();
-                    string harga= dt.Rows[0].ItemArray[2].ToString();
-                    string deskrip = dt.Rows[0].ItemArray[4].ToString();
-                    int grandtotal = item.jumlah * Convert.ToInt32(harga);
-                    dr[0] = nama;
-                    dr[1] = harga;
-                    dr[2] = deskrip;
-                    dr[3] = item.jumlah;
-                    dr[4] = grandtotal;
-                    tableTrans.Rows.Add(dr);
+
+                    string query = $"SELECT * from menu where id_menu='{item.nama}'";
+                    using (OracleDataAdapter adap = new OracleDataAdapter(query, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        adap.Fill(dt);
+                        string id = dt.Rows[0].ItemArray[0].ToString();
+                        string nama = dt.Rows[0].ItemArray[1].ToString();
+                        string harga = dt.Rows[0].ItemArray[2].ToString();
+                        string deskrip = dt.Rows[0].ItemArray[4].ToString();
+                        int grandtotal = item.jumlah * Convert.ToInt32(harga);
+                        dr[0] = nama;
+                        dr[1] = harga;
+                        dr[2] = deskrip;
+                        dr[3] = item.jumlah;
+                        dr[4] = grandtotal;
+                        tableTrans.Rows.Add(dr);
+                    }
                 }
-                gridTrans.ItemsSource = tableTrans.DefaultView;
+                else
+                {
+
+                    string query = $"SELECT * from paket where id_paket='{item.nama}'";
+                    using (OracleDataAdapter adap = new OracleDataAdapter(query, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        adap.Fill(dt);
+                        string id = dt.Rows[0].ItemArray[0].ToString();
+                        string nama = dt.Rows[0].ItemArray[1].ToString();
+                        string harga = dt.Rows[0].ItemArray[2].ToString();
+                        string deskrip = "";
+                        int grandtotal = item.jumlah * Convert.ToInt32(harga);
+                        dr[0] = nama;
+                        dr[1] = harga;
+                        dr[2] = deskrip;
+                        dr[3] = item.jumlah;
+                        dr[4] = grandtotal;
+                        tableTrans.Rows.Add(dr);
+                    }
+                }
             }
+            gridTrans.ItemsSource = tableTrans.DefaultView;
             conn.Close();
         }
 

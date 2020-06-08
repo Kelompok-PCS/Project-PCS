@@ -266,7 +266,7 @@ namespace Project
 			}
 			
 			id_menu = name.Tag.ToString();
-
+            tbJumlah.Text = "1";
         }
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
@@ -289,13 +289,13 @@ namespace Project
                 if (ctr == 0)
                 {
                     App.lMenu.Add(new App.menu(id_menu, Convert.ToInt32(tbJumlah.Text)));
-                    System.Windows.Forms.MessageBox.Show("Mohon input jumlah menu");
+                    System.Windows.Forms.MessageBox.Show("Berhasil tambah menu");
                 }
             }
             else
             {
                 App.lMenu.Add(new App.menu(id_menu, Convert.ToInt32(tbJumlah.Text)));
-                System.Windows.Forms.MessageBox.Show("gagal tambah menu");
+                System.Windows.Forms.MessageBox.Show("Berhasil tambah menu");
             }
         }
 

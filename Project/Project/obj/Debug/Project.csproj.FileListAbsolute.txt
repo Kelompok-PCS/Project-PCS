@@ -340,3 +340,7 @@ C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
 C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
