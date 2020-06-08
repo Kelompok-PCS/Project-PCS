@@ -201,6 +201,22 @@ namespace Project.Pegawai {
         #line default
         #line hidden
         
+        
+        #line 43 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox cmbPromo;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 44 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label ___No_Name__Copy2;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -352,6 +368,18 @@ namespace Project.Pegawai {
             
             #line default
             #line hidden
+            return;
+            case 22:
+            this.cmbPromo = ((System.Windows.Controls.ComboBox)(target));
+            
+            #line 43 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+            this.cmbPromo.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbPromo_SelectionChanged);
+            
+            #line default
+            #line hidden
+            return;
+            case 23:
+            this.___No_Name__Copy2 = ((System.Windows.Controls.Label)(target));
             return;
             }
             this._contentLoaded = true;

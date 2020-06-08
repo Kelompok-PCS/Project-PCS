@@ -214,8 +214,8 @@ INSERT INTO PROMO VALUES ('PR005', 'Es Ceria', TO_DATE('2020-04-09','YYYY-MM-DD'
 INSERT INTO PROMO VALUES ('PR006', 'Hari Raya Penuh berkah', TO_DATE('2020-05-11','YYYY-MM-DD'), TO_DATE('2020-05-23','YYYY-MM-DD'), 'PrImage/LennyFace.jpg', 'Promo Ini sangat bagus dan hebat', 'HR', 0);
 INSERT INTO PROMO VALUES ('PR007', 'Promo Enak', TO_DATE('2020-05-15','YYYY-MM-DD'), TO_DATE('2020-05-31','YYYY-MM-DD'), 'PrImage/promoenak.jpg', 'lalala', 'H', 0);
 
-INSERT INTO promo_paket VALUES ('PRO001', 'MEN012', 7500, 1);
-INSERT INTO promo_paket VALUES ('PRO001', 'MEN011', 12000, 1);
+INSERT INTO promo_paket VALUES ('PR001', 'MEN012', 7500, 1);
+INSERT INTO promo_paket VALUES ('PR001', 'MEN011', 12000, 1);
 
 INSERT INTO menu VALUES('MEN001', 'Nasi Goreng Jawa', 20000, 'Image/Nasgor.jpg', 'Dengan Bumbu Jawa', 'KAT002', 1);
 INSERT INTO menu VALUES('MEN002', 'Ayam goreng', 5000, 'Image/Aygor.jpg', 'Dengan tambahan rempah-rempah', 'KAT001', 1);
