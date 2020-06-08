@@ -24,7 +24,8 @@ namespace Project.Pegawai
     public partial class Pemesanan_copy : UserControl
     {
         OracleConnection conn;
-        public Pemesanan_copy()
+        string kodePegawai = "";
+        public Pemesanan_copy(string kodePegawai)
         {
             InitializeComponent();
             this.conn = App.Connection;
@@ -35,6 +36,7 @@ namespace Project.Pegawai
             reset_trans();
             loadMenu();
             loadKupon();
+            this.kodePegawai = kodePegawai;
         }
         
         private void reset_trans()
@@ -298,7 +300,7 @@ namespace Project.Pegawai
                 }
 
 
-                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}";
+                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}||Alamat :{tbAlamat.Text}";
                 query =
                     "INSERT INTO hjual VALUES ( " +
                     $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotals}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";

@@ -217,6 +217,22 @@ namespace Project.Pegawai {
         #line default
         #line hidden
         
+        
+        #line 45 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lbAalamat;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 46 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox tbAlamat;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -362,6 +378,11 @@ namespace Project.Pegawai {
             return;
             case 23:
             this.detail_meja_pesanan = ((System.Windows.Controls.TextBlock)(target));
+            case 24:
+            this.lbAalamat = ((System.Windows.Controls.Label)(target));
+            return;
+            case 25:
+            this.tbAlamat = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;
