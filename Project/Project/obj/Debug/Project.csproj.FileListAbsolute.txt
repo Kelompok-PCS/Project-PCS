@@ -399,3 +399,11 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.M
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.xml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login_pegawai.g.cs
+C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml
