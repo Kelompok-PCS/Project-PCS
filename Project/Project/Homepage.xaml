@@ -3,14 +3,63 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Homepage
-        " Height="360.609" Width="418.059" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Homepage"
+        Height="450" Width="380"
+        WindowStartupLocation="CenterScreen" 
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="MainWindow_OnMouseDown">
     <Grid>
-        <Button Content="Admin" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="Button_Click"/>
-        <Button Content="Pegawai" HorizontalAlignment="Left" Margin="138,147,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="Button_Click_1"/>
-        <Label Content="Pilih Halaman" HorizontalAlignment="Left" Margin="130,33,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+    <GradientStop Color="#f083da" Offset="1"/>
+    </LinearGradientBrush>
+    </Border.Background>
+    </Border>
+
+
+    <StackPanel VerticalAlignment="Center">
+        <Image Source="Image/logo.png" Width="150" Height="100" Margin="90,0"/>
+        <TextBlock Text="Pilih"
+                          FontWeight="Light"
+                          FontFamily="helvetica"
+                          FontSize="22"
+                          Foreground="White"
+                          HorizontalAlignment="Center" Margin="119,30,118,0"/>
+    </StackPanel>
+
+
+
+    <StackPanel Grid.Row="1" >
+       
+        <StackPanel Orientation="Horizontal" Margin="0,35,0,0">
+            <Border CornerRadius="6" BorderBrush="Purple" BorderThickness="3" Margin="30,0,60,0" HorizontalAlignment="Center" Width="325" >
+                <Button x:Name="admin" Height="40" Content="Admin" Margin="-3,0,-1,0" BorderBrush="Purple" Foreground="White" Background="{x:Null}" Click="admin_Click"/>
+            </Border>
+        </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,35,0,0">
+                    <Border CornerRadius="6" BorderBrush="Purple" BorderThickness="3" Margin="30,0,60,0" HorizontalAlignment="Center" Width="325" >
+                        <Button x:Name="pegawai" Height="40" Content="Pegawai" Margin="-3,0,-1,0" BorderBrush="Purple" Foreground="White" Background="{x:Null}" Click="pegawai_Click"/>
+                    </Border>
+                </StackPanel>
+        
+
+
+
+            </StackPanel>
+
+    </Grid>
     </Grid>
 </Window>

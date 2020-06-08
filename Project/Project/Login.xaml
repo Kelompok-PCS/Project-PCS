@@ -3,18 +3,127 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Login" Height="360.609" Width="418.059" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Login" Height="450" Width="380"
+        WindowStartupLocation="CenterScreen" 
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="MainWindow_OnMouseDown">
+    
     <Grid>
-        <Label Content="Login Database" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="64" Width="275" FontSize="36" FontWeight="Bold"/>
-        <Label Content="Data Source" HorizontalAlignment="Left" Margin="94,83,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbData" HorizontalAlignment="Left" Height="23" Margin="184,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="orcl"/>
-        <Label Content="User Id" HorizontalAlignment="Left" Margin="120,117,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbUser" HorizontalAlignment="Left" Height="23" Margin="184,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="project"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="106,149,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="tbPass" HorizontalAlignment="Left" Height="23" Margin="184,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="123"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="146,195,0,0" VerticalAlignment="Top" Width="103" Height="34" FontWeight="Bold" FontSize="16" Click="btnLogin_Click"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+                        <GradientStop Color="#f083da" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+           
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="Image/logo.png" Width="150" Height="100" Margin="90,0"/>
+                <TextBlock Text="Login Database"
+                          FontWeight="Light"
+                          FontFamily="helvetica"
+                          FontSize="22"
+                          Foreground="White"
+                          HorizontalAlignment="Center" Margin="119,30,118,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="tbData" FontFamily="Helvetica"
+                            FontWeight="Light"
+                            Text="Source"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Width="235"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"
+                            Height="25"
+                            Margin="63,0,0,0" MouseEnter="tbData_MouseEnter"/>
+
+                    <iconPacks:PackIconMaterial Kind="SourceFork"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="White"/>
+                </StackPanel>
+                <Border Width="250"
+                       Height="2"
+                       Background="White"
+                       Opacity="0.5"/>
+
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBox x:Name="tbUser" FontFamily="Helvetica"
+                            FontWeight="Light"
+                            Text="Username"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Width="235"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"
+                            Height="25"
+                            Margin="63,0,0,0" MouseEnter="tbUser_MouseEnter"/>
+                    <iconPacks:PackIconMaterial Kind="Account"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="White"/>
+                </StackPanel>
+                <Border Width="250"
+                       Height="2"
+                       Background="White"
+                       Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBox x:Name="tbPass" FontFamily="Helvetica"
+                            FontWeight="Light"
+                            Text="Password"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Width="235"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"
+                            Height="25"
+                            Margin="63,0,0,0" MouseEnter="tbPass_MouseEnter"/>
+                    <iconPacks:PackIconMaterial Kind="FormTextboxPassword"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="White"/>
+                </StackPanel>
+                <Border Width="250"
+                       Height="2"
+                       Background="White"
+                       Opacity="0.5"/>
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,35,0,0">
+                    <Border CornerRadius="6" BorderBrush="Purple" BorderThickness="3" Margin="30,0,60,0" HorizontalAlignment="Center" Width="325" >
+                        <Button x:Name="btnLogin" Height="40" Content="LOGIN" Margin="-3,0,-1,0" Foreground="White" BorderBrush="Purple" Background="{x:Null}" Click="btnLogin_Click"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
+    

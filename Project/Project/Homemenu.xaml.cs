@@ -327,8 +327,7 @@ namespace Project
 			{
 				cekpromo(db.Tables[0].Rows[row]["id_paket"].ToString());
 			}
-			
-			id_menu = name.Tag.ToString();
+
             tbJumlah.Text = "1";
         }
 

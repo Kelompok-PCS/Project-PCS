@@ -54,7 +54,6 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Resources\search-icon
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.exe.config
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.exe
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\Project.pdb
-C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Form_Utama.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master Kateogri\Insert_kategori.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login.g.cs
@@ -387,3 +386,10 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_k
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Login_pegawai.g.cs
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
