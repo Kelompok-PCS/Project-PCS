@@ -71,6 +71,14 @@ namespace Project
                 }
 
                 btn.Tag = item.ItemArray[3].ToString();
+                foreach (Button items in Form_pegawai.lbtn)
+                {
+                    if (items.Content.ToString() == item.ItemArray[0].ToString())
+                    {
+                        btn.Background = Brushes.Blue;
+                        btn.Tag = "3";
+                    }
+                }
                 btn.Content = item.ItemArray[0].ToString();
                 btn.HorizontalAlignment = HorizontalAlignment.Left;
                 btn.VerticalAlignment = VerticalAlignment.Top;
@@ -105,7 +113,15 @@ namespace Project
             {
                 btn.Tag = "1";
                 btn.Background = Brushes.Green;
-                lbtn.Remove(btn);
+                foreach (Button item in lbtn)
+                {
+                    if (item.Content.ToString()==btn.Content.ToString())
+                    {
+                        System.Windows.Forms.MessageBox.Show("Test");
+                        lbtn.Remove(item);
+                        break;
+                    }
+                }
             }
             getDetail_Meja();
         }
