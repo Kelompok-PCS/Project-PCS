@@ -16,7 +16,6 @@
         <TextBox x:Name="tbId" HorizontalAlignment="Left" Height="23" Margin="609,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="M000000000" IsEnabled="False"/>
         <TextBox x:Name="tbNama" HorizontalAlignment="Left" Height="23" Margin="609,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <TextBox x:Name="tbTelp" HorizontalAlignment="Left" Height="23" Margin="609,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSearch" Content="Search" Margin="732,87,2,382" Click="btnSearch_Click" IsEnabled="False"/>
         <RadioButton x:Name="rdPunya" Content="Punya" HorizontalAlignment="Left" Margin="612,213,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" Checked="rdPunya_Checked"/>
         <Label Content="Punya Member ?" HorizontalAlignment="Left" Margin="612,182,0,0" VerticalAlignment="Top" Foreground="#FFFAF6F6"/>
         <RadioButton x:Name="rdTdk" Content="Tidak Punya" HorizontalAlignment="Left" Margin="668,213,0,0" VerticalAlignment="Top" Foreground="#FFF6F5F5" GroupName="memberOpt" IsChecked="True" Checked="rdTdk_Checked"/>
@@ -31,6 +30,5 @@
         <RadioButton x:Name="rdTake" Content="Take Away" HorizontalAlignment="Left" Margin="628,285,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked"/>
         <RadioButton x:Name="rdDelivery" Content="Delivery" HorizontalAlignment="Left" Margin="707,285,0,0" VerticalAlignment="Top" GroupName="jenis" Foreground="#FFFAF7F7" Checked="rdTake_Checked"/>
         <TextBox x:Name="tbReservasi" HorizontalAlignment="Left" Height="23" Margin="609,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSearch_reserv" Content="Search" Margin="732,127,2,342" Click="btnSearch_Click"/>
     </Grid>
 </UserControl>

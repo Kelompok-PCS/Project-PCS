@@ -104,10 +104,7 @@ namespace Project.Master_menu
                                 MessageBox.Show(ex.Message);
                                 MessageBox.Show("Gagal Masukan Menu");
                             }
-                            filename = "";
-                            lbGambar.Content = "None";
 
-                            
                             MessageBox.Show("Berhasil Masukan Menu");
                         }
                         catch (Exception ex)
