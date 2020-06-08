@@ -1,4 +1,5 @@
 ﻿using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -42,30 +43,12 @@ namespace Project.Pegawai
                 detail_meja_pesanan.Text = "-";
                 jumlah_meja.Text = "0";
             }
+            gridTrans.IsReadOnly = true;
             reset_trans();
             loadMenu();
+            loadKupon();
         }
-        List<kategori> kategoris;
-        List<string> kodeMenuTrans;
-        private void getDetail_Meja()
-        {
-            //if (Form_pegawai.lbtn.Count()>0)
-            //{
-            //    string detail = " ";
-            //    foreach (Button item in Form_pegawai.lbtn)
-            //    {
-            //        detail += item.Content + ",";
-            //    }
-            //    MessageBox.Show(detail);
-            //    detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
-            //    jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
-            //}
-            //else
-            //{
-            //    detail_meja_pesanan.Text = "-";
-            //    jumlah_meja.Text = "0";
-            //}
-        }
+        
         private void reset_trans()
         {
             tableTrans = new DataTable();
@@ -75,6 +58,38 @@ namespace Project.Pegawai
             tableTrans.Columns.Add("Jumlah");
             tableTrans.Columns.Add("Subtotal");
             gridTrans.ItemsSource = tableTrans.DefaultView;
+        }
+
+        List<kupon_member> kupons;
+        private void loadKupon()
+        {
+            kupons = new List<kupon_member>();
+            conn.Open();
+            string query =
+                $"SELECT k1.id_kupon,k1.id_menu,k1.nama_kupon,TO_CHAR(k1.harga_kupon),TO_CHAR(k1.sisa_kupon) " +
+                $"FROM kupon k1 " +
+                $"JOIN kupon_member k2 ON k2.id_kupon = k1.id_kupon " +
+                $"WHERE k2.id_member = '{tbId.Text}' AND k1.status_kupon = '1' AND " +
+                $"k2.status= '1' AND (TO_CHAR(k1.periode_awal_kupon) >= TO_CHAR(SYSDATE) " +
+                $"AND TO_CHAR(k1.periode_akhir_kupon) <= TO_CHAR(SYSDATE)) " +
+                $"AND k1.sisa_kupon >0 ";
+            OracleCommand cmd = new OracleCommand(query,conn);
+            OracleDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                kupons.Add(new kupon_member(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)));
+            }
+            
+            if (kupons.Count == 0)
+            {
+                kupons.Add(new kupon_member("none"," ", "tidak terdapat kupon untuk member ini"," "," "));
+            }
+            cmbKupon.ItemsSource = kupons;
+            cmbKupon.DisplayMemberPath = "nama_kupon";
+            cmbKupon.SelectedValuePath = "kode_kupon";
+
+            conn.Close();
         }
         private void update_meja()
         {
@@ -95,29 +110,24 @@ namespace Project.Pegawai
         }
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            tbId.IsEnabled = false;
-            kategoris = new List<kategori>();
-            tableTrans = new DataTable();
-            kodeMenuTrans = new List<string>();
-            tableTrans.Columns.Add("Nama Menu");
-            tableTrans.Columns.Add("Harga Menu");
-            tableTrans.Columns.Add("Deskripsi Menu");
-            tableTrans.Columns.Add("Jumlah");
-            tableTrans.Columns.Add("Subtotal");
-            gridTrans.IsReadOnly = true;
-            
-
+            gridTrans.IsReadOnly = true;   
         }
 
-        private class kategori
+        private class kupon_member
         {
-            public string kode { get; set; }
-            public string nama { get; set; }
+            public string kode_kupon { get; set; }
+            public string kode_menu { get; set; }
+            public string nama_kupon { get; set; }
+            public string harga { get; set; }
+            public string sisa_kupon { get; set; }
 
-            public kategori(string kode, string nama)
+            public kupon_member(string kode_kupon, string kode_menu, string nama_kupon, string harga, string sisa_kupon)
             {
-                this.kode = kode;
-                this.nama = nama;
+                this.kode_kupon = kode_kupon;
+                this.kode_menu = kode_menu;
+                this.nama_kupon = nama_kupon;
+                this.harga = harga;
+                this.sisa_kupon = sisa_kupon;
             }
         }
 
@@ -137,7 +147,6 @@ namespace Project.Pegawai
         {
 
         }
-        List<string> kodeMenu = new List<string>();
         private void loadMenu()
         {
             conn.Open();
@@ -189,6 +198,8 @@ namespace Project.Pegawai
             }
             gridTrans.ItemsSource = tableTrans.DefaultView;
             conn.Close();
+            lbPesanan.Content = jumlahPesanan;
+            lbTotal.Content = grandtotal;
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
@@ -204,95 +215,102 @@ namespace Project.Pegawai
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if (gridTrans.SelectedIndex !=-1)
+            conn.Open();
+            OracleTransaction trans = conn.BeginTransaction();
+            try
             {
-                conn.Open();
-                OracleTransaction trans = conn.BeginTransaction();
-                try
+                string kode = "HJ";
+                DateTime tgl = DateTime.Now;
+                string nomor_nota = tgl.Year.ToString() + tgl.Month.ToString().PadLeft(2, '0') + tgl.Day.ToString().PadLeft(2, '0');
+                string tanggl_trans = tgl.Day.ToString().PadLeft(2, '0') + tgl.Month.ToString().PadLeft(2, '0') + tgl.Year.ToString();
+                kode += nomor_nota;
+                string query =
+                    "SELECT LPAD(NVL(MAX(SUBSTR(id_hjual,-3,3)),0)+1,3,0) " +
+                    "FROM hjual " +
+                    $"WHERE id_hjual LIKE '{kode}%' ";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                kode += cmd.ExecuteScalar().ToString();
+                string jenisPemesanan = "";
+
+                if (rdDine.IsChecked == true)
                 {
-                    string kode = "HJ";
-                    DateTime tgl = DateTime.Now;
-                    string nomor_nota = tgl.Year.ToString() + tgl.Month.ToString().PadLeft(2, '0') + tgl.Day.ToString().PadLeft(2, '0');
-                    string tanggl_trans = tgl.Day.ToString().PadLeft(2, '0') + tgl.Month.ToString().PadLeft(2, '0') + tgl.Year.ToString();
-                    kode += nomor_nota;
-                    string query =
-                        "SELECT LPAD(NVL(MAX(SUBSTR(id_hjual,-3,3)),0)+1,3,0) " +
-                        "FROM hjual " +
-                        $"WHERE id_hjual LIKE '{kode}%' ";
-                    OracleCommand cmd = new OracleCommand(query, conn);
-                    kode += cmd.ExecuteScalar().ToString();
-                    string jenisPemesanan = "";
-
-                    if (rdDine.IsChecked == true)
-                    {
-                        jenisPemesanan = "Dine In";
-                    }
-                    else if (rdTake.IsChecked == true)
-                    {
-                        jenisPemesanan = "Take Away";
-                    }
-                    else if (rdDelivery.IsChecked == true)
-                    {
-                        jenisPemesanan = "Delivery";
-                    }
+                    jenisPemesanan = "Dine In";
+                }
+                else if (rdTake.IsChecked == true)
+                {
+                    jenisPemesanan = "Take Away";
+                }
+                else if (rdDelivery.IsChecked == true)
+                {
+                    jenisPemesanan = "Delivery";
+                }
 
 
-                    var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}";
+                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}";
+                query =
+                    "INSERT INTO hjual VALUES ( " +
+                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";
+                cmd = new OracleCommand(query, conn);
+                cmd.ExecuteNonQuery();
 
-                    //TODO ganti pegawai dengan pegawai asli
+                int index = 0;
+                string id_hjual = kode;
+                foreach (DataRow row in tableTrans.Rows)
+                {
+                    string td = kode + "_";
                     query =
-                        "INSERT INTO hjual VALUES ( " +
-                        $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";
+                        "SELECT LPAD(NVL(MAX(SUBSTR(id_djual,-2,2)),0)+1,2,0) " +
+                        "FROM djual " +
+                        $"WHERE id_djual LIKE '{td}%'";
+                    cmd = new OracleCommand(query, conn);
+                    td += cmd.ExecuteScalar().ToString();
+                    string id_menu = App.lMenu[index].nama;
+                    index++;
+                    string harga = row[1].ToString();
+                    string jumlah = row[3].ToString();
+                    string subtotal = row[4].ToString();
+
+                    query =
+                        $"INSERT INTO djual VALUES ( " +
+                        $"'{td}','{id_menu}','{harga}','{jumlah}','{subtotal}','{id_hjual}') ";
+                    cmd = new OracleCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                }
+
+                if (cmbKupon.SelectedIndex != -1)
+                {
+                    query =
+                        $"UPDATE kupon_member SET status = 0 WHERE id_member = '{tbId.Text}'";
                     cmd = new OracleCommand(query, conn);
                     cmd.ExecuteNonQuery();
 
-                    int index = 0;
-                    string id_hjual = kode;
-                    foreach (DataRow row in tableTrans.Rows)
-                    {
-                        string td = kode + "_";
-                        query =
-                            "SELECT LPAD(NVL(MAX(SUBSTR(id_djual,-2,2)),0)+1,2,0) " +
-                            "FROM djual " +
-                            $"WHERE id_djual LIKE '{td}%'";
-                        cmd = new OracleCommand(query, conn);
-                        td += cmd.ExecuteScalar().ToString();
-                        string id_menu = kodeMenuTrans[index];
-                        index++;
-                        string harga = row[1].ToString();
-                        string jumlah = row[3].ToString();
-                        string subtotal = row[4].ToString();
-
-                        query =
-                            $"INSERT INTO djual VALUES ( " +
-                            $"'{td}','{id_menu}','{harga}','{jumlah}','{subtotal}','{id_hjual}') ";
-                        cmd = new OracleCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                    }
-                    update_meja();
-                    trans.Commit();
-                    conn.Close();
-                }
-                catch (Exception ex)
-                {
-                    trans.Rollback();
-                    conn.Close();
-                    MessageBox.Show(ex.Message);
+                    query =
+                        $"UPDATE kupon SET sisa_kupon = {Convert.ToInt32(kupons[cmbKupon.SelectedIndex].sisa_kupon) - 1} WHERE id_kupon = '{cmbKupon.SelectedValue}'";
+                    cmd = new OracleCommand(query, conn);
+                    cmd.ExecuteNonQuery();
                 }
 
-                tableTrans.Clear();
-                gridTrans.ItemsSource = tableTrans.DefaultView;
-                kodeMenuTrans.Clear();
-                grandtotal = 0;
-                jumlahPesanan = 0;
-                lbPesanan.Content = jumlahPesanan;
-                lbTotal.Content = grandtotal;
-                gridTrans.SelectedIndex = -1;
+                update_meja();
+                trans.Commit();
+                conn.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("tidak ada yang dipilih");
+                trans.Rollback();
+                conn.Close();
+                MessageBox.Show(ex.Message);
             }
+
+            tableTrans.Clear();
+            gridTrans.ItemsSource = tableTrans.DefaultView;
+            App.lMenu.Clear();
+            grandtotal = 0;
+            jumlahPesanan = 0;
+            lbPesanan.Content = jumlahPesanan;
+            lbTotal.Content = grandtotal;
+            gridTrans.SelectedIndex = -1;
+            loadKupon();
+            MessageBox.Show("berhasil masukan transaksi");
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -304,10 +322,9 @@ namespace Project.Pegawai
                 jumlahPesanan -= Convert.ToInt32(dr[3].ToString());
                 lbPesanan.Content = jumlahPesanan;
                 lbTotal.Content = grandtotal;
-                kodeMenuTrans.RemoveAt(gridTrans.SelectedIndex);
                 tableTrans.Rows.RemoveAt(gridTrans.SelectedIndex);
                 gridTrans.ItemsSource = tableTrans.DefaultView;
-                
+                gridTrans.SelectedIndex = -1;
             }
         }
 
@@ -345,6 +362,37 @@ namespace Project.Pegawai
 
         }
 
+        private void btnKupon_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmbKupon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbKupon.SelectedIndex != -1)
+            {
+                for (int i = 0; i < App.lMenu.Count; i++)
+                {
+                    if (App.lMenu[i].nama == kupons[cmbKupon.SelectedIndex].kode_menu)
+                    {
+                        int harga_kupon = Convert.ToInt32(kupons[cmbKupon.SelectedIndex].harga);
+                        harga_kupon *= App.lMenu[i].jumlah;
+                        grandtotal -= harga_kupon;
+                        conn.Open();
+                        string query =
+                            "SELECT nama_menu " +
+                            "FROM menu " +
+                            $"WHERE id_menu = '{kupons[cmbKupon.SelectedIndex].kode_menu}' ";
+                        OracleCommand cmd = new OracleCommand(query,conn);
+                        string menu = cmd.ExecuteScalar().ToString();
+                        conn.Close();
+                        MessageBox.Show($"berhasil diskon '{menu}' seharga Rp " + harga_kupon);
+                        lbTotal.Content = grandtotal;
+                    } 
+                }
+            }
+        }
+
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             string query =
@@ -362,6 +410,8 @@ namespace Project.Pegawai
             }
 
             conn.Close();
+
+            loadKupon();
         }
     }
 }

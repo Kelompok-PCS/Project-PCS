@@ -255,8 +255,6 @@ D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homemenu.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Homemenu.baml
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
-D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Transaction.baml
 D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Transaction.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Transaction.baml
@@ -330,6 +328,31 @@ C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\SAPBusinessObjects.WPF.Vie
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\FlashControlV71.dll
 C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Laporan.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\struk.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.Shared.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.Web.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\SAPBusinessObjects.WPF.Viewer.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\FlashControlV71.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\stdole.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\ShockwaveFlashObjects.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Laporan.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\struk.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Project.exe.config
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.g.cs
@@ -344,3 +367,9 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_K
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.g.cs
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Insert_Kupon.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Master_Kupon\Master_kupon.baml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\obj\Debug\Pegawai_UC\Pemesanan - Copy.baml
