@@ -28,8 +28,17 @@ namespace Project
             InitializeComponent();
         }
 
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+           
             try
             {
                 App.user = tbUser.Text;
@@ -45,6 +54,32 @@ namespace Project
             {
                 MessageBox.Show(ex.Message);
             }
+           
+        }
+
+        private void tbData_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+
+        private void tbData_MouseEnter(object sender, MouseEventArgs e)
+        {
+             tbData.Text = "";
+        }
+
+        private void tbUser_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tbUser.Text = "";
+        }
+
+        private void tbPass_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tbPass.Text = "";
+        }
+
+        private void tbData_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
         }
     }
 }
