@@ -107,8 +107,11 @@ namespace Project
 
         private void to_kupon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
-        }
+			checkConnection(conn);
+			canvas.Children.Clear();
+			Master_kupon panel = new Master_kupon(canvas);
+			canvas.Children.Add(panel);
+		}
 
         private void to_member_MouseDown(object sender, MouseButtonEventArgs e)
         {

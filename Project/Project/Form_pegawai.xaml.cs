@@ -43,7 +43,7 @@ namespace Project
         private void tbPemesan_MouseDown(object sender, MouseButtonEventArgs e)
         {
             canvas.Children.Clear();
-            Pemesanan pemesanan = new Pemesanan();
+            Pemesanan_copy pemesanan = new Pemesanan_copy();
             canvas.Children.Add(pemesanan);
         }
 
@@ -64,6 +64,14 @@ namespace Project
 			canvas.Children.Clear();
 			Pilih_Meja Pilih_Meja = new Pilih_Meja();
 			canvas.Children.Add(Pilih_Meja);
+		}
+
+		private void TbMenu_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			canvas.Children.Clear();
+			Homemenu menu = new Homemenu();
+			canvas.Children.Add(menu);
+			
 		}
 	}
       

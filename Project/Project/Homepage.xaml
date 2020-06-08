@@ -11,7 +11,6 @@
         <Button Content="Admin" HorizontalAlignment="Left" Margin="138,78,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="Button_Click"/>
         <Button Content="Pegawai" HorizontalAlignment="Left" Margin="138,147,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="Button_Click_1"/>
         <Label Content="Pilih Halaman" HorizontalAlignment="Left" Margin="130,33,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="menu" Content="Menu Kami" HorizontalAlignment="Left" Height="63" Margin="138,220,0,0" VerticalAlignment="Top" Width="112" Click="menu_Click"/>
 
     </Grid>
 </Window>

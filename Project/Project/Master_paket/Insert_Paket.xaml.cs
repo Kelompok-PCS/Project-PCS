@@ -37,7 +37,7 @@ namespace Project.Master_paket
             this.canvas = canvas;
             this.kodeMenu = kodeMenu;
         }
-
+		
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if (kodeMenu == " ")
