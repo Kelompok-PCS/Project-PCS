@@ -45,7 +45,6 @@ namespace Project
         {
             Login_pegawai login = new Login_pegawai();
             login.ShowDialog();
-            
         }
     }
 }

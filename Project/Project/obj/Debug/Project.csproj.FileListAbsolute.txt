@@ -393,3 +393,9 @@ C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPac
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+D:\Kuliah\Semester_4\Project PCS\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml

@@ -54,7 +54,7 @@
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
                             Height="25"
-                            Margin="63,0,0,0" MouseEnter="tbData_MouseEnter"/>
+                            Margin="63,0,0,0" MouseEnter="tbData_MouseEnter" GotFocus="tbData_GotFocus"/>
 
                     <iconPacks:PackIconMaterial Kind="SourceFork"
                                                VerticalAlignment="Center"
@@ -81,7 +81,7 @@
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
                             Height="25"
-                            Margin="63,0,0,0" MouseEnter="tbUser_MouseEnter"/>
+                            Margin="63,0,0,0" MouseEnter="tbUser_MouseEnter" GotFocus="tbUser_GotFocus"/>
                     <iconPacks:PackIconMaterial Kind="Account"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
@@ -105,7 +105,7 @@
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
                             Height="25"
-                            Margin="63,0,0,0" MouseEnter="tbPass_MouseEnter"/>
+                            Margin="63,0,0,0" MouseEnter="tbPass_MouseEnter" GotFocus="tbPass_GotFocus"/>
                     <iconPacks:PackIconMaterial Kind="FormTextboxPassword"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
