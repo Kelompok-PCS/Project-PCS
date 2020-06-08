@@ -140,6 +140,9 @@
       <DependentUpon>LaporanHari.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Login_pegawai.xaml.cs">
+      <DependentUpon>Login_pegawai.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Master_Kupon\Insert_Kupon.xaml.cs">
       <DependentUpon>Insert_Kupon.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Laporan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login_pegawai.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

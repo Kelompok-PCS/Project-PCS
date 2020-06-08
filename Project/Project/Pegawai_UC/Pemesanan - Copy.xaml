@@ -41,6 +41,8 @@
         <Label x:Name="___No_Name__Copy1" Content="Kupon Member" HorizontalAlignment="Left" Margin="230.218,96,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" Grid.Column="1"/>
         <Button x:Name="btnCancel" Content="Hapus Pesanan Terpilih" HorizontalAlignment="Left" Margin="283,420,0,0" VerticalAlignment="Top" Width="134" Click="btnCancel_Click" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="cmbPromo" Grid.Column="1" HorizontalAlignment="Left" Margin="384.2,124,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbPromo_SelectionChanged"/>
-        <Label x:Name="___No_Name__Copy2" Content="Promo Yang Tersedia" HorizontalAlignment="Left" Margin="384.2,89,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" Grid.Column="1"/>
+        <Label x:Name="___No_Name__Copy2" Content="Promo Yang Tersedia" HorizontalAlignment="Left" Margin="384.2,98,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" Grid.Column="1"/>
+        <Label x:Name="lbAalamat" Content="Alamat Delivery" HorizontalAlignment="Left" Margin="449.2,409,0,0" VerticalAlignment="Top" Foreground="#FFF6EFEF" Grid.Column="1" Width="94"/>
+        <TextBox x:Name="tbAlamat" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="454.2,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.28,0.452"/>
     </Grid>
 </UserControl>

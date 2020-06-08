@@ -35,8 +35,9 @@ namespace Project
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Form_pegawai pegawai = new Form_pegawai();
-            pegawai.ShowDialog();
+            Login_pegawai login = new Login_pegawai();
+            login.ShowDialog();
+            
         }
     }
 }

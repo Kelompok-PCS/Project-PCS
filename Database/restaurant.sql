@@ -72,7 +72,7 @@ CREATE TABLE hjual (
 
 CREATE TABLE djual (
   id_djual varchar(20) NOT NULL CONSTRAINTS pk_djual PRIMARY KEY,
-  id_menu varchar(10) NOT NULL CONSTRAINTS fk_menu REFERENCES MENU(ID_MENU),
+  id_menu varchar(10) NOT NULL,
   harga NUMBER NOT NULL,
   jumlah NUMBER NOT NULL,
   subtotal NUMBER NOT NULL,
@@ -284,6 +284,16 @@ INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'FA00002', 0);
 INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'FA00002', 0);
 INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'SH00001', 0);
 INSERT INTO KUPON_MEMBER VALUES ('KUP002', 'SH00001', 0);
+
+
+INSERT INTO kupon VALUES('KUP005','coba4','MEN001',8000,TO_CHAR(sysdate),TO_CHAR(sysdate),10,0);
+INSERT INTO kupon_member VALUES('KUP005','YO00001',0);
+
+INSERT INTO promo VALUES('PR008','Coba Promo',TO_CHAR(sysdate),TO_CHAR(sysdate),'temp','lalala','X',1);
+INSERT INTO promo_paket VALUES('PR008','MEN001',2000,1);
+
+INSERT INTO promo VALUES('PR009','Coba Promo 1',TO_CHAR(sysdate),TO_CHAR(sysdate),'temp','lalala','H',1);
+INSERT INTO promo_paket VALUES('PR009','PK001',2000,1);
 
 create or replace function autogen_IDpegawai return varchar2
 is

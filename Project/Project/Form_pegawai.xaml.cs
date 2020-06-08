@@ -24,10 +24,12 @@ namespace Project
     {
         OracleConnection conn;
         public static List<Button> lbtn = new List<Button>();
-        public Form_pegawai()
+        string kodePegawai = "";
+        public Form_pegawai(string kodePegawai)
         {
             InitializeComponent();
             this.conn = App.Connection;
+            this.kodePegawai = kodePegawai;
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,7 +45,7 @@ namespace Project
         private void tbPemesan_MouseDown(object sender, MouseButtonEventArgs e)
         {
             canvas.Children.Clear();
-            Pemesanan_copy pemesanan = new Pemesanan_copy();
+            Pemesanan_copy pemesanan = new Pemesanan_copy(kodePegawai);
             canvas.Children.Add(pemesanan);
         }
 

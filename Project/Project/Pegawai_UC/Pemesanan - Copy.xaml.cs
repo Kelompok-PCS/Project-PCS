@@ -24,7 +24,8 @@ namespace Project.Pegawai
     public partial class Pemesanan_copy : UserControl
     {
         OracleConnection conn;
-        public Pemesanan_copy()
+        string kodePegawai = "";
+        public Pemesanan_copy(string kodePegawai)
         {
             InitializeComponent();
             this.conn = App.Connection;
@@ -47,6 +48,7 @@ namespace Project.Pegawai
             reset_trans();
             loadMenu();
             loadKupon();
+            this.kodePegawai = kodePegawai;
         }
         
         private void reset_trans()
@@ -154,6 +156,8 @@ namespace Project.Pegawai
                         dr[3] = item.jumlah;
                         dr[4] = grandtotal;
                         tableTrans.Rows.Add(dr);
+                        this.grandtotal += grandtotal;
+                        jumlahPesanan += item.jumlah;
                     }
                 }
                 else
@@ -175,6 +179,8 @@ namespace Project.Pegawai
                         dr[3] = item.jumlah;
                         dr[4] = grandtotal;
                         tableTrans.Rows.Add(dr);
+                        this.grandtotal += grandtotal;
+                        jumlahPesanan += item.jumlah;
                     }
                 }
             }
@@ -265,10 +271,10 @@ namespace Project.Pegawai
                 }
 
 
-                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}";
+                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}||Alamat :{tbAlamat.Text}";
                 query =
                     "INSERT INTO hjual VALUES ( " +
-                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";
+                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{kodePegawai}','{tbId.Text}','{keterangan}') ";
                 cmd = new OracleCommand(query, conn);
                 cmd.ExecuteNonQuery();
 
