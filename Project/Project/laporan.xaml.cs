@@ -58,7 +58,7 @@ namespace Project
 					tgl = input[1];
 					MessageBox.Show(tgl);
 				}
-				rpt.SetDatabaseLogon(App.user, App.password, App.source, "");
+				rpt.SetDatabaseLogon("proyek", "proyek123","orcl", "");
 				rpt.SetParameterValue("tlap", tipe);
 				rpt.SetParameterValue("tanggal", tgl);
 				viewer.ViewerCore.ReportSource = rpt;
@@ -80,7 +80,7 @@ namespace Project
 					tgl = input[1];
 					MessageBox.Show(tgl);
 				}
-				rpt2.SetDatabaseLogon(App.user, App.password, App.source, "");
+				rpt2.SetDatabaseLogon("proyek", "proyek123", "orcl", "");
 				rpt2.SetParameterValue("tlap", tipe);
 				rpt2.SetParameterValue("tanggal", tgl);
 				viewer.ViewerCore.ReportSource = rpt2;
@@ -96,7 +96,7 @@ namespace Project
 				if (tipe3.Equals("MEMBER"))
 				{
 					rpt3 = new LaporanBanyak();
-					rpt3.SetDatabaseLogon(App.user, App.password, App.source, "");
+					rpt3.SetDatabaseLogon("proyek", "proyek123", "orcl", "");
 					rpt3.SetParameterValue("tlap", tipe);
 					rpt3.SetParameterValue("tanggal", tgl);
 					viewer.ViewerCore.ReportSource = rpt3;
@@ -104,7 +104,7 @@ namespace Project
 				else
 				{
 					rpt4 = new LaporanBanyak2();
-					rpt4.SetDatabaseLogon(App.user, App.password, App.source, "");
+					rpt4.SetDatabaseLogon("proyek", "proyek123", "orcl", "");
 					rpt4.SetParameterValue("tlap", tipe);
 					rpt4.SetParameterValue("tanggal", tgl);
 					viewer.ViewerCore.ReportSource = rpt4;

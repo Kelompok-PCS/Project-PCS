@@ -54,7 +54,7 @@ namespace Project
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             CrystalReport1 rpt = new CrystalReport1();
-            rpt.SetDatabaseLogon(App.user, App.password, App.source, "");
+            rpt.SetDatabaseLogon("proyek", "proyek123", "orcl", "");
             rpt.SetParameterValue("id_hjual", tbId.SelectedValue.ToString());
             viewer.ViewerCore.ReportSource = rpt;
 

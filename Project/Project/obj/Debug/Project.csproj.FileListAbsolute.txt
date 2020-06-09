@@ -409,3 +409,11 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login_pe
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login_pegawai.g.cs
 C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\xampp\htdocs\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login_pegawai.g.cs
+C:\xampp\htdocs\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml

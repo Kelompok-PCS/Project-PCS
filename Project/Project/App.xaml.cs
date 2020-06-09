@@ -15,9 +15,9 @@ namespace Project
     public partial class App : Application
     {
         public static OracleConnection Connection = new OracleConnection();
-        public static string user ="";
-        public static string password ="";
-        public static string source ="";
+        public static string user ="proyek";
+        public static string password ="proyek123";
+        public static string source ="orcl";
 
         public class menu
         {

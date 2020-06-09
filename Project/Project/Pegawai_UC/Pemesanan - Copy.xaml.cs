@@ -40,8 +40,13 @@ namespace Project.Pegawai
             }
             for (int i = 1; i < 60; i++)
             {
-                cbMenit.Items.Add(i);
-            }
+				string men = i + ""; 
+				if (Convert.ToInt32(men) < 10)
+				{
+					men = "0" + men;
+				}
+				cbMenit.Items.Add(men);
+			}
 
             gridTrans.IsReadOnly = true;
             reset_trans();
@@ -118,11 +123,13 @@ namespace Project.Pegawai
         private void rdPunya_Checked(object sender, RoutedEventArgs e)
         {
             btnSearch.IsEnabled = true;
-        }
+			//tbTelp.IsEnabled = true;
+		}
 
         private void rdTdk_Checked(object sender, RoutedEventArgs e)
         {
             tbId.Text = "M000000000";
+			//tbTelp.IsEnabled = false;
             btnSearch.IsEnabled = false;
         }
         DataTable tableMenu, tableTrans;
@@ -228,44 +235,11 @@ namespace Project.Pegawai
             conn.Close();
             lbPesanan.Content = jumlahPesanan;
             lbTotal.Content = grandtotals.ToString();
-            loadPromo();
+           // loadPromo();
         }
 
         List<promo> promos;
-        private void loadPromo()
-        {
-            promos = new List<promo>();
-            conn.Open();
-            string query =
-                "SELECT p1.id_promo,p2.id_paket,p1.nama_promo,TO_CHAR(p2.harga_promo_paket),p1.detail_promo,p1.jenis_promo " +
-                "FROM promo p1 " +
-                "JOIN promo_paket p2 ON p2.id_promo = p1.id_promo " +
-                "WHERE p1.status_promo = '1' AND p2.status= '1' AND " +
-                "(TO_CHAR(p1.periode_awal) >= TO_CHAR(SYSDATE) AND " +
-                "TO_CHAR(p1.periode_akhir) <= TO_CHAR(SYSDATE)) ";
-            OracleCommand cmd = new OracleCommand(query,conn);
-            OracleDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                for (int i = 0; i < App.lMenu.Count; i++)
-                {
-                    if (App.lMenu[i].nama == reader.GetString(1))
-                    {
-                        promos.Add(new promo(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
-                    } 
-                }
-            }
-
-            if (promos.Count == 0)
-            {
-                promos.Add(new promo("none", " ", "tidak terdapat promo", " ", " "," "));
-            }
-            cmbPromo.ItemsSource = promos;
-            cmbPromo.DisplayMemberPath = "nama_promo";
-            cmbPromo.SelectedValuePath = "kode_promo";
-            conn.Close();
-        }
+       
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
@@ -379,6 +353,7 @@ namespace Project.Pegawai
             tableTrans.Clear();
             gridTrans.ItemsSource = tableTrans.DefaultView;
             App.lMenu.Clear();
+			Form_pegawai.lbtn.Clear();
             grandtotals = 0;
             jumlahPesanan = 0;
             lbPesanan.Content = jumlahPesanan;
@@ -454,39 +429,7 @@ namespace Project.Pegawai
             loadKupon();
         }
 
-        private void cmbPromo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cmbPromo.SelectedIndex != -1)
-            {
-                if(cmbPromo.SelectedValue.ToString() != "none")
-                {
-                    MessageBox.Show(promos[cmbPromo.SelectedIndex].jenis_promo);
-                    //x adalah buy one get one
-                    if (promos[cmbPromo.SelectedIndex].jenis_promo != "X")
-                    {
-                        grandtotals -= promos[cmbPromo.SelectedIndex].getPromo();
-                        lbTotal.Content = grandtotals;
-                        MessageBox.Show($"berhasil potong harga {promos[cmbPromo.SelectedIndex].jenis} sebesar {promos[cmbPromo.SelectedIndex].getPromo()}"); 
-                    }
-                    else
-                    {
-                        int index = -1;
-                        for (int i = 0; i < App.lMenu.Count; i++)
-                        {
-                            if(App.lMenu[i].nama == promos[cmbPromo.SelectedIndex].kode)
-                            {
-                                index = i;
-                            }
-                        }
-                        App.lMenu.Add(new App.menu(App.lMenu[index].nama, App.lMenu[index].jumlah));
-                        tableTrans.Clear();
-                        gridTrans.ItemsSource = tableTrans.DefaultView;
-                        loadMenu();
-                    }
-                }
-            }
-        }
-
+       
         private class kupon_member
         {
             public string kode_kupon { get; set; }
@@ -513,7 +456,7 @@ namespace Project.Pegawai
             {
                 if (Form_pegawai.lbtn.Count() > 0)
                 {
-                    string detail = " ";
+                    string detail = "";
                     foreach (Button item in Form_pegawai.lbtn)
                     {
                         detail += item.Content + ",";

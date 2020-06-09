@@ -260,7 +260,7 @@ namespace Project
 					harga = Convert.ToInt32(tbHarga.Text);
 					stok = Convert.ToInt32(tbStok.Text);
 					string query =
-						$"UPDATE kupon SET nama_kupon= '{tbNama.Text}', id_menu = '{cmbMen.SelectedValue}', harga_kupon = {harga}, periode_awal= to_Date('{waktu}','YYYY-MM-DD'),periode_akhir = to_Date('{waktu2}','YYYY-MM-DD'), stok_kupon = {stok} WHERE id_kupon = '{id}'";
+						$"UPDATE kupon SET nama_kupon= '{tbNama.Text}', id_menu = '{cmbMen.SelectedValue}', harga_kupon = {harga}, periode_awal_kupon= to_Date('{waktu}','YYYY-MM-DD'),periode_akhir_kupon = to_Date('{waktu2}','YYYY-MM-DD'), sisa_kupon = {stok} WHERE id_kupon = '{id}'";
 					MessageBox.Show(query);
 					OracleCommand cmd = new OracleCommand(query, connection);
 					cmd.ExecuteNonQuery();

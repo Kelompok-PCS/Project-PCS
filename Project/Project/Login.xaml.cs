@@ -27,7 +27,7 @@ namespace Project
         {
             InitializeComponent();
             this.Hide();
-            string datasource = $"data source=orcl; user id=proyekpcs; password=proyek123";
+            string datasource = $"data source=orcl; user id=proyek; password=proyek123";
             conn = new OracleConnection(datasource);
             App.Connection = conn;
            Login_pegawai homepage = new Login_pegawai();
