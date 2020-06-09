@@ -62,14 +62,6 @@ namespace Project
                 if (item.ItemArray[3].ToString() == "2") btn.Background = Brushes.Red;
                 else btn.Background = Brushes.Green;
 
-                foreach (Button items in Form_pegawai.lbtn)
-                {
-                    if (items.Content.ToString()== item.ItemArray[0].ToString())
-                    {
-                        btn.Background = Brushes.Blue;
-                    }
-                }
-
                 btn.Tag = item.ItemArray[3].ToString();
                 foreach (Button items in Form_pegawai.lbtn)
                 {
@@ -79,6 +71,8 @@ namespace Project
                         btn.Tag = "3";
                     }
                 }
+
+                
                 btn.Content = item.ItemArray[0].ToString();
                 btn.HorizontalAlignment = HorizontalAlignment.Left;
                 btn.VerticalAlignment = VerticalAlignment.Top;
@@ -86,6 +80,50 @@ namespace Project
                 int atas = 60*(Convert.ToInt32(item.ItemArray[2].ToString())-1)+10;
                 btn.Margin = new Thickness(kanan,atas,0,0);
                 btn.Click += ubah_meja;
+
+                string querys = "SELECT keterangan from hjual where (jenis_pemesanan='Reservasi') and to_char(tanggal_transaksi)=to_char(sysdate) and substr(keterangan,instr(keterangan,'Waktu')+8,5)>to_char(sysdate- interval '2' hour,'HH24:MI') and substr(keterangan,instr(keterangan,'Waktu')+8,5)<to_char(sysdate+ interval '1' hour,'HH24:MI') and status='1'";
+                con.Close();
+                con.Open();
+                using (OracleDataAdapter adap = new OracleDataAdapter(querys, App.Connection))
+                {
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    foreach (DataRow items in dt.Rows)
+                    {
+                        string[] ket = items.ItemArray[0].ToString().Split(new string[] { "||" }, StringSplitOptions.None);
+                        string[] jummeja = ket[1].Split(':');
+                        jummeja = jummeja[1].Split(',');
+                        foreach (string item_meja in jummeja)
+                        {
+                            //System.Windows.Forms.MessageBox.Show(item.ItemArray[0].ToString()+" a"+item_meja+"a");
+                            if (item.ItemArray[0].ToString()==item_meja)
+                            {
+                                btn.Background = Brushes.Yellow;
+                                btn.Tag = "4";
+                            }
+                        }
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                con.Close();
+
                 grid_meja.Children.Add(btn);
             }
         }

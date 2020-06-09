@@ -64,9 +64,27 @@ namespace Project
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             App.Connection.Open();
-            string query = $"SELECT keterangan from hjual where id_hjual='{id_hjual}'";
+            string query = $"SELECT keterangan from hjual where id_hjual='{id_hjual}' ";
             OracleCommand cmd = new OracleCommand(query, App.Connection);
             string keterangan = cmd.ExecuteScalar().ToString();
+
+            query = $"SELECT jenis_pemesanan from hjual where id_hjual='{id_hjual}' ";
+            cmd = new OracleCommand(query, App.Connection);
+            string jenis_p = cmd.ExecuteScalar().ToString();
+            int stat = 1;
+            if (jenis_p == "Reservasi")
+            {
+                query = $"SELECT status from hjual where id_hjual='{id_hjual}' ";
+                cmd = new OracleCommand(query, App.Connection);
+                string status_p = cmd.ExecuteScalar().ToString();
+                if (status_p == "1")
+                {
+                    query = $"UPDATE hjual set status='2' where id_hjual='{id_hjual}'";
+                    cmd = new OracleCommand(query, App.Connection);
+                    cmd.ExecuteNonQuery();
+                    stat = 2;
+                }
+            }
             string[] detail_keterangan = keterangan.Split(new string[] { "||" }, StringSplitOptions.None);
 
             string[] detail = detail_keterangan[1].Split(':');
@@ -78,7 +96,7 @@ namespace Project
                     detail = detail[1].Split(',');
                     foreach (var item in detail)
                     {
-                        query = $"UPDATE meja set status=1 where id_meja={item}";
+                        query = $"UPDATE meja set status={stat} where id_meja={item}";
                         cmd = new OracleCommand(query, App.Connection);
                         cmd.ExecuteNonQuery();
                     }

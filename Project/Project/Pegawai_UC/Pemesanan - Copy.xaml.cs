@@ -32,6 +32,17 @@ namespace Project.Pegawai
             rdDelivery.Checked += rdDine_Checked;
             rdTake.Checked += rdDine_Checked;
             rdDine.Checked += rdDine_Checked;
+            rdReservasi.Checked += rdDine_Checked;
+
+            for (int i = 10; i < 21; i++)
+            {
+                cbJam.Items.Add(i);
+            }
+            for (int i = 1; i < 60; i++)
+            {
+                cbMenit.Items.Add(i);
+            }
+
             gridTrans.IsReadOnly = true;
             reset_trans();
             loadMenu();
@@ -285,10 +296,13 @@ namespace Project.Pegawai
                 OracleCommand cmd = new OracleCommand(query, conn);
                 kode += cmd.ExecuteScalar().ToString();
                 string jenisPemesanan = "";
-
+                string waktu = cbJam.SelectedItem + ":" + cbMenit.SelectedItem;
                 if (rdDine.IsChecked == true)
                 {
                     jenisPemesanan = "Dine In";
+                    query = "SELECT to_char(sysdate,'HH24:MI') from dual";
+                    cmd = new OracleCommand(query, conn);
+                    waktu = cmd.ExecuteScalar().ToString();
                 }
                 else if (rdTake.IsChecked == true)
                 {
@@ -298,12 +312,16 @@ namespace Project.Pegawai
                 {
                     jenisPemesanan = "Delivery";
                 }
+                else if (rdReservasi.IsChecked == true)
+                {
+                    jenisPemesanan = "Reservasi";
+                }
 
 
-                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}||Alamat :{tbAlamat.Text}";
+                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}||Alamat :{tbAlamat.Text}||Waktu : {waktu}";
                 query =
                     "INSERT INTO hjual VALUES ( " +
-                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotals}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";
+                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotals}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}','1') ";
                 cmd = new OracleCommand(query, conn);
                 cmd.ExecuteNonQuery();
 
@@ -491,7 +509,7 @@ namespace Project.Pegawai
         {
 
             RadioButton rbt = (RadioButton)sender;
-            if (rbt.Content.ToString() == "Dine In")
+            if (rbt.Content.ToString() == "Dine In" || rbt.Content.ToString() =="Reservasi")
             {
                 if (Form_pegawai.lbtn.Count() > 0)
                 {

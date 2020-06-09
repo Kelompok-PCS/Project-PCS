@@ -13,5 +13,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="20,351,0,0" TextWrapping="Wrap" Text="Jumlah Kursi yang di pesan :" VerticalAlignment="Top"/>
         <TextBlock x:Name="detail_meja" HorizontalAlignment="Left" Margin="170,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="jumlah_meja" HorizontalAlignment="Left" Margin="174,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="coba" HorizontalAlignment="Left" Margin="355,410,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </UserControl>
