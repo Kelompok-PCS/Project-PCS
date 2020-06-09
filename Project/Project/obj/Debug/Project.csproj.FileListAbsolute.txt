@@ -407,3 +407,5 @@ C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\bin\Debug\MahApps.Metro.IconPacks.Material.xml
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login_pegawai.g.cs
 C:\Users\Fabian-Lepi\source\repos\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login_pegawai.g.cs
+C:\xampp\htdocs\coba\Project-PCS\Project\Project\obj\Debug\Login_pegawai.baml

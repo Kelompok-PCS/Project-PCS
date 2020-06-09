@@ -26,6 +26,13 @@ namespace Project
         public MainWindow()
         {
             InitializeComponent();
+            this.Hide();
+            string datasource = $"data source=orcl; user id=proyekpcs; password=proyek123";
+            conn = new OracleConnection(datasource);
+            App.Connection = conn;
+           Login_pegawai homepage = new Login_pegawai();
+           // this.Hide();
+            homepage.ShowDialog();
         }
 
         private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -38,17 +45,12 @@ namespace Project
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-           
             try
             {
                 App.user = tbUser.Text;
                 App.password = tbPass.Text;
                 App.source = tbData.Text;
-                string datasource = $"data source={tbData.Text}; user id={tbUser.Text}; password={tbPass.Text}";
-                conn = new OracleConnection(datasource);
-                App.Connection = conn;
-                Homepage homepage = new Homepage();
-                homepage.ShowDialog();
+               
             }
             catch (Exception ex)
             {

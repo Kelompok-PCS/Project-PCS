@@ -81,7 +81,7 @@ namespace Project
                 btn.Margin = new Thickness(kanan,atas,0,0);
                 btn.Click += ubah_meja;
 
-                string querys = "SELECT keterangan from hjual where (jenis_pemesanan='Reservasi') and to_char(tanggal_transaksi)=to_char(sysdate) and substr(keterangan,instr(keterangan,'Waktu')+8,5)>to_char(sysdate- interval '2' hour,'HH24:MI') and substr(keterangan,instr(keterangan,'Waktu')+8,5)<to_char(sysdate+ interval '1' hour,'HH24:MI') and status='1'";
+                string querys = "SELECT keterangan from hjual where (jenis_pemesanan='Reservasi') and to_char(tanggal_transaksi)=to_char(sysdate) and substr(keterangan,instr(keterangan,'Waktu')+8,5)>to_char(sysdate- interval '2' hour,'HH24:MI') and substr(keterangan,instr(keterangan,'Waktu')+8,5)<to_char(sysdate+ interval '1' hour,'HH24:MI') and status= '1'";
                 con.Close();
                 con.Open();
                 using (OracleDataAdapter adap = new OracleDataAdapter(querys, App.Connection))

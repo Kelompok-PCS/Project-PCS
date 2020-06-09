@@ -37,14 +37,18 @@ namespace Project
 
         private void admin_Click(object sender, RoutedEventArgs e)
         {
-            Form_Utama Form_Utama = new Form_Utama(conn);
-            Form_Utama.ShowDialog();
+          
+            //Form_Utama Form_Utama = new Form_Utama(conn);
+            //Form_Utama.ShowDialog();
+            //this.Close();
         }
 
         private void pegawai_Click(object sender, RoutedEventArgs e)
         {
-            Login_pegawai login = new Login_pegawai();
-            login.ShowDialog();
+           
+            //Login_pegawai login = new Login_pegawai();
+            //login.ShowDialog();
+
         }
     }
 }

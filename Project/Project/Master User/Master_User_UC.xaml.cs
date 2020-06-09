@@ -56,6 +56,7 @@ namespace Project
             connection = conn;
             getTableMembers();
             getProvinsi();
+            fillcbkup();
         }
 
         //FUNCTION PROCEDURE
@@ -138,8 +139,31 @@ namespace Project
                     string query = $"UPDATE MEMBERS SET fullname='{tbFullname.Text}',username='{tbUsername.Text}',email='{tbEmail.Text}',alamat='{tbAlamat.Text}',no_hp={tbNo_Hp.Text},kota='{cbKota.SelectedValue}',kecematan='{cbPronvinsi.SelectedValue}',kode_pos={tbKode_pos.Text},point={tbPoint.Text},saldo={tbSaldo.Text},status='{status}' where id_member='{id_members}'";
                     OracleCommand cmd = new OracleCommand(query, connection);
                     cmd.ExecuteNonQuery();
-                    checkConnection(connection);
                     getTableMembers();
+                    if(cbkup.SelectedIndex != -1)
+                    {
+                        string query2 = "";
+                        if (zap == false)
+                        {
+                            query2 = $"INSERT INTO KUPON_MEMBER VALUES('{cbkup.SelectedValue.ToString()}','{id_members}',1)";
+
+                        }
+                        else
+                        {
+                            query2 = $"UPDATE kupon_member set id_kupon='{cbkup.SelectedValue.ToString()}' where id_member ='{id_members}'";
+
+                        }
+                        try
+                        {
+                            OracleCommand cmd2 = new OracleCommand(query2, connection);
+                            cmd2.ExecuteNonQuery();
+                        }catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.StackTrace);
+                        }
+
+                    }
+                    checkConnection(connection);
                     MessageBox.Show("Berhasil Update");
                 }
             }
@@ -150,8 +174,45 @@ namespace Project
             connection.Close();
         }
 
+        bool zap = false;
+        private class kupon
+        {
+            public string kode { get; set; }
+            public string nama { get; set; }
+        }
+        List<kupon> likup = new List<kupon>();
+        private void fillcbkup()
+        {
+            likup.Clear();
+            try
+            {
+                connection.Open();
+                string query = "SELECT ID_KUPON, NAMA_KUPON FROM KUPON WHERE STATUS_KUPON = 1";
+                OracleCommand cmd = new OracleCommand(query, connection);
+                OracleDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    likup.Add(new kupon()
+                    {
+                        kode = reader.GetString(0),
+                        nama = reader.GetString(1)
+                    }); ;
+                }
+
+                cbkup.ItemsSource = likup;
+                cbkup.DisplayMemberPath = "nama";
+                cbkup.SelectedValuePath = "kode";
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.StackTrace);           
+            }
+        }
         private void dtgMembers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            zap = false;
             connection.Open();
             if (dtgMembers.SelectedIndex != -1)
             {
@@ -176,6 +237,24 @@ namespace Project
                         cbPronvinsi.Text = cmd.ExecuteScalar().ToString();
 
                         tbKode_pos.Text = dt.Rows[0].ItemArray[8].ToString();
+                        cmd = new OracleCommand($"SELECT ID_KUPON FROM KUPON_MEMBER WHERE ID_MEMBER='{id_members}'", connection);
+
+                        string z = "";
+                        try
+                        {
+                            z = cmd.ExecuteScalar().ToString();                            
+                        }catch { }
+                       
+                        int idxkup = 0;
+                        for (int i = 0; i < likup.Count; i++)
+                        {
+                            if (likup[i].kode.Equals(z))
+                            {
+                                idxkup = i;
+                                zap = true;
+                            }
+                        }
+                        cbkup.SelectedIndex = idxkup;
 
                         tbPoint.Text = dt.Rows[0].ItemArray[9].ToString();
                         tbSaldo.Text = dt.Rows[0].ItemArray[10].ToString();

@@ -25,42 +25,78 @@ namespace Project
         {
             InitializeComponent();
             this.conn = App.Connection;
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void tbUser_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbEmail.Text = "";
+        }
+
+        private void btnLoginPeg_Click(object sender, RoutedEventArgs e)
         {
             string kodePegawai = "test";
-            try
+            if (tbEmail.Text.ToLower().Equals("admin") && tbPass.Text.ToLower().Equals("admin"))
             {
-                conn.Open();
-                string query =
-                    $"SELECT id_pegawai FROM pegawai WHERE email = '{tbEmail.Text}' AND password = '{tbPass.Text}'";
-                OracleCommand cmd = new OracleCommand(query,conn);
-                try
-                {
-                    kodePegawai = cmd.ExecuteScalar().ToString();
-                }
-                catch (Exception)
-                {
-                    conn.Close();
-                    MessageBox.Show("email atau password tidak benar");
-                }
-
-                if (kodePegawai != "")
-                {
-                    conn.Close();
-                    Form_pegawai pegawai = new Form_pegawai(kodePegawai);
-                    pegawai.ShowDialog();
-                    this.Hide();
-                }
+                Form_Utama form = new Form_Utama(conn, this);
+                this.Hide();
+                form.ShowDialog();
                 
             }
-            catch (Exception ex)
+            else
             {
-                conn.Close();
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("email atau password tidak benar");
+                try
+                {
+                    conn.Open();
+                    string query =
+                        $"SELECT id_pegawai FROM pegawai WHERE email = '{tbEmail.Text}' AND password = '{tbPass.Text}'";
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    try
+                    {
+                        kodePegawai = cmd.ExecuteScalar().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        conn.Close();
+                        MessageBox.Show("email atau password tidak benar");
+                    }
+
+                    if (kodePegawai != "")
+                    {
+                        conn.Close();
+                        Form_pegawai pegawai = new Form_pegawai(kodePegawai,this);
+                        this.Hide();
+                        pegawai.ShowDialog();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("email atau password tidak benar");
+                }
             }
+        }
+
+        private void tbPass_GotFocus(object sender, RoutedEventArgs e)
+        {
+            
+            tbPass.Text = "";
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbEmail.Text = "Email / Username";
+            tbPass.Text = "Password";
         }
     }
 }

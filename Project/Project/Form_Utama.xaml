@@ -117,9 +117,9 @@
 
         <Grid >
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="1142" Margin="70,10,-76.2,0" VerticalAlignment="Top" Width="751"/>    
+                <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="1142" Margin="70,10,-76.2,0" VerticalAlignment="Top" Width="751"/>
             </ScrollViewer>
-            
+
             <!--// App Close Button //-->
 
             <Grid>
@@ -267,9 +267,10 @@
                                       >
                             <StackPanel Orientation="Horizontal" x:Name="to_menu"
                                         Width="230" Height="43" MouseDown="to_menu_MouseDown_1">
-                                <TextBlock Text="Master Menu"
-                                           Margin="25,9,0,9"
-                                           Style="{StaticResource font_style}"/>
+                                <TextBlock x:Name="mm" 
+                                    Text="MM"
+                                           Margin="12,10,0,9"
+                                           Style="{StaticResource font_style}" Width="211"/>
 
                             </StackPanel>
 
@@ -294,9 +295,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_kategori"
                                         Width="230" Height="48" MouseDown="to_kategori_MouseDown">
 
-                                <TextBlock Text="Master Kategori"
-                                           Margin="25,0,0,0"
-                                           Style="{StaticResource font_style}"/>
+                                <TextBlock x:Name="MK" 
+                                    Text="MK"
+                                           Margin="12,10,0,9"
+                                           Style="{StaticResource font_style}" Width="206"/>
 
                             </StackPanel>
 
@@ -321,8 +323,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_paket"
                                         Width="230" Height="45" MouseDown="to_paket_MouseDown">
 
-                                <TextBlock Text="Master Paket"
-                                           Margin="25,0,0,0"
+                                <TextBlock 
+                                    x:Name="mp"
+                                    Text="MP"
+                                           Margin="12,10,0,9"
                                            Style="{StaticResource font_style}"/>
 
                             </StackPanel>
@@ -348,8 +352,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_promo"
                                         Width="230" Height="50" MouseDown="to_promo_MouseDown">
 
-                                <TextBlock Text="Master Promo"
-                                           Margin="25,0,0,0"
+                                <TextBlock 
+                                    x:Name="mpr"
+                                    Text="MR"
+                                           Margin="12,10,0,9"
                                            Style="{StaticResource font_style}"/>
 
                             </StackPanel>
@@ -363,8 +369,8 @@
                                          Style="{StaticResource tt_style}"/>
 
                             </ListViewItem.ToolTip>
-                            
-                            
+
+
 
                         </ListViewItem>
 
@@ -375,8 +381,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_kupon"
                                         Width="230" Height="50" MouseDown="to_kupon_MouseDown">
 
-                                <TextBlock Text="Master Kupon"
-                                           Margin="25,0,0,0"
+                                <TextBlock 
+                                    x:Name="kp"
+                                    Text="KP"
+                                           Margin="12,10,0,9"
                                            Style="{StaticResource font_style}"/>
 
                             </StackPanel>
@@ -406,8 +414,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_member"
                                         Width="230" Height="45" MouseDown="to_member_MouseDown">
 
-                                <TextBlock Text="Master Member"
-                                           Margin="25,0,0,0"
+                                <TextBlock 
+                                    x:Name="mb"
+                                    Text="MB"
+                                           Margin="12,10,0,9"
                                            Style="{StaticResource font_style}"/>
 
                             </StackPanel>
@@ -431,8 +441,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_pegawai"
                                         Width="230" Height="45" MouseDown="to_pegawai_MouseDown">
 
-                                <TextBlock Text="Master Pegawai"
-                                           Margin="25,0,0,0"
+                                <TextBlock 
+                                    x:Name="pg"
+                                    Text="PG"
+                                           Margin="12,10,0,9"
                                            Style="{StaticResource font_style}"/>
 
                             </StackPanel>
@@ -456,8 +468,10 @@
                             <StackPanel Orientation="Horizontal" x:Name="to_laporan"
                                         Width="230" Height="45" MouseDown="to_laporan_MouseDown">
 
-                                <TextBlock Text="Laporan"
-                                           Margin="25,0,0,0"
+                                <TextBlock
+                                    x:Name="lpr"
+                                    Text="LP"
+                                           Margin="12,10,0,9"
                                            Style="{StaticResource font_style}"/>
 
                             </StackPanel>
@@ -467,6 +481,33 @@
                             <ListViewItem.ToolTip>
 
                                 <ToolTip x:Name="Laporan"
+                                         Content="Laporan"
+                                         Style="{StaticResource tt_style}"/>
+
+                            </ListViewItem.ToolTip>
+
+                        </ListViewItem>
+
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,10" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+
+                            <StackPanel Orientation="Horizontal" x:Name="to_logout"
+                                        Width="230" Height="45" MouseDown="to_logout_MouseDown">
+
+                                <TextBlock
+                                    x:Name="logout"
+                                    Text="LOG"
+                                           Margin="12,10,0,9"
+                                           Style="{StaticResource font_style}"/>
+
+                            </StackPanel>
+
+                            <!--// Tooltip //-->
+
+                            <ListViewItem.ToolTip>
+
+                                <ToolTip x:Name="Logout"
                                          Content="Laporan"
                                          Style="{StaticResource tt_style}"/>
 
@@ -537,7 +578,7 @@
 
 
             </Grid>
-            
+
 
 
         </Grid>

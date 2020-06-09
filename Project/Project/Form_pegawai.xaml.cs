@@ -23,19 +23,35 @@ namespace Project
     public partial class Form_pegawai : Window
     {
         OracleConnection conn;
+        Login_pegawai logpeg;
         public static List<Button> lbtn = new List<Button>();
         string kodePegawai = "";
-        public Form_pegawai(string kodePegawai)
+        public Form_pegawai(string kodePegawai, Login_pegawai logpeg)
         {
             InitializeComponent();
             this.conn = App.Connection;
             this.kodePegawai = kodePegawai;
+            this.logpeg = logpeg;
+            try
+            {
+                conn.Open();
+                string query = $"SELECT NAMA FROM PEGAWAI WHERE ID_PEGAWAI = '{kodePegawai}'";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                string tmp = cmd.ExecuteScalar().ToString();
+                tbNamaPeg.Text = tmp;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("hore");
-        }
+        //private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    MessageBox.Show("hore");
+        //}
 
         private void getClick(TextBlock tb)
         {
@@ -75,7 +91,13 @@ namespace Project
 			canvas.Children.Add(menu);
 			
 		}
-	}
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            logpeg.Show();
+        }
+    }
       
     
 }

@@ -23,19 +23,16 @@ namespace Project
     public partial class Form_Utama : Window
     {
         OracleConnection conn;
-        public Form_Utama(OracleConnection conn)
+        Login_pegawai logpeg;
+        public Form_Utama(OracleConnection conn, Login_pegawai logpeg)
         {
             InitializeComponent();
             this.conn = conn;
+            this.logpeg = logpeg;
         }
         public void checkConnection(OracleConnection connection)
         {
             if (connection.State == System.Data.ConnectionState.Open) connection.Close();
-        }
-
-        private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
@@ -65,7 +62,15 @@ namespace Project
 
         private void Tg_Btn_Unchecked(object sender, RoutedEventArgs e)
         {
-            
+            mm.Text = "MM";
+            MK.Text = "MK";
+            mp.Text = "MP";
+            mpr.Text = "MR";
+            kp.Text = "KP";
+            mb.Text = "MB";
+            pg.Text = "PG";
+            lpr.Text = "LP";
+            logout.Text = "LOG";
         }
 
         private void to_menu_MouseEnter(object sender, MouseEventArgs e)
@@ -134,5 +139,24 @@ namespace Project
 			Laporan lap= new Laporan(canvas);
 			canvas.Children.Add(lap);
 		}
+
+        private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
+        {
+            mm.Text = "Master Menu";
+            MK.Text = "Master Kategori";
+            mp.Text = "Master Paket";
+            mpr.Text = "Master Promo";
+            kp.Text = "Master Kupon";
+            mb.Text = "Master Member";
+            pg.Text = "Master Pegawai";
+            lpr.Text = "Laporan";
+            logout.Text = "Log Out";
+        }
+
+        private void to_logout_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+            logpeg.Show();
+        }
     }
 }

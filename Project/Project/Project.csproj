@@ -503,5 +503,8 @@
     <Resource Include="Image\promoenak.jpg" />
     <Resource Include="Image\x8clothing.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
