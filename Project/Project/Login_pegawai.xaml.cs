@@ -29,7 +29,7 @@ namespace Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string kodePegawai = "test";
+            string kodePegawai = "";
             try
             {
                 conn.Open();
