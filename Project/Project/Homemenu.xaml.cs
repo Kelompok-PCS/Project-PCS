@@ -80,6 +80,7 @@ namespace Project
 
 		private void cekpromo(string id)
 		{
+            hpromo.Content = "";
 			try
 			{
 				//MessageBox.Show(id);
@@ -87,6 +88,7 @@ namespace Project
 				string idpromo = "";
 				string namapromo = "";
 				string hargapromo = "";
+				string gambar = "";
 				string query = $"SELECT * FROM PROMO_PAKET WHERE ID_PAKET = '{id}' and status = 1";
 				OracleCommand cmd = new OracleCommand(query, conn);
 				OracleDataReader reader = cmd.ExecuteReader();
@@ -101,7 +103,7 @@ namespace Project
 				while (reader.Read())
 				{
 					namapromo = reader.GetString(1);
-
+                    gambar = reader.GetString(4);
 				}
 				
 				if (!namapromo.Equals(""))
@@ -114,7 +116,8 @@ namespace Project
 					hmenu.Content = hargamenu;
 					hpromo.Foreground = new SolidColorBrush(Colors.Red);
 					hpromo.Content = "**" + namapromo;
-				}
+                    gambarmenu.Source = new BitmapImage(new Uri(gambar, UriKind.Relative));
+                }
 				conn.Close();
 			}
 			catch (Exception ex)

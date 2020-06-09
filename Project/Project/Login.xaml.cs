@@ -56,30 +56,5 @@ namespace Project
             }
            
         }
-
-        private void tbData_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-           
-        }
-
-        private void tbData_MouseEnter(object sender, MouseEventArgs e)
-        {
-             tbData.Text = "";
-        }
-
-        private void tbUser_MouseEnter(object sender, MouseEventArgs e)
-        {
-            tbUser.Text = "";
-        }
-
-        private void tbPass_MouseEnter(object sender, MouseEventArgs e)
-        {
-            tbPass.Text = "";
-        }
-
-        private void tbData_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
     }
 }

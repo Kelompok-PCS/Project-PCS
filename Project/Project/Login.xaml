@@ -23,8 +23,8 @@
             <Border CornerRadius="10" Grid.RowSpan="2">
                 <Border.Background>
                     <LinearGradientBrush>
-                        <GradientStop Color="#7be9f6" Offset="0.0"/>
-                        <GradientStop Color="#f083da" Offset="1"/>
+                        <GradientStop Color="#7be9f6" Offset="0.1"/>
+                        <GradientStop Color="#FF1B2029" Offset="0.7"/>
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
@@ -54,7 +54,7 @@
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
                             Height="25"
-                            Margin="63,0,0,0" MouseEnter="tbData_MouseEnter"/>
+                            Margin="63,0,0,0"/>
 
                     <iconPacks:PackIconMaterial Kind="SourceFork"
                                                VerticalAlignment="Center"
@@ -81,7 +81,7 @@
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
                             Height="25"
-                            Margin="63,0,0,0" MouseEnter="tbUser_MouseEnter"/>
+                            Margin="63,0,0,0"/>
                     <iconPacks:PackIconMaterial Kind="Account"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
@@ -105,7 +105,7 @@
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
                             Height="25"
-                            Margin="63,0,0,0" MouseEnter="tbPass_MouseEnter"/>
+                            Margin="63,0,0,0"/>
                     <iconPacks:PackIconMaterial Kind="FormTextboxPassword"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
@@ -118,8 +118,8 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,35,0,0">
-                    <Border CornerRadius="6" BorderBrush="Purple" BorderThickness="3" Margin="30,0,60,0" HorizontalAlignment="Center" Width="325" >
-                        <Button x:Name="btnLogin" Height="40" Content="LOGIN" Margin="-3,0,-1,0" Foreground="White" BorderBrush="Purple" Background="{x:Null}" Click="btnLogin_Click"/>
+                    <Border CornerRadius="6" BorderBrush="White" BorderThickness="3" Margin="30,0,60,0" HorizontalAlignment="Center" Width="325" >
+                        <Button x:Name="btnLogin" Height="40" Content="LOGIN" Margin="-3,0,-1,0" Foreground="White" BorderBrush="White" Background="{x:Null}" Click="btnLogin_Click"/>
                     </Border>
                 </StackPanel>
             </StackPanel>
