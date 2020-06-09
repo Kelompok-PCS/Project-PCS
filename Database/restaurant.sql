@@ -43,6 +43,7 @@ CREATE TABLE members (
   saldo NUMBER NOT NULL,
   status varchar(1) NOT NULL
 );
+
 CREATE TABLE kategori (
   id_kategori varchar(10) NOT NULL CONSTRAINTS pk_kategori PRIMARY KEY,
   nama_kategori varchar(50) NOT NULL,
@@ -207,13 +208,14 @@ INSERT INTO kota VALUES('K0015', 'Surakarta', 'D0003');
 INSERT INTO jabatan VALUES ('JAB00001', 'Waiter');
 INSERT INTO jabatan VALUES ('JAB00002', 'Host');
 
-INSERT INTO PROMO VALUES ('PR001', 'Hemat 1', TO_DATE('2020-06-01','YYYY-MM-DD'), TO_DATE('2020-06-20','YYYY-MM-DD'), 'PrImage/ayam-bakar-dengan-es.jpg', 'enak', 'H', 1);
-INSERT INTO PROMO VALUES ('PR002', 'Hemat 2', TO_DATE('2020-04-02','YYYY-MM-DD'), TO_DATE('2020-05-20','YYYY-MM-DD'), 'PrImage/download.png', 'enak', 'H', 0);
-INSERT INTO PROMO VALUES ('PR003', 'Beef Time', TO_DATE('2020-04-08','YYYY-MM-DD'), TO_DATE('2020-04-23','YYYY-MM-DD'), 'PrImage/16214324-beef-steak-on-a-wooden-table.jpg', 'enak', 'M', 0);
-INSERT INTO PROMO VALUES ('PR004', 'Ramadhan Hemat', TO_DATE('2020-04-01','YYYY-MM-DD'), TO_DATE('2020-04-30','YYYY-MM-DD'), 'PrImage/ketupat-dan-opor-ayam-foto-resep-utama.jpg', 'enak', 'HR', 0);
-INSERT INTO PROMO VALUES ('PR005', 'Es Ceria', TO_DATE('2020-04-09','YYYY-MM-DD'), TO_DATE('2020-04-11','YYYY-MM-DD'), 'PrImage/easiest-ever-fruit-ice-cream-ghk-1532637317.jpg', 'enak', 'M', 0);
-INSERT INTO PROMO VALUES ('PR006', 'Hari Raya Penuh berkah', TO_DATE('2020-05-11','YYYY-MM-DD'), TO_DATE('2020-05-23','YYYY-MM-DD'), 'PrImage/LennyFace.jpg', 'Promo Ini sangat bagus dan hebat', 'HR', 0);
-INSERT INTO PROMO VALUES ('PR007', 'Promo Enak', TO_DATE('2020-05-15','YYYY-MM-DD'), TO_DATE('2020-05-31','YYYY-MM-DD'), 'PrImage/promoenak.jpg', 'lalala', 'H', 0);
+INSERT INTO PROMO VALUES ('PR001', 'Hemat 1', TO_DATE('2020-06-01','YYYY-MM-DD'), TO_DATE('2020-06-20','YYYY-MM-DD'), 'Image/ayam-bakar-dengan-es.jpg', 'enak', 'H', 1);
+INSERT INTO PROMO VALUES ('PR002', 'Hemat 2', TO_DATE('2020-04-02','YYYY-MM-DD'), TO_DATE('2020-05-20','YYYY-MM-DD'), 'Image/download.png', 'enak', 'H', 0);
+INSERT INTO PROMO VALUES ('PR003', 'Beef Time', TO_DATE('2020-04-08','YYYY-MM-DD'), TO_DATE('2020-04-23','YYYY-MM-DD'), 'Image/16214324-beef-steak-on-a-wooden-table.jpg', 'enak', 'M', 0);
+INSERT INTO PROMO VALUES ('PR004', 'Ramadhan Hemat', TO_DATE('2020-04-01','YYYY-MM-DD'), TO_DATE('2020-04-30','YYYY-MM-DD'), 'Image/ketupat-dan-opor-ayam-foto-resep-utama.jpg', 'enak', 'HR', 0);
+INSERT INTO PROMO VALUES ('PR005', 'Es Ceria', TO_DATE('2020-04-09','YYYY-MM-DD'), TO_DATE('2020-04-11','YYYY-MM-DD'), 'Image/easiest-ever-fruit-ice-cream-ghk-1532637317.jpg', 'enak', 'M', 0);
+INSERT INTO PROMO VALUES ('PR006', 'Hari Raya Penuh berkah', TO_DATE('2020-05-11','YYYY-MM-DD'), TO_DATE('2020-05-23','YYYY-MM-DD'), 'Image/LennyFace.jpg', 'Promo Ini sangat bagus dan hebat', 'HR', 0);
+INSERT INTO PROMO VALUES ('PR007', 'Promo Enak', TO_DATE('2020-05-15','YYYY-MM-DD'), TO_DATE('2020-05-31','YYYY-MM-DD'), 'Image/promoenak.jpg', 'lalala', 'H', 0);
+INSERT INTO PROMO VALUES ('PR008', 'Promo Buy 1 Get 1', TO_DATE('2020-05-15','YYYY-MM-DD'), TO_DATE('2020-05-31','YYYY-MM-DD'), 'Image/promoenak.jpg', 'lalala', 'X', 1);
 
 INSERT INTO promo_paket VALUES ('PR001', 'MEN012', 7500, 1);
 INSERT INTO promo_paket VALUES ('PR001', 'MEN011', 12000, 1);

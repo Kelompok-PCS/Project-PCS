@@ -493,5 +493,15 @@
   <ItemGroup>
     <Resource Include="Image\Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\16214324-beef-steak-on-a-wooden-table.jpg" />
+    <Resource Include="Image\ayam-bakar-dengan-es.jpg" />
+    <Resource Include="Image\Diskon-web.png" />
+    <Resource Include="Image\download.png" />
+    <Resource Include="Image\easiest-ever-fruit-ice-cream-ghk-1532637317.jpg" />
+    <Resource Include="Image\ketupat-dan-opor-ayam-foto-resep-utama.jpg" />
+    <Resource Include="Image\promoenak.jpg" />
+    <Resource Include="Image\x8clothing.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
