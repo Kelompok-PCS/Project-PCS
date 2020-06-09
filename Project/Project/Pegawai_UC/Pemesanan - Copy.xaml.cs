@@ -24,29 +24,30 @@ namespace Project.Pegawai
     public partial class Pemesanan_copy : UserControl
     {
         OracleConnection conn;
-        public Pemesanan_copy()
+        string kodePegawai = "";
+        public Pemesanan_copy(string kodePegawai)
         {
             InitializeComponent();
             this.conn = App.Connection;
-            if (Form_pegawai.lbtn.Count() > 0)
+            rdDelivery.Checked += rdDine_Checked;
+            rdTake.Checked += rdDine_Checked;
+            rdDine.Checked += rdDine_Checked;
+            rdReservasi.Checked += rdDine_Checked;
+
+            for (int i = 10; i < 21; i++)
             {
-                string detail = " ";
-                foreach (Button item in Form_pegawai.lbtn)
-                {
-                    detail += item.Content + ",";
-                }
-                detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
-                jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
+                cbJam.Items.Add(i);
             }
-            else
+            for (int i = 1; i < 60; i++)
             {
-                detail_meja_pesanan.Text = "-";
-                jumlah_meja.Text = "0";
+                cbMenit.Items.Add(i);
             }
+
             gridTrans.IsReadOnly = true;
             reset_trans();
             loadMenu();
             loadKupon();
+            this.kodePegawai = kodePegawai;
         }
         
         private void reset_trans()
@@ -57,6 +58,7 @@ namespace Project.Pegawai
             tableTrans.Columns.Add("Deskripsi Menu");
             tableTrans.Columns.Add("Jumlah");
             tableTrans.Columns.Add("Subtotal");
+            tableTrans.Columns.Add("Keterangan");
             gridTrans.ItemsSource = tableTrans.DefaultView;
         }
 
@@ -132,56 +134,100 @@ namespace Project.Pegawai
         private void loadMenu()
         {
             conn.Open();
+            int grandtotal = 0;
             foreach (App.menu item in App.lMenu)
             {
                 DataRow dr = tableTrans.NewRow();
+                string query = "";
+                string id = "";
+                string nama = "";
+                string harga = "";
+                string deskrip ="";
                 if (item.nama.Substring(0, 2) == "ME")
                 {
 
-                    string query = $"SELECT * from menu where id_menu='{item.nama}'";
+                    query = $"SELECT * from menu where id_menu='{item.nama}'";
                     using (OracleDataAdapter adap = new OracleDataAdapter(query, conn))
                     {
                         DataTable dt = new DataTable();
+
+
                         adap.Fill(dt);
-                        string id = dt.Rows[0].ItemArray[0].ToString();
-                        string nama = dt.Rows[0].ItemArray[1].ToString();
-                        string harga = dt.Rows[0].ItemArray[2].ToString();
-                        string deskrip = dt.Rows[0].ItemArray[4].ToString();
-                        int grandtotal = item.jumlah * Convert.ToInt32(harga);
+                        id = dt.Rows[0].ItemArray[0].ToString();
+
+
+                        nama = dt.Rows[0].ItemArray[1].ToString();
+                        harga = dt.Rows[0].ItemArray[2].ToString();
+                        deskrip = dt.Rows[0].ItemArray[4].ToString();
+                        grandtotal = item.jumlah * Convert.ToInt32(harga);
+
                         dr[0] = nama;
                         dr[1] = harga;
                         dr[2] = deskrip;
                         dr[3] = item.jumlah;
                         dr[4] = grandtotal;
-                        tableTrans.Rows.Add(dr);
                     }
                 }
                 else
                 {
 
-                    string query = $"SELECT * from paket where id_paket='{item.nama}'";
+                    query = $"SELECT * from paket where id_paket='{item.nama}'";
                     using (OracleDataAdapter adap = new OracleDataAdapter(query, conn))
                     {
                         DataTable dt = new DataTable();
                         adap.Fill(dt);
-                        string id = dt.Rows[0].ItemArray[0].ToString();
-                        string nama = dt.Rows[0].ItemArray[1].ToString();
-                        string harga = dt.Rows[0].ItemArray[2].ToString();
-                        string deskrip = "";
-                        int grandtotal = item.jumlah * Convert.ToInt32(harga);
+                         id = dt.Rows[0].ItemArray[0].ToString();
+                         nama = dt.Rows[0].ItemArray[1].ToString();
+                         harga = dt.Rows[0].ItemArray[2].ToString();
+                         deskrip = "";
+                         grandtotal = item.jumlah * Convert.ToInt32(harga);
                         dr[0] = nama;
                         dr[1] = harga;
                         dr[2] = deskrip;
                         dr[3] = item.jumlah;
                         dr[4] = grandtotal;
-                        tableTrans.Rows.Add(dr);
                     }
                 }
+                dr[5] = "";
+                try
+                {
+                    query = $"SELECT id_promo from promo_paket where id_paket='{id}' and status='1'";
+                    
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    string id_paket = cmd.ExecuteScalar().ToString();
+                    System.Windows.Forms.MessageBox.Show(id_paket);
+                    query = $"SELECT jenis_promo from promo where TO_CHAR(periode_awal) <= TO_CHAR(SYSDATE)AND TO_CHAR(periode_akhir) >= TO_CHAR(SYSDATE) and id_promo='{id_paket}'";
+                    cmd = new OracleCommand(query, conn);
+                    string jenis= cmd.ExecuteScalar().ToString();
+                    System.Windows.Forms.MessageBox.Show(jenis);
+                    if (jenis.ToUpper()!="X")
+                    {
+                        query = $"SELECT harga_promo_paket from promo_paket where id_paket='{id}' and status='1'";
+                        cmd = new OracleCommand(query, conn);
+                        harga = cmd.ExecuteScalar().ToString();
+                        grandtotal = item.jumlah * Convert.ToInt32(harga);
+                        dr[1] = harga;
+                        dr[4] = grandtotal;
+                        dr[5] = $"Mendapat Potongan Harga menjadi {harga}/piece";
+                    }
+                    else
+                    {
+                        dr[3] = Convert.ToInt32(dr[3].ToString())+ 1;
+                        dr[5] = $"Mendapat promo by 1 get 1";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                grandtotals += Convert.ToInt32(grandtotal);
+                jumlahPesanan += Convert.ToInt32(dr[3].ToString());
+                tableTrans.Rows.Add(dr);
             }
             gridTrans.ItemsSource = tableTrans.DefaultView;
             conn.Close();
             lbPesanan.Content = jumlahPesanan;
-            lbTotal.Content = grandtotal;
+            lbTotal.Content = grandtotals.ToString();
             loadPromo();
         }
 
@@ -225,7 +271,7 @@ namespace Project.Pegawai
         {
             
         }
-        int grandtotal = 0;
+        int grandtotals = 0;
         int jumlahPesanan = 0;
         private void btnTrans_Click(object sender, RoutedEventArgs e)
         {
@@ -250,10 +296,13 @@ namespace Project.Pegawai
                 OracleCommand cmd = new OracleCommand(query, conn);
                 kode += cmd.ExecuteScalar().ToString();
                 string jenisPemesanan = "";
-
+                string waktu = cbJam.SelectedItem + ":" + cbMenit.SelectedItem;
                 if (rdDine.IsChecked == true)
                 {
                     jenisPemesanan = "Dine In";
+                    query = "SELECT to_char(sysdate,'HH24:MI') from dual";
+                    cmd = new OracleCommand(query, conn);
+                    waktu = cmd.ExecuteScalar().ToString();
                 }
                 else if (rdTake.IsChecked == true)
                 {
@@ -263,12 +312,16 @@ namespace Project.Pegawai
                 {
                     jenisPemesanan = "Delivery";
                 }
+                else if (rdReservasi.IsChecked == true)
+                {
+                    jenisPemesanan = "Reservasi";
+                }
 
 
-                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}";
+                var keterangan = $"Jumlah Meja :{jumlah_meja.Text}||Detail Meja :{detail_meja_pesanan.Text}||Alamat :{tbAlamat.Text}||Waktu : {waktu}";
                 query =
                     "INSERT INTO hjual VALUES ( " +
-                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotal}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}') ";
+                    $"'{kode}',TO_DATE('{tanggl_trans}','dd-mm-yyyy'),'{grandtotals}','{jenisPemesanan}','{"PEG001"}','{tbId.Text}','{keterangan}','1') ";
                 cmd = new OracleCommand(query, conn);
                 cmd.ExecuteNonQuery();
 
@@ -326,10 +379,10 @@ namespace Project.Pegawai
             tableTrans.Clear();
             gridTrans.ItemsSource = tableTrans.DefaultView;
             App.lMenu.Clear();
-            grandtotal = 0;
+            grandtotals = 0;
             jumlahPesanan = 0;
             lbPesanan.Content = jumlahPesanan;
-            lbTotal.Content = grandtotal;
+            lbTotal.Content = grandtotals;
             gridTrans.SelectedIndex = -1;
             loadKupon();
             MessageBox.Show("berhasil masukan transaksi");
@@ -340,54 +393,16 @@ namespace Project.Pegawai
             if(gridTrans.SelectedIndex != -1)
             {
                 DataRow dr = tableTrans.Rows[gridTrans.SelectedIndex];
-                grandtotal -= Convert.ToInt32(dr[4].ToString());
+                grandtotals -= Convert.ToInt32(dr[4].ToString());
                 jumlahPesanan -= Convert.ToInt32(dr[3].ToString());
                 lbPesanan.Content = jumlahPesanan;
-                lbTotal.Content = grandtotal;
+                lbTotal.Content = grandtotals;
                 tableTrans.Rows.RemoveAt(gridTrans.SelectedIndex);
                 gridTrans.ItemsSource = tableTrans.DefaultView;
                 gridTrans.SelectedIndex = -1;
             }
         }
 
-        private void rdTake_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton rbt = (RadioButton)sender;
-            if(rbt.Content.ToString()=="Dine In")
-            {
-                //if (Form_pegawai.lbtn.Count() > 0)
-                //{
-                //    string detail = " ";
-                //    foreach (Button item in Form_pegawai.lbtn)
-                //    {
-                //        detail += item.Content + ",";
-                //    }
-                //    MessageBox.Show(detail);
-                //    detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1);
-                //    jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
-                //}
-                //else
-                //{
-                //    detail_meja_pesanan.Text = "-";
-                //    jumlah_meja.Text = "0";
-                //}
-            }
-            else
-            {
-                detail_meja_pesanan.Text = "-";
-                jumlah_meja.Text = "-";
-            }
-        }
-
-        private void r(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnKupon_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void cmbKupon_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -401,7 +416,7 @@ namespace Project.Pegawai
                         {
                             int harga_kupon = Convert.ToInt32(kupons[cmbKupon.SelectedIndex].harga);
                             harga_kupon *= App.lMenu[i].jumlah;
-                            grandtotal -= harga_kupon;
+                            grandtotals -= harga_kupon;
                             conn.Open();
                             string query =
                                 "SELECT nama_menu " +
@@ -411,7 +426,7 @@ namespace Project.Pegawai
                             string menu = cmd.ExecuteScalar().ToString();
                             conn.Close();
                             MessageBox.Show($"berhasil diskon '{menu}' seharga Rp " + harga_kupon);
-                            lbTotal.Content = grandtotal;
+                            lbTotal.Content = grandtotals;
                         }
                     } 
                 }
@@ -449,8 +464,8 @@ namespace Project.Pegawai
                     //x adalah buy one get one
                     if (promos[cmbPromo.SelectedIndex].jenis_promo != "X")
                     {
-                        grandtotal -= promos[cmbPromo.SelectedIndex].getPromo();
-                        lbTotal.Content = grandtotal;
+                        grandtotals -= promos[cmbPromo.SelectedIndex].getPromo();
+                        lbTotal.Content = grandtotals;
                         MessageBox.Show($"berhasil potong harga {promos[cmbPromo.SelectedIndex].jenis} sebesar {promos[cmbPromo.SelectedIndex].getPromo()}"); 
                     }
                     else
@@ -487,6 +502,35 @@ namespace Project.Pegawai
                 this.nama_kupon = nama_kupon;
                 this.harga = harga;
                 this.sisa_kupon = sisa_kupon;
+            }
+        }
+
+        private void rdDine_Checked(object sender, RoutedEventArgs e)
+        {
+
+            RadioButton rbt = (RadioButton)sender;
+            if (rbt.Content.ToString() == "Dine In" || rbt.Content.ToString() =="Reservasi")
+            {
+                if (Form_pegawai.lbtn.Count() > 0)
+                {
+                    string detail = " ";
+                    foreach (Button item in Form_pegawai.lbtn)
+                    {
+                        detail += item.Content + ",";
+                    }
+                    detail_meja_pesanan.Text = detail.Substring(0, detail.Length - 1).ToString();
+                    jumlah_meja.Text = Form_pegawai.lbtn.Count().ToString();
+                }
+                else
+                {
+                    detail_meja_pesanan.Text = "-";
+                    jumlah_meja.Text = "0";
+                }
+            }
+            else
+            {
+                detail_meja_pesanan.Text = "-";
+                jumlah_meja.Text = "-";
             }
         }
 

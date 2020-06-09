@@ -68,12 +68,13 @@ CREATE TABLE hjual (
   jenis_pemesanan varchar(10) NOT NULL,
   id_pegawai varchar(10) NOT NULL CONSTRAINTS fk_pegawai REFERENCES pegawai(id_pegawai),
   id_member varchar(10) NOT NULL CONSTRAINTS fk_members REFERENCES members(id_member),
-  keterangan varchar(255) NOT NULL
+  keterangan varchar(255) NOT NULL,
+  status varchar(1) NOT NULL,
 );
 
 CREATE TABLE djual (
   id_djual varchar(20) NOT NULL CONSTRAINTS pk_djual PRIMARY KEY,
-  id_menu varchar(10) NOT NULL CONSTRAINTS fk_menu REFERENCES MENU(ID_MENU),
+  id_menu varchar(10) NOT NULL,
   harga NUMBER NOT NULL,
   jumlah NUMBER NOT NULL,
   subtotal NUMBER NOT NULL,
@@ -271,7 +272,7 @@ INSERT INTO PAKET_MENU VALUES ('PK012', 'MEN014');
 INSERT INTO PAKET_MENU VALUES ('PK013', 'MEN010');
 INSERT INTO PAKET_MENU VALUES ('PK013', 'MEN014');
 
-INSERT INTO HJUAL VALUES('H001',TO_DATE('2020-05-30','YYYY-MM-DD'),10000,'Reservasi','PEG001','M000000001','A');
+INSERT INTO HJUAL VALUES('H001',TO_DATE('2020-05-30','YYYY-MM-DD'),10000,'Reservasi','PEG001','M000000001','A','1');
 
 INSERT INTO DJUAL VALUES ('DJ001', 'MEN001', 5000, 1, 5000, 'H001');
 INSERT INTO DJUAL VALUES ('DJ002', 'MEN001', 5000, 1, 5000, 'H001');
@@ -286,6 +287,16 @@ INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'FA00002', 0);
 INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'FA00002', 0);
 INSERT INTO KUPON_MEMBER VALUES ('KUP001', 'SH00001', 0);
 INSERT INTO KUPON_MEMBER VALUES ('KUP002', 'SH00001', 0);
+
+
+INSERT INTO kupon VALUES('KUP005','coba4','MEN001',8000,TO_CHAR(sysdate),TO_CHAR(sysdate),10,0);
+INSERT INTO kupon_member VALUES('KUP005','YO00001',0);
+
+INSERT INTO promo VALUES('PR008','Coba Promo',TO_CHAR(sysdate),TO_CHAR(sysdate),'temp','lalala','X',1);
+INSERT INTO promo_paket VALUES('PR008','MEN001',2000,1);
+
+INSERT INTO promo VALUES('PR009','Coba Promo 1',TO_CHAR(sysdate),TO_CHAR(sysdate),'temp','lalala','H',1);
+INSERT INTO promo_paket VALUES('PR009','PK001',2000,1);
 
 create or replace function autogen_IDpegawai return varchar2
 is

@@ -115,12 +115,48 @@ namespace Project {
             return;
             case 2:
             this.tbData = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 57 "..\..\Login.xaml"
+            this.tbData.MouseEnter += new System.Windows.Input.MouseEventHandler(this.tbData_MouseEnter);
+            
+            #line default
+            #line hidden
+            
+            #line 57 "..\..\Login.xaml"
+            this.tbData.GotFocus += new System.Windows.RoutedEventHandler(this.tbData_GotFocus);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             this.tbUser = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 84 "..\..\Login.xaml"
+            this.tbUser.MouseEnter += new System.Windows.Input.MouseEventHandler(this.tbUser_MouseEnter);
+            
+            #line default
+            #line hidden
+            
+            #line 84 "..\..\Login.xaml"
+            this.tbUser.GotFocus += new System.Windows.RoutedEventHandler(this.tbUser_GotFocus);
+            
+            #line default
+            #line hidden
             return;
             case 4:
             this.tbPass = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 108 "..\..\Login.xaml"
+            this.tbPass.MouseEnter += new System.Windows.Input.MouseEventHandler(this.tbPass_MouseEnter);
+            
+            #line default
+            #line hidden
+            
+            #line 108 "..\..\Login.xaml"
+            this.tbPass.GotFocus += new System.Windows.RoutedEventHandler(this.tbPass_GotFocus);
+            
+            #line default
+            #line hidden
             return;
             case 5:
             this.btnLogin = ((System.Windows.Controls.Button)(target));

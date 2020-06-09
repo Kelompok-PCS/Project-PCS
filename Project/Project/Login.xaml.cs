@@ -56,5 +56,54 @@ namespace Project
             }
            
         }
+
+        private void tbData_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+
+        private void tbData_MouseEnter(object sender, MouseEventArgs e)
+        {
+             
+        }
+
+        private void tbUser_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void tbPass_MouseEnter(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void tbData_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void tbData_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbData.Text == "Source")
+            {
+                tbData.Text = ""; 
+            }
+        }
+
+        private void tbUser_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbUser.Text == "Username")
+            {
+                tbUser.Text = ""; 
+            }
+        }
+
+        private void tbPass_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbPass.Text == "Password")
+            {
+                tbPass.Text = ""; 
+            }
+        }
     }
 }

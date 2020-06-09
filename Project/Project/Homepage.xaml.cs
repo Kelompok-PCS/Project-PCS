@@ -43,8 +43,8 @@ namespace Project
 
         private void pegawai_Click(object sender, RoutedEventArgs e)
         {
-            Form_pegawai pegawai = new Form_pegawai();
-            pegawai.ShowDialog();
+            Login_pegawai login = new Login_pegawai();
+            login.ShowDialog();
         }
     }
 }

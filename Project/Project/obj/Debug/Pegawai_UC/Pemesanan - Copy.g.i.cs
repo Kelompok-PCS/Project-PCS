@@ -172,7 +172,7 @@ namespace Project.Pegawai {
         
         #line 39 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBlock detail_meja_pesanan;
+        internal System.Windows.Controls.ComboBox cmbKupon;
         
         #line default
         #line hidden
@@ -180,7 +180,7 @@ namespace Project.Pegawai {
         
         #line 40 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox cmbKupon;
+        internal System.Windows.Controls.Label ___No_Name__Copy1;
         
         #line default
         #line hidden
@@ -188,7 +188,7 @@ namespace Project.Pegawai {
         
         #line 41 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label ___No_Name__Copy1;
+        internal System.Windows.Controls.Button btnCancel;
         
         #line default
         #line hidden
@@ -196,7 +196,7 @@ namespace Project.Pegawai {
         
         #line 42 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnCancel;
+        internal System.Windows.Controls.ComboBox cmbPromo;
         
         #line default
         #line hidden
@@ -204,7 +204,7 @@ namespace Project.Pegawai {
         
         #line 43 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox cmbPromo;
+        internal System.Windows.Controls.Label ___No_Name__Copy2;
         
         #line default
         #line hidden
@@ -212,7 +212,47 @@ namespace Project.Pegawai {
         
         #line 44 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label ___No_Name__Copy2;
+        internal System.Windows.Controls.TextBlock detail_meja_pesanan;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 46 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lbAalamat;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 47 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox tbAlamat;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 49 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox cbJam;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 50 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox cbMenit;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 51 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.RadioButton rdReservasi;
         
         #line default
         #line hidden
@@ -317,69 +357,66 @@ namespace Project.Pegawai {
             return;
             case 14:
             this.rdDine = ((System.Windows.Controls.RadioButton)(target));
-            
-            #line 33 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
-            this.rdDine.Checked += new System.Windows.RoutedEventHandler(this.rdTake_Checked);
-            
-            #line default
-            #line hidden
             return;
             case 15:
             this.rdTake = ((System.Windows.Controls.RadioButton)(target));
-            
-            #line 34 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
-            this.rdTake.Checked += new System.Windows.RoutedEventHandler(this.rdTake_Checked);
-            
-            #line default
-            #line hidden
             return;
             case 16:
             this.rdDelivery = ((System.Windows.Controls.RadioButton)(target));
-            
-            #line 35 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
-            this.rdDelivery.Checked += new System.Windows.RoutedEventHandler(this.rdTake_Checked);
-            
-            #line default
-            #line hidden
             return;
             case 17:
             this.jumlah_meja = ((System.Windows.Controls.TextBlock)(target));
             return;
             case 18:
-            this.detail_meja_pesanan = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 19:
             this.cmbKupon = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 40 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+            #line 39 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
             this.cmbKupon.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbKupon_SelectionChanged);
             
             #line default
             #line hidden
             return;
-            case 20:
+            case 19:
             this.___No_Name__Copy1 = ((System.Windows.Controls.Label)(target));
             return;
-            case 21:
+            case 20:
             this.btnCancel = ((System.Windows.Controls.Button)(target));
             
-            #line 42 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+            #line 41 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
             this.btnCancel.Click += new System.Windows.RoutedEventHandler(this.btnCancel_Click);
             
             #line default
             #line hidden
             return;
-            case 22:
+            case 21:
             this.cmbPromo = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 43 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
+            #line 42 "..\..\..\Pegawai_UC\Pemesanan - Copy.xaml"
             this.cmbPromo.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbPromo_SelectionChanged);
             
             #line default
             #line hidden
             return;
-            case 23:
+            case 22:
             this.___No_Name__Copy2 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 23:
+            this.detail_meja_pesanan = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 24:
+            this.lbAalamat = ((System.Windows.Controls.Label)(target));
+            return;
+            case 25:
+            this.tbAlamat = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 26:
+            this.cbJam = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 27:
+            this.cbMenit = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 28:
+            this.rdReservasi = ((System.Windows.Controls.RadioButton)(target));
             return;
             }
             this._contentLoaded = true;
