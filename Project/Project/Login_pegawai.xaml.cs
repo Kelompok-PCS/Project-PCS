@@ -43,7 +43,7 @@ namespace Project
 
         private void btnLoginPeg_Click(object sender, RoutedEventArgs e)
         {
-            string kodePegawai = "test";
+            string kodePegawai = "";
             if (tbEmail.Text.ToLower().Equals("admin") && tbPass.Text.ToLower().Equals("admin"))
             {
                 Form_Utama form = new Form_Utama(conn, this);
